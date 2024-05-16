@@ -1,0 +1,159 @@
+<app-about-header></app-about-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="features-job">
+  <div class="container">
+    <div class="features-job-wrap">
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="./assets/images/pages/job/cj1.png" alt="Map">
+          </div>
+          <div class="features-job-card-title">{{'aboutJobTextThree' | translate}}</div>
+          <div class="features-job-card-description">
+          {{'aboutJobTextFour' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="./assets/images/pages/job/cj2.png" alt="Graphic">
+          </div>
+          <div class="features-job-card-title">{{'aboutJobTextFive' | translate}}</div>
+          <div class="features-job-card-description">
+            {{'aboutJobTextSix' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="./assets/images/pages/job/cj3.png" alt="Pick">
+          </div>
+          <div class="features-job-card-title">{{'aboutJobTextSeven' | translate}}</div>
+          <div class="features-job-card-description">
+            {{'aboutJobTextEight' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="more">
+  <div class="container">
+    <div class="more-wrap">
+      <h2>{{'aboutJobTextNine' | translate}}</h2>
+      <span
+        class="who">{{'aboutJobTextTen' | translate}}<br>
+        <strong>{{'aboutJobTextEleven' | translate}}</strong> <br>
+        {{'aboutJobTextTwelve' | translate}}
+      </span>
+    </div>
+  </div>
+</section>
+<!--<section class="search" id="search">-->
+<!--  <div class="container">-->
+<!--    <h2>{{'aboutJobTextThirteen' | translate}}</h2>-->
+<!--    <div class="search-subtitle">{{'aboutJobTextFourteen' | translate}}</div>-->
+<!--    <div class="search-params-wrap">-->
+<!--      <mat-accordion *ngFor="let job of jobs">-->
+<!--        <mat-expansion-panel>-->
+<!--          <mat-expansion-panel-header>-->
+<!--            <mat-panel-title>-->
+<!--              {{job.duty}}-->
+<!--            </mat-panel-title>-->
+<!--          </mat-expansion-panel-header>-->
+<!--          <div class="job-description">-->
+<!--            <div class="salary">{{job.salary}}</div>-->
+<!--            <div class="salary city">{{job.city}}</div>-->
+<!--            <div class="job-info">{{job.info}}</div>-->
+<!--          </div>-->
+<!--        </mat-expansion-panel>-->
+<!--      </mat-accordion>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>{{'aboutJobTextFifteen' | translate}}</h2>
+    <form class="contact-wrap" [formGroup]="candidateForm" autocomplete="off">
+      <div class="contact-wrap-row">
+        <mat-form-field class="example-form-field">
+          <mat-label>{{'aboutJobTextSixteen' | translate}}</mat-label>
+          <input matInput type="text" formControlName="fullname">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('fullname')?.touched && candidateForm.get('fullname')?.errors?.['required']">
+            {{'murabahaAutoTextTwentySeven' | translate}}
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('fullname')?.touched && candidateForm.get('fullname')?.errors?.['pattern']">
+            {{'mainBusinessTextThirtyThree' | translate}}
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row">
+        <mat-form-field class="example-form-field">
+          <mat-label>{{'personalFinancingFormTextTwentyFive' | translate}}</mat-label>
+          <input matInput type="tell" formControlName="mobileNumber">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('mobileNumber')?.touched && candidateForm.get('mobileNumber')?.errors?.['required']">
+            {{'personalFinancingFormErrorTextThree' | translate}}
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('mobileNumber')?.touched && candidateForm.get('mobileNumber')?.errors?.['pattern']">
+            {{'personalFinancingFormErrorTextFour' | translate}}
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field class="example-form-field" >
+          <mat-label>{{'personalDepositsFormTexTwo' | translate}}</mat-label>
+          <input matInput type="text" formControlName="email">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('email')?.touched && candidateForm.get('email')?.errors?.['required']">
+            {{ 'personalFinancingFormTextTwentySeven' | translate }}
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('email')?.touched && candidateForm.get('email')?.errors?.['pattern']">
+            {{'personalFinancingFormTextTwentyEight' | translate}}
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row">
+        <mat-form-field>
+          <mat-label>{{'aboutJobTextSeventeen' | translate}}</mat-label>
+          <textarea matInput formControlName="text"></textarea>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('text')?.touched && candidateForm.get('text')?.errors?.['required']">
+            {{'aboutJobTextEighteen' | translate}}
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row file">
+        <app-file-getter [name]="fileGetter" (fileUuidEmitted)="onFileUuidReceived($event)"></app-file-getter>
+      </div>
+      <div class="contact-wrap-row">
+        <div class="financing-request-agreement-checkbox">
+          <input class="custom-checkbox" type="checkbox" id="myCheckbox" formControlName="agree">
+          <label for="myCheckbox">
+           {{'aboutJobTextNineteen' | translate}}
+          </label>
+        </div>
+      </div>
+      <div class="contact-wrap-row">
+        <button class="button" (click)="sendCandidateData()">{{'aboutJobTextTwenty' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</section>
+<ng-template #job>
+  <div class="job-popup">
+    <div class="popup-close" (click)="closePopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="confirm-request">
+      {{'aboutJobTextTwentyOne' | translate}}
+    </div>
+  </div>
+</ng-template>
+
+

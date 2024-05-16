@@ -1,0 +1,47 @@
+.additional-rate{
+  width: 100%;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1199px){
+  .additional-rate{
+    padding: 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .additional-rate{
+    padding: 30px 30px;
+  }
+}
+
+@media screen and (max-width: 424px){
+  .additional-rate{
+    padding: 10px 10px;
+  }
+}
+
+@media screen and (max-width: 374px){
+  .additional-rate{
+    padding: 10px;
+  }
+
+  .rate-label-wrap {
+    margin-top: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 10px;
+
+    .rate-label {
+      margin-right: 0;
+      width: 78px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+<app-personal-header></app-personal-header>
+<section class="auto-banner">
+  <div class="container">
+    <div class="auto-banner-wrap">
+      <div class="auto-banner-info">
+        <h1>{{'murabahaAutoTextOne' | translate}}</h1>
+        <div class="auto-banner-info-description">
+          {{'murabahaAutoTextTwo' | translate}}
+        </div>
+        <div class="auto-banner-info-action">
+          <a routerLink="/personal/auto-financing" fragment="request" class="button-yellow-rounded">{{'murabahaAutoTextThree' | translate}}</a>
+        </div>
+      </div>
+      <div class="auto-banner-image">
+        <img src="./assets/images/pages/auto/banner1.png" alt="Car">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="purchase">
+  <div class="container">
+    <h2>{{'murabahaAutoTextFour' | translate}}</h2>
+    <div class="purchase-steps">
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p1.png" alt="Car">
+        <span class="purchase-step-text">{{'murabahaAutoTextFive' | translate}}</span>
+      </div>
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p2.png" alt="">
+        <span class="purchase-step-text">{{'murabahaAutoTextSix' | translate}}</span>
+      </div>
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p3.png" alt="">
+        <span class="purchase-step-text">{{'murabahaAutoTextSeven' | translate}}</span>
+      </div>
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p4.png" alt="" class="thin-image">
+        <span class="purchase-step-text">{{'murabahaAutoTextEight' | translate}}</span>
+      </div>
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p5.png" alt="">
+        <span class="purchase-step-text">{{'murabahaAutoTextNine' | translate}}</span>
+      </div>
+      <div class="purchase-step">
+        <img src="./assets/images/pages/auto/p6.png" alt="">
+        <span class="purchase-step-text">{{'murabahaAutoTextTen' | translate}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+<app-auto-financing-calculator></app-auto-financing-calculator>
+<section class="auto-request" id="request">
+  <div class="container">
+    <div class="auto-request-wrap">
+      <div class="auto-request-info">
+        <h2>{{'murabahaAutoTextTwentyThree' | translate}}</h2>
+        <div class="auto-request-info-description">
+          {{'murabahaAutoTextTwentyFour' | translate}}
+        </div>
+      </div>
+      <form class="auto-request-form" [formGroup]="autoFinancingForm">
+        <div class="auto-request-form-row">
+          <div class="auto-request-form-row-span">{{'murabahaAutoTextTwentyFive' | translate}}</div>
+          <input type="text" placeholder="Введите данные" formControlName="fullName" [ngClass]="{'error': autoFinancingForm.get('fullName')?.touched &&
+                                                                      (autoFinancingForm.get('fullName')?.hasError('required') ||
+                                                                      autoFinancingForm.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="autoFinancingForm.get('fullName')?.touched && autoFinancingForm.get('fullName')?.errors?.['required']">{{'murabahaAutoTextTwentySeven' | translate}}</div>
+          <div class="error-message" *ngIf="autoFinancingForm.get('fullName')?.touched && autoFinancingForm.get('fullName')?.errors?.['pattern']">{{'murabahaAutoTextFortyFour' | translate}}</div>
+        </div>
+        <div class="auto-request-form-row">
+          <div class="auto-request-form-row-span">{{'murabahaAutoTextTwentySix' | translate}}</div>
+          <input type="text" placeholder="Введите номер" formControlName="mobileNumber"  [ngClass]="{'error': autoFinancingForm.get('mobileNumber')?.touched &&
+                                                                      (autoFinancingForm.get('mobileNumber')?.hasError('required') ||
+                                                                      autoFinancingForm.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="autoFinancingForm.get('mobileNumber')?.touched && autoFinancingForm.get('mobileNumber')?.errors?.['required']">{{'murabahaAutoTextFortyFive' | translate}}</div>
+          <div class="error-message" *ngIf="autoFinancingForm.get('mobileNumber')?.touched && autoFinancingForm.get('mobileNumber')?.errors?.['pattern']">{{'murabahaAutoTextTwentyEight' | translate}}</div>
+        </div>
+        <div class="auto-request-form-row">
+          <button class="button-white" (click)="sendAutoFinancingRequest()">{{'murabahaAutoTextThirty' | translate}}</button>
+          <span>{{'murabahaAutoTextTwentyNine' | translate}}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="documents">
+  <div class="container">
+    <div class="documents-requirements-wrap">
+      <header class="documents-requirements">
+        <div class="documents-requirements-info">
+          <h2>{{'murabahaAutoTextThirtyOne' | translate}}</h2>
+          <span class="documents-requirements-info-description">{{'murabahaAutoTextThirtyTwo' | translate}}</span>
+        </div>
+        <div class="documents-requirements-image">
+          <img src="./assets/images/pages/auto/d1.png" alt="Documents">
+        </div>
+      </header>
+      <div class="documents-requirements-text">
+        <span>{{'murabahaAutoTextThirtyThree' | translate}}</span>
+        <p>{{'murabahaAutoTextThirtyFour' | translate}}</p>
+        <p>{{'murabahaAutoTextThirtyFive' | translate}}</p>
+        <p>{{'murabahaAutoTextThirtySix' | translate}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="payment">
+  <div class="container">
+    <h2>{{'murabahaAutoTextThirtySeven' | translate}}</h2>
+    <div class="payment-wrap">
+      <div class="payment-card">
+        <div class="payment-card-image" style="background-image: url('./assets/images/pages/auto/pay-1.png');"></div>
+        <div class="payment-card-info">
+          <div class="payment-card-info-title">{{'murabahaAutoTextThirtyEight' | translate}}</div>
+          <div class="payment-card-info-description">{{'murabahaAutoTextThirtyNine' | translate}}</div>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card-image" style="background-image: url('./assets/images/pages/auto/pay-2.png');"></div>
+        <div class="payment-card-info">
+          <div class="payment-card-info-title">{{'murabahaAutoTextForty' | translate}}</div>
+          <div class="payment-card-info-description">{{'murabahaAutoTextFortyOne' | translate}}</div>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card-image" style="background-image: url('./assets/images/pages/auto/pay-3.png');"></div>
+        <div class="payment-card-info">
+          <div class="payment-card-info-title">{{'murabahaAutoTextFortyTwo' | translate}}</div>
+          <div class="payment-card-info-description">{{'murabahaAutoTextFortyThree' | translate}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

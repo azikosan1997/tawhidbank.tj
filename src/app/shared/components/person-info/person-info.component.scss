@@ -1,0 +1,45 @@
+.people-info-wrap{
+  margin-top: 30px;
+  .person-info{
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(68, 68, 68, 0.5);
+
+    .person-info-fullname{
+      position: relative;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 30px;
+    }
+
+    .person-info-biography{
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      text-indent: 40px;
+      text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .people-info-wrap{
+    margin-top: 20px;
+    .person-info{
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+
+      .person-info-fullname{
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .person-info-biography{
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+      }
+    }
+  }
+
+}

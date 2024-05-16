@@ -1,0 +1,60 @@
+<app-business-header></app-business-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="requirements">
+  <product-condition [conditionData]="conditionData"></product-condition>
+</section>
+<section class="features">
+  <div class="container">
+    <h2>{{'businessFinancingPageTextFour' | translate}}</h2>
+    <div class="features-wrap">
+      <div class="feature-card simple">
+        <h3>{{'businessFinancingPageTextFive' | translate}}</h3>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/business%20financing/f1.png" alt="Aim">
+        </div>
+      </div>
+      <div class="feature-card gradient">
+        <h3>{{'businessFinancingPageTextSix' | translate}}</h3>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/business%20financing/f2.png" alt="Box">
+        </div>
+      </div>
+      <div class="feature-card simple">
+        <h3>{{'businessFinancingPageTextSeven' | translate}}</h3>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/business%20financing/f3.png" alt="Cash machine">
+        </div>
+      </div>
+      <div class="feature-card simple">
+        <h3>{{'businessFinancingPageTextEight' | translate}}</h3>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/business%20financing/f4.png" alt="Growth">
+        </div>
+      </div>
+      <div class="feature-card simple">
+        <h3>{{'businessFinancingPageTextNine' | translate}}</h3>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/business%20financing/f5.png" alt="Pie chart">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="what-financing">
+  <div class="container">
+    <div class="what-financing-wrap">
+      <div class="what-financing-wrap-image">
+        <img src="./assets/images/pages/business%20financing/banner.png" alt="Cash machine">
+      </div>
+      <div class="what-financing-wrap-info">
+        <h3>{{'businessFinancingPageTextTen' | translate}}</h3>
+        <div class="what-financing-wrap-info-description">
+          {{'businessFinancingPageTextEleven' | translate}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-steps></app-steps>
+<app-request-form [requestType]="requestType" id="request" id="request" [appId]="appId" [productId]="productId"></app-request-form>
+<app-faq></app-faq>

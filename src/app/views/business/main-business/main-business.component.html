@@ -1,0 +1,350 @@
+<app-business-header></app-business-header>
+<section class="business-main-banner">
+  <div class="container">
+    <div class="business-main-banner-wrap">
+      <div class="business-main-banner-wrap-info">
+        <div class="business-main-banner-wrap-info-title">
+          {{'mainBusinessTextOne' | translate}}<strong>50%</strong><br>
+          {{'mainBusinessTextTwo' | translate}}
+        </div>
+        <div class="business-main-banner-wrap-info-description">
+          {{'mainBusinessTextThree' | translate}}
+        </div>
+        <a routerLink="/business/accounting" class="button">{{'mainBusinessTextFour' | translate}}</a>
+      </div>
+      <div class="business-main-banner-wrap-image">
+        <img src="./assets/images/pages/business%20main/banner.png" alt="Cards & list">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="conditions">
+  <div class="container">
+    <div class="conditions-wrap">
+      <div class="conditions-card">
+        <div class="conditions-card-title">{{'mainBusinessTextFive' | translate}}</div>
+        <div class="conditions-card-subtitle">
+          {{'mainBusinessTextSix' | translate}}
+        </div>
+        <div class="condition-card-image">
+          <img src="./assets/images/pages/business%20main/cd1.png" alt="Laptop">
+        </div>
+      </div>
+      <div class="conditions-card">
+        <div class="conditions-card-title">{{'mainBusinessTextSeven' | translate}}</div>
+        <div class="conditions-card-subtitle">
+          {{'mainBusinessTextEight' | translate}}
+        </div>
+        <div class="condition-card-image">
+          <img src="./assets/images/pages/business%20main/cd2.png" alt="Note">
+        </div>
+      </div>
+      <div class="conditions-card">
+        <div class="conditions-card-title">{{'mainBusinessTextNine' | translate}}</div>
+        <div class="conditions-card-subtitle">
+          {{'mainBusinessTextTen' | translate}}
+        </div>
+        <div class="condition-card-image">
+          <img src="./assets/images/pages/business%20main/cd3.png" alt="Globe">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="best">
+  <div class="container">
+    <h2>{{'mainBusinessTextEleven' | translate}}</h2>
+    <div class="best-wrap">
+      <div class="carousel-controllers">
+        <div class="move-backward" (click)="serviceCarousel.prev()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M14.293 4.29297L15.7073 5.70718L9.41436 12.0001L15.7073 18.293L14.293 19.7072L6.58594 12.0001L14.293 4.29297Z"
+                  fill="#309799"></path>
+          </svg>
+        </div>
+        <div class="move-forward" (click)="serviceCarousel.next()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M14.5859 11.9999L8.29297 18.2928L9.70718 19.707L17.4143 11.9999L9.70718 4.29282L8.29297 5.70703L14.5859 11.9999Z"
+                  fill="#309799"></path>
+          </svg>
+        </div>
+      </div>
+      <owl-carousel-o [options]="serviceOptions" #serviceCarousel>
+        <ng-template carouselSlide *ngFor="let banner of bannerData">
+          <div class="best-card">
+            <div class="best-card-image-content">
+              <span class="overlay"></span>
+              <div class="best-card-image">
+                <img src="{{banner.background}}" alt="Photo">
+              </div>
+            </div>
+            <div class="best-card-content">
+              <div class="best-card-title">{{translateText(banner.title)}}</div>
+              <div class="best-card-description">{{translateText(banner.description)}}</div>
+              <a routerLink="{{banner.link}}" class="button">{{'mainBusinessTextFortyEight' | translate}}</a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<section class="open-account">
+  <div class="container">
+    <h2>{{'mainBusinessTextEighteen' | translate}}</h2>
+    <div class="open-account-steps-wrap">
+      <div class="open-account-step">
+        <div class="open-account-step-icon">
+          <svg fill="#309799" width="50px" height="50px" viewBox="0 0 16.00 16.00" id="request-send-16px"
+               xmlns="http://www.w3.org/2000/svg" stroke="#309799" stroke-width="0.00016">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+               stroke-width="0.032"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path id="Path_44" data-name="Path 44"
+                    d="M-18,11a2,2,0,0,0,2-2,2,2,0,0,0-2-2,2,2,0,0,0-2,2A2,2,0,0,0-18,11Zm0-3a1,1,0,0,1,1,1,1,1,0,0,1-1,1,1,1,0,0,1-1-1A1,1,0,0,1-18,8Zm2.5,4h-5A2.5,2.5,0,0,0-23,14.5,1.5,1.5,0,0,0-21.5,16h7A1.5,1.5,0,0,0-13,14.5,2.5,2.5,0,0,0-15.5,12Zm1,3h-7a.5.5,0,0,1-.5-.5A1.5,1.5,0,0,1-20.5,13h5A1.5,1.5,0,0,1-14,14.5.5.5,0,0,1-14.5,15ZM-7,2.5v5A2.5,2.5,0,0,1-9.5,10h-2.793l-1.853,1.854A.5.5,0,0,1-14.5,12a.493.493,0,0,1-.191-.038A.5.5,0,0,1-15,11.5v-2a.5.5,0,0,1,.5-.5.5.5,0,0,1,.5.5v.793l1.146-1.147A.5.5,0,0,1-12.5,9h3A1.5,1.5,0,0,0-8,7.5v-5A1.5,1.5,0,0,0-9.5,1h-7A1.5,1.5,0,0,0-18,2.5v3a.5.5,0,0,1-.5.5.5.5,0,0,1-.5-.5v-3A2.5,2.5,0,0,1-16.5,0h7A2.5,2.5,0,0,1-7,2.5Zm-7.854,3.646L-12.707,4H-14.5a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h3a.5.5,0,0,1,.191.038.506.506,0,0,1,.271.271A.5.5,0,0,1-11,3.5v3a.5.5,0,0,1-.5.5.5.5,0,0,1-.5-.5V4.707l-2.146,2.147A.5.5,0,0,1-14.5,7a.5.5,0,0,1-.354-.146A.5.5,0,0,1-14.854,6.146Z"
+                    transform="translate(23)"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="open-account-step-info">
+          <div class="open-account-step-info-title">{{'mainBusinessTextNineteen' | translate}}</div>
+          <div class="open-account-step-info-subtitle">{{'mainBusinessTextTwenty' | translate}}<br> {{'mainBusinessTextTwentyOne' | translate}}</div>
+        </div>
+      </div>
+      <div class="open-account-step">
+        <div class="open-account-step-icon">
+          <svg fill="#309799" height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 463 463" xml:space="preserve" stroke="#309799">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+            <g> <g> <g>
+            <path
+              d="M390.52,295.267L303,266.094v-27.405l1.376-0.813C323.266,226.714,335,205.402,335,182.257v-36.899 c0.417-0.206,0.83-0.425,1.231-0.674c4.238-2.619,6.769-7.157,6.769-12.14V97.47c21.202-38.689,8.326-89.672,7.759-91.856 c-0.503-1.936-1.758-3.59-3.486-4.596c-1.729-1.007-3.788-1.28-5.718-0.762c-21.249,5.706-48.183,3.734-74.23,1.829 C228.721-0.74,188.803-3.66,162.746,17.698c-5.827,4.776-9.845,10.37-12.614,15.759l-5.879,0.979 c-22.818,3.804-38.289,25.462-34.486,48.281l8.829,52.971c0.752,4.514,3.523,8.294,7.601,10.371 c0.589,0.3,1.193,0.545,1.804,0.759v35.438c0,23.145,11.734,44.457,30.624,55.619l1.376,0.813v27.405L72.48,295.266 C53.052,301.743,40,319.852,40,340.33v91.17c0,17.369,14.131,31.5,31.5,31.5h320c17.369,0,31.5-14.131,31.5-31.5v-91.17 C423,319.852,409.948,301.743,390.52,295.267z M124.562,80.253c-2.328-13.972,6.589-27.266,20.121-30.6 c-0.576,3.201-0.668,5.304-0.678,5.578c-0.142,3.952,2.81,7.335,6.744,7.73c3.933,0.394,7.5-2.33,8.149-6.23l1.287-7.729 c1.484-5.662,4.785-13.731,12.069-19.701c21.426-17.563,56.666-14.984,93.976-12.255c24.378,1.783,49.498,3.622,71.474-0.542 c2.59,14.729,6.382,49.324-8.687,75.225C328.351,92.873,328,94.175,328,95.5v35.865l-13.25-6.625 c-2.313-1.156-3.75-3.481-3.75-6.067v-8.889C311,97.772,301.228,88,289.217,88H173.783C161.772,88,152,97.772,152,109.783v8.889 c0,2.586-1.437,4.911-3.75,6.067l-15.022,7.511L124.562,80.253z M143,182.257v-38.122l11.958-5.979 c7.428-3.714,12.042-11.18,12.042-19.484v-8.889c0-3.74,3.043-6.783,6.783-6.783h115.434c3.74,0,6.783,3.043,6.783,6.783v8.889 c0,8.304,4.614,15.77,12.042,19.484L320,144.135v38.122c0,17.865-8.911,34.229-23.255,42.705l-41.331,24.423 c-7.324,4.328-15.591,6.615-23.92,6.615c-8.317,0-16.584-2.288-23.908-6.615l-41.331-24.423 C151.911,216.486,143,200.122,143,182.257z M239.5,296h-16c-4.638,0-8.795,2.058-11.638,5.296l-23.227-11.613L175,269.229 v-21.677l24.955,14.746c9.633,5.693,20.539,8.702,31.551,8.702c11,0,21.905-3.009,31.539-8.701L288,247.552v21.677 l-13.643,20.464L251.142,301.3C248.299,298.059,244.14,296,239.5,296z M240,311.5v16c0,0.275-0.224,0.5-0.5,0.5h-16 c-0.276,0-0.5-0.225-0.5-0.5v-15.499c0.012-0.183,0.011-0.366,0.01-0.548c0.025-0.253,0.231-0.453,0.49-0.453h16 C239.776,311,240,311.225,240,311.5z M208,316.135v6.729l-32.276,16.139c-0.093,0.047-0.25,0.125-0.486-0.021 C175,338.834,175,338.66,175,338.556v-38.111c0-0.104,0-0.279,0.237-0.426c0.237-0.146,0.394-0.068,0.486-0.021L208,316.135z M255,316.142l32.291-16.146c0.093-0.046,0.25-0.125,0.486,0.021c0.237,0.147,0.237,0.321,0.237,0.426v38.111 c0,0.104,0,0.279-0.237,0.426c-0.237,0.146-0.394,0.068-0.486,0.021L255,322.857V316.142z M224.001,448.002H119v-56.5 c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5V448H71.5c-9.098,0-16.5-7.402-16.5-16.5v-91.17 c0-14.011,8.931-26.401,22.223-30.832l87.215-29.071l4.113,6.169c-0.406,0.205-0.807,0.421-1.199,0.663 c-4.603,2.845-7.351,7.774-7.351,13.186v38.111c0,5.411,2.748,10.34,7.351,13.186c2.505,1.548,5.317,2.329,8.139,2.329 c2.364,0,4.736-0.547,6.941-1.65l29.431-14.715c2.843,3.238,7,5.296,11.638,5.296h0.5V448.002z M408,431.5 c0,9.098-7.402,16.5-16.5,16.5H359v-56.5c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5V448H239V343h0.5 c4.64,0,8.799-2.06,11.642-5.301l29.441,14.721c2.206,1.103,4.577,1.65,6.941,1.65c2.822,0,5.634-0.781,8.139-2.329 c4.603-2.845,7.351-7.774,7.351-13.186v-38.111c0-5.411-2.748-10.34-7.351-13.186c-0.396-0.244-0.801-0.462-1.211-0.668 l4.109-6.164l87.215,29.071C399.069,313.929,408,326.319,408,340.33V431.5z"></path>
+              <path
+                d="M311.5,376h-40c-8.547,0-15.5,6.953-15.5,15.5v24c0,8.547,6.953,15.5,15.5,15.5h40c8.547,0,15.5-6.953,15.5-15.5v-24 C327,382.953,320.047,376,311.5,376z M312,415.5c0,0.275-0.224,0.5-0.5,0.5h-40c-0.276,0-0.5-0.225-0.5-0.5v-24 c0-0.275,0.224-0.5,0.5-0.5h40c0.276,0,0.5,0.225,0.5,0.5V415.5z"></path>
+            </g> </g>
+            </g> </g>
+          </svg>
+        </div>
+        <div class="open-account-step-info">
+          <div class="open-account-step-info-title">{{'mainBusinessTextTwentyTwo' | translate}}</div>
+          <div class="open-account-step-info-subtitle">{{'mainBusinessTextTwentyThree' | translate}} <br> {{'mainBusinessTextTwentyFour' | translate}}</div>
+        </div>
+      </div>
+      <div class="open-account-step">
+        <div class="open-account-step-icon third">
+          <svg width="50px" height="50px" viewBox="0 0 32.00 32.00" data-name="Layer 1" id="Layer_1"
+               xmlns="http://www.w3.org/2000/svg" fill="#309799" stroke="#309799" stroke-width="0.00032">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <style>.cls-1 {
+                  fill: #309799;
+                }</style>
+              </defs>
+              <title></title>
+              <path class="cls-1"
+                    d="M22,27a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4h9.76L15,4V8a3,3,0,0,0,3,3l2-2H18a1,1,0,0,1-1-1V5.41L20.29,8.7l.89-.89.52-.52L17.59,3.17A4,4,0,0,0,14.76,2H5A3,3,0,0,0,2,5V27a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V19.42l-2,2Z"></path>
+              <path class="cls-1"
+                    d="M29,7.24a2.86,2.86,0,0,0-4.39,0l-2,2L14.11,17.7a6.09,6.09,0,0,0-.93,1.23L10.69,24H7a1,1,0,0,0,0,2h4a1,1,0,0,0,.67-.27.58.58,0,0,0,.18,0L17.36,23a5.87,5.87,0,0,0,1.14-.9l.56-.55h0L27,13.62l2-2a3.07,3.07,0,0,0,1-2.19A3.11,3.11,0,0,0,29,7.24ZM16.67,21l-.27.19-2.8,1.38,1.33-2.73a3.88,3.88,0,0,1,.47-.6l.61.61.92.93Zm1.69-1.63-.78-.77-.78-.79,6.5-6.5,1.56,1.56Zm9.19-9.19L26.27,11.5,24.71,9.93,26,8.66a1.29,1.29,0,0,1,.78-.45,1.31,1.31,0,0,1,.78.45,1.34,1.34,0,0,1,.45.78A1.37,1.37,0,0,1,27.55,10.22Z"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="open-account-step-info">
+          <div class="open-account-step-info-title">{{'mainBusinessTextTwentyFive' | translate}}</div>
+          <div class="open-account-step-info-subtitle">{{'mainBusinessTextTwentySix' | translate}}<br> {{'mainBusinessTextTwentySeven' | translate}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="consulting-wrap">
+      <div class="consulting-info">
+        <h3>{{'mainBusinessTextTwentyEight' | translate}}<br> {{'mainBusinessTextTwentyNine' | translate}}</h3>
+        <div class="consulting-description">
+          {{'mainBusinessTextThirty' | translate}}
+        </div>
+      </div>
+      <form class="consulting-form" [formGroup]="accountConsulting">
+        <div class="consulting-form-row">
+          <div class="consulting-form-input-name">{{'mainBusinessTextThirtyOne' | translate}}</div>
+          <input type="text" placeholder="{{'mainBusinessTextSixty' | translate}}" formControlName="fullName" [ngClass]="{'error': accountConsulting.get('fullName')?.touched &&
+                                                                      (accountConsulting.get('fullName')?.hasError('required') ||
+                                                                      accountConsulting.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="accountConsulting.get('fullName')?.touched && accountConsulting.get('fullName')?.errors?.['required']">{{'mainBusinessTextThirtyTwo' | translate}}</div>
+          <div class="error-message" *ngIf="accountConsulting.get('fullName')?.touched && accountConsulting.get('fullName')?.errors?.['pattern']">{{'mainBusinessTextThirtyThree' | translate}}</div>
+        </div>
+        <div class="consulting-form-row">
+          <div class="consulting-form-input-name">{{'mainBusinessTextThirtyFour' | translate}}</div>
+          <input type="text" placeholder="{{'mainBusinessTextFiftyNine' | translate}}" formControlName="mobileNumber"  [ngClass]="{'error': accountConsulting.get('mobileNumber')?.touched &&
+                                                                      (accountConsulting.get('mobileNumber')?.hasError('required') ||
+                                                                      accountConsulting.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="accountConsulting.get('mobileNumber')?.touched && accountConsulting.get('mobileNumber')?.errors?.['required']">{{'mainBusinessTextThirtyFive' | translate}}</div>
+          <div class="error-message" *ngIf="accountConsulting.get('mobileNumber')?.touched && accountConsulting.get('mobileNumber')?.errors?.['pattern']">{{'mainBusinessTextThirtySix' | translate}}</div>
+        </div>
+        <div class="consulting-form-row action">
+          <button class="button" (click)="sendConsultingRequest()">{{'mainBusinessTextThirtySeven' | translate}}</button>
+          <div class="agreement">{{'mainBusinessTextThirtyEight' | translate}} <strong>{{'mainBusinessTextThirtyNine' | translate}}</strong>
+            {{'mainBusinessTextForty' | translate}}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="services">
+  <div class="container">
+    <h2>{{'mainBusinessTextFortyOne' | translate}}</h2>
+    <div class="for-business">
+      <div class="for-business-title">{{'mainBusinessTextFortyTwo' | translate}}</div>
+      <div class="for-business-carousel-controllers">
+        <div class="move-icon-container" (click)="services.prev()">
+          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M15 20L7 12L15 4" stroke="#9a9a9a" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="move-icon-container" (click)="services.next()">
+          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+               transform="rotate(180)">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M15 20L7 12L15 4" stroke="#9a9a9a" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <owl-carousel-o [options]="usefullServices" #services>
+      <ng-template carouselSlide>
+        <div class="carousel-card">
+          <div class="carousel-card-row">
+            <div class="carousel-card-title">{{'mainBusinessTextFiftyEight' | translate}}</div>
+            <div class="carousel-card-icon">
+              <svg fill="#309799" width="64px" height="64px" viewBox="-3 0 16 16" id="mobile-16px"
+                   xmlns="http://www.w3.org/2000/svg" stroke="#309799" stroke-width="0.00016">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path id="Path_67" data-name="Path 67"
+                        d="M30.5,0h-5A2.5,2.5,0,0,0,23,2.5v11A2.5,2.5,0,0,0,25.5,16h5A2.5,2.5,0,0,0,33,13.5V2.5A2.5,2.5,0,0,0,30.5,0ZM32,13.5A1.5,1.5,0,0,1,30.5,15h-5A1.5,1.5,0,0,1,24,13.5V2.5A1.5,1.5,0,0,1,25.454,1V2.5a.5.5,0,0,0,.5.5h4.092a.5.5,0,0,0,.5-.5V1A1.5,1.5,0,0,1,32,2.5Zm-3,0a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1,0-1h1A.5.5,0,0,1,29,13.5Z"
+                        transform="translate(-23)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="carousel-card-description">{{'mainBusinessTextFortyThree' | translate}}</div>
+          <a routerLink="/personal/tawhid-pay" class="button-black">{{'mainBusinessTextFortyFour' | translate}}</a>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="carousel-card">
+          <div class="carousel-card-row">
+            <div class="carousel-card-title">{{'mainBusinessTextFortyFive' | translate}}<br>{{'mainBusinessTextFortySix' | translate}}</div>
+            <div class="carousel-card-icon">
+              <svg fill="#309799" width="70px" height="70px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                   stroke="#309799" stroke-width="0.00024000000000000003">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Calculator_1" data-name="Calculator 1">
+                    <g>
+                      <path
+                        d="M16.5,21.937h-9a2.5,2.5,0,0,1-2.5-2.5V4.563a2.5,2.5,0,0,1,2.5-2.5h9a2.5,2.5,0,0,1,2.5,2.5V19.437A2.5,2.5,0,0,1,16.5,21.937ZM7.5,3.063A1.5,1.5,0,0,0,6,4.563V19.437a1.5,1.5,0,0,0,1.5,1.5h9a1.5,1.5,0,0,0,1.5-1.5V4.563a1.5,1.5,0,0,0-1.5-1.5Z"></path>
+                      <path
+                        d="M14.5,9.757h-5A1.5,1.5,0,0,1,8,8.257V6.563a1.5,1.5,0,0,1,1.5-1.5h5a1.5,1.5,0,0,1,1.5,1.5V8.257A1.5,1.5,0,0,1,14.5,9.757Zm-5-3.694a.5.5,0,0,0-.5.5V8.257a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5V6.563a.5.5,0,0,0-.5-.5Z"></path>
+                      <g>
+                        <circle cx="12" cy="11.508" r="0.75"></circle>
+                        <circle cx="15.25" cy="11.508" r="0.75"></circle>
+                        <circle cx="8.75" cy="11.508" r="0.75"></circle>
+                      </g>
+                      <g>
+                        <circle cx="12" cy="14.848" r="0.75"></circle>
+                        <circle cx="15.25" cy="14.848" r="0.75"></circle>
+                        <circle cx="8.75" cy="14.848" r="0.75"></circle>
+                      </g>
+                      <g>
+                        <circle cx="15.25" cy="18.187" r="0.75"></circle>
+                        <path d="M12.248,18.687H8.5a.5.5,0,0,1,0-1h3.744a.5.5,0,1,1,0,1Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="carousel-card-description">{{'mainBusinessTextFortySeven' | translate}}</div>
+          <a href="https://ib.tawhid.tj/" class="button-black" target="_blank">{{'mainBusinessTextFortyEight' | translate}}</a>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="carousel-card">
+          <div class="carousel-card-row">
+            <div class="carousel-card-title">{{'mainBusinessTextFortyNine' | translate}}</div>
+            <div class="carousel-card-icon">
+              <svg width="80px" height="80px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                   stroke="#ffffff" stroke-width="0.4800000000000001">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.75 6.75L4.5 6H20.25L21 6.75V10.7812H20.25C19.5769 10.7812 19.0312 11.3269 19.0312 12C19.0312 12.6731 19.5769 13.2188 20.25 13.2188H21V17.25L20.25 18L4.5 18L3.75 17.25V13.2188H4.5C5.1731 13.2188 5.71875 12.6731 5.71875 12C5.71875 11.3269 5.1731 10.7812 4.5 10.7812H3.75V6.75ZM5.25 7.5V9.38602C6.38677 9.71157 7.21875 10.7586 7.21875 12C7.21875 13.2414 6.38677 14.2884 5.25 14.614V16.5L9 16.5L9 7.5H5.25ZM10.5 7.5V16.5L19.5 16.5V14.614C18.3632 14.2884 17.5312 13.2414 17.5312 12C17.5312 10.7586 18.3632 9.71157 19.5 9.38602V7.5H10.5Z"
+                        fill="#309799"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="carousel-card-description">{{'mainBusinessTextFifty' | translate}}</div>
+          <a href="https://iqdom.twb.tj/" class="button-black" target="_blank">{{'mainBusinessTextFiftyOne' | translate}}</a>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
+<section class="internet-banking">
+  <div class="container">
+    <div class="overlay"></div>
+    <div class="internet-banking-wrap">
+      <div class="internet-banking-image">
+        <img src="./assets/images/pages/business%20main/laptop.png" alt="Laptop">
+      </div>
+      <div class="internet-banking-info">
+      <div class="internet-banking-title">{{'mainBusinessTextFiftyTwo' | translate}}</div>
+      <div class="internet-banking-subtitle">{{'mainBusinessTextFiftyThree' | translate}}</div>
+        <a href="https://ib.tawhid.tj/" class="button" target="_blank">{{'mainBusinessTextFiftyFour' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="rate-map">
+  <div class="container">
+    <div class="additional-wrap">
+      <div class="rate-component-wrap">
+        <app-rate-tabe></app-rate-tabe>
+      </div>
+      <div class="additional-map">
+        <div class="map">
+          <img src="./assets/images/pages/business%20main/map.png" alt="Map">
+        </div>
+        <div class="office-warp">
+          <h3>{{'mainBusinessTextFiftyFive' | translate}}</h3>
+          <div class="additional-map-description">
+            {{'mainBusinessTextFiftySix' | translate}}
+          </div>
+          <a routerLink="/about/location" class="button-fill">{{'mainBusinessTextFiftySeven' | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<news></news>-->
+

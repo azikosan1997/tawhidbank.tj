@@ -1,0 +1,1432 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.business-main-banner {
+  padding-top: 30px;
+  padding-bottom: 100px;
+  background: #f2f7f9;
+
+  .container {
+    .business-main-banner-wrap {
+      width: 100%;
+      height: 600px;
+      background-color: white;
+      border-radius: 1.15rem;
+      box-shadow: 0.5px 0.866px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+      padding: 75px 60px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .business-main-banner-wrap-info {
+
+        .business-main-banner-wrap-info-title {
+          max-width: 550px;
+          font-size: 30px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(5, 5, 5);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.2;
+          margin-bottom: 52px;
+
+          strong {
+            font-size: 50px;
+            color: $main-color;
+            margin-left: 10px;
+          }
+        }
+
+        .business-main-banner-wrap-info-description {
+          max-width: 449px;
+          box-sizing: border-box;
+          text-align: center;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          border-radius: .5rem;
+          background: $secondary-color;
+          font-size: 12px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(5, 5, 5);
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 55px;
+        }
+
+        .button {
+          background-color: $secondary-color;
+          color: #444444;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 500;
+          font-family: "Montserrat", sans-serif;
+          padding: 13px 56px;
+          max-width: 222px;
+          display: grid;
+          place-content: center;
+
+          &:hover {
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+          }
+        }
+      }
+
+      .business-main-banner-wrap-image {
+        width: 48%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.conditions {
+  padding-bottom: 100px;
+  background: #f2f7f9;
+
+  .container {
+    .conditions-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .conditions-card {
+        width: 32%;
+        height: 500px;
+        padding: 52px 28px 30px 28px;
+        box-sizing: border-box;
+        background-color: #ddedee;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .conditions-card-title {
+          height: 48px;
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 31, 31);
+          font-weight: bold;
+          line-height: 1.2;
+          margin-bottom: 22px;
+        }
+
+        .conditions-card-subtitle {
+          height: 58px;
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 31, 31);
+          line-height: 1.2;
+          margin-bottom: 80px;
+        }
+
+        .condition-card-image {
+          height: 200px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+
+          img {
+            object-fit: scale-down;
+          }
+        }
+      }
+    }
+  }
+}
+
+.best {
+  padding-bottom: 100px;
+  background: #f2f7f9;
+  border-bottom: 3px solid #e6ecee;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .best-wrap {
+      position: relative;
+
+      .carousel-controllers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        .move-backward {
+          position: absolute;
+          transform: scale(2);
+          top: calc(50% - 24px);
+          left: -30px;
+          cursor: pointer;
+        }
+
+        .move-forward {
+          position: absolute;
+          transform: scale(2);
+          top: calc(50% - 24px);
+          right: -30px;
+          cursor: pointer;
+        }
+      }
+
+      .best-card {
+        width: 100%;
+        height: 470px;
+        box-sizing: border-box;
+        border-radius: 25px;
+        background-color: white;
+
+        .best-card-image-content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 5px;
+          padding: 20px 14px;
+
+          .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: $main-color;
+            border-radius: 25px 25px 0 25px;
+
+            &::before, &::after {
+              content: '';
+              position: absolute;
+              right: 0;
+              bottom: -40px;
+              height: 40px;
+              width: 40px;
+              background-color: $main-color;
+            }
+
+            &::after {
+              border-top-right-radius: 25px;
+              background-color: white;
+            }
+          }
+
+          .best-card-image {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              object-fit: scale-down;
+            }
+          }
+        }
+
+        .best-card-content {
+          text-align: center;
+          padding: 20px 14px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .best-card-title {
+            height: 40px;
+            font-size: 20px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(31, 31, 31);
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+
+          .best-card-description {
+            height: 63px;
+            max-width: 300px;
+            font-size: 13px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(31, 31, 31);
+            line-height: 1.2;
+            margin-bottom: 35px;
+          }
+
+          .button {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(255, 255, 255);
+            padding: 20px 33px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.open-account {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .container {
+    h2 {
+      text-align: center;
+      @include h2-mixin;
+    }
+
+    .open-account-steps-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+
+      .open-account-step {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .open-account-step-icon {
+          width: 82px;
+          height: 82px;
+          border-radius: 50%;
+          background-color: #f2f7f9;
+          display: grid;
+          place-content: center;
+          box-sizing: border-box;
+
+          &.third {
+            padding-left: 10px;
+          }
+        }
+
+        .open-account-step-info {
+          .open-account-step-info-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .consulting-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+
+      .consulting-info {
+        width: 40%;
+
+        h3 {
+          font-size: 36px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(12, 12, 12);
+          font-weight: bold;
+          line-height: 1.2;
+        }
+
+        .consulting-description {
+          max-width: 420px;
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(12, 12, 12);
+          line-height: 1.2;
+        }
+      }
+
+      .consulting-form {
+        width: 40%;
+
+        .consulting-form-row {
+          margin-bottom: 40px;
+          height: 80px;
+
+          .consulting-form-input-name {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(12, 12, 12);
+            margin-bottom: 5px;
+          }
+
+          input {
+            border: 2px solid $main-color;
+            border-radius: 5px;
+            height: 70px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(12, 12, 12);
+            outline: none;
+
+            &.error {
+              border: 2px solid #f44336;
+            }
+          }
+
+          .error-message {
+            color: #f44336;
+            font-size: 12px;
+            font-family: Montserrat, sans-serif;
+          }
+
+          .button {
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 18px 41px;
+            font-size: 18px;
+            font-family: Montserrat, sans-serif;
+            font-weight: 500;
+          }
+
+          .agreement {
+            font-size: 13px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(41, 41, 41);
+            line-height: 1.2;
+
+            strong {
+              color: $main-color;
+              text-decoration: underline;
+            }
+          }
+
+          &:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.services {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #f2f7f9;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .for-business {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 50px;
+
+      .for-business-title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #999999;
+      }
+
+      .for-business-carousel-controllers {
+        display: flex;
+        gap: 20px;
+
+        .move-icon-container {
+          width: 50px;
+          height: 50px;
+          border-radius: 1rem;
+          background-color: white;
+          display: grid;
+          place-content: center;
+          cursor: pointer;
+          transition: all 120ms ease-in-out;
+
+          &:hover {
+            background-color: $main-color;
+
+            svg {
+              path {
+                stroke: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-card {
+      width: 100%;
+      height: 400px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background-color: white;
+      padding: 20px;
+
+      .carousel-card-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+
+        .carousel-card-title {
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(12, 12, 12);
+          line-height: 1.2;
+        }
+      }
+
+      .carousel-card-description {
+        height: 58px;
+        max-width: 220px;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(130, 130, 130);
+        line-height: 1.2;
+        margin-bottom: 140px;
+      }
+
+      .button-black {
+        display: grid;
+        place-content: center;
+        min-width: 169px;
+        border-radius: 5px;
+        border: 1px solid #444444;
+        padding: 17px 25px;
+        text-decoration: none;
+        color: #444444;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.internet-banking {
+  padding-top: 50px;
+  background-color: #f2f7f9;
+  padding-bottom: 200px;
+
+  .container {
+    position: relative;
+    box-sizing: border-box;
+
+    .internet-banking-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background-color: #e0e9ed;
+      padding: 60px 30px;
+      box-sizing: border-box;
+
+      .internet-banking-image{
+        width: 48%;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .internet-banking-info {
+        background-color: transparent;
+        max-width: 50%;
+
+        .internet-banking-title {
+          @include h2-mixin;
+        }
+
+        .internet-banking-subtitle {
+          font-size: 16px;
+          margin-bottom: 30px;
+        }
+
+        .button {
+          border-radius: 5px;
+          width: 200px;
+          display: grid;
+          place-content: center;
+        }
+      }
+    }
+  }
+}
+
+.rate-map {
+  background-color: #f2f7f9;
+  padding-bottom: 60px;
+
+  .container {
+    .additional-wrap {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      .rate-component-wrap{
+        width: 50%;
+      }
+
+      .additional-map {
+        width: 50%;
+        background-color: white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding-bottom: 35px;
+
+        .map {
+          height: 200px;
+
+          img {
+            object-fit: scale-down;
+          }
+        }
+
+        .office-warp {
+          padding: 0 20px;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+
+          .additional-map-description{
+            font-size: 15px;
+          }
+
+          .button-fill {
+            border-radius: 5px;
+            max-width: 100px;
+            padding: 10px 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1299px){
+  .conditions {
+    padding-bottom: 60px;
+
+    .container {
+      .conditions-wrap {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .conditions-card {
+          width: 33%;
+          text-align: center;
+
+          .condition-card-image {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            img {
+              width: 100%;
+              height: 200px;
+              object-fit: scale-down;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .best {
+    padding-bottom: 80px;
+
+    .container {
+      .best-wrap {
+        .carousel-controllers {
+          width: 100%;
+          height: 20%;
+          position: absolute;
+          justify-content: center;
+          bottom: -70px;
+
+          .move-backward {
+            position: relative;
+          }
+
+          .move-forward {
+            position: relative;
+          }
+        }
+
+        .best-card {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .conditions {
+    .container {
+      .conditions-wrap {
+        .conditions-card {
+          width: 392px;
+        }
+      }
+    }
+  }
+
+  .best {
+    padding-bottom: 80px;
+    .container {
+      .best-wrap {
+        .best-card {
+          width: 100%;
+          height: 470px;
+          box-sizing: border-box;
+          border-radius: 25px;
+          background-color: white;
+
+          .best-card-image-content {
+            padding: 15px 10px;
+          }
+
+          .best-card-content {
+            text-align: center;
+            padding: 15px 10px;
+
+            .best-card-title {
+              position: relative;
+              height: 40px;
+              font-size: 18px;
+              margin-bottom: 30px;
+              z-index: 20;
+            }
+
+            .button {
+              font-size: 16px;
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .open-account {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .container {
+      .open-account-steps-wrap {
+        margin-bottom: 60px;
+        justify-content: center;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .business-main-banner {
+    padding-top: 30px;
+    padding-bottom: 100px;
+    background: #f2f7f9;
+
+    .container {
+      .business-main-banner-wrap {
+        height: 450px;
+        padding: 20px 30px;
+        gap: 20px;
+
+        .business-main-banner-wrap-info {
+
+          .business-main-banner-wrap-info-title {
+            max-width: 450px;
+            font-size: 24px;
+
+            strong {
+              font-size: 40px;
+            }
+          }
+
+          .business-main-banner-wrap-info-description {
+            max-width: 350px;
+            box-sizing: border-box;
+            text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: .5rem;
+            background: $secondary-color;
+            font-size: 12px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(5, 5, 5);
+            font-weight: bold;
+            text-transform: lowercase;
+            margin-bottom: 55px;
+          }
+
+          .button {
+            font-size: 16px;
+            padding: 13px 30px;
+
+            &:hover {
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        .business-main-banner-wrap-image {
+          width: 48%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .conditions {
+    .container {
+      .conditions-wrap {
+        .conditions-card {
+          width: 340px;
+          text-align: center;
+
+          .conditions-card-title {
+            font-size: 18px;
+            margin-bottom: 18px;
+          }
+
+          .conditions-card-subtitle {
+            height: 58px;
+            font-size: 14px;
+            margin-bottom: 60px;
+          }
+
+          .condition-card-image {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            img {
+              width: 100%;
+              height: 200px;
+              object-fit: scale-down;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .best {
+    padding-bottom: 80px;
+    .container {
+      .best-wrap {
+
+        .carousel-controllers {
+          width: 100%;
+          height: 20%;
+          position: absolute;
+          justify-content: center;
+          bottom: -70px;
+
+          .move-backward {
+            position: relative;
+          }
+
+          .move-forward {
+            position: relative;
+          }
+        }
+
+        .best-card {
+          width: 100%;
+          height: 470px;
+          box-sizing: border-box;
+          border-radius: 25px;
+          background-color: white;
+
+          .best-card-image-content {
+            padding: 15px 10px;
+          }
+
+          .best-card-content {
+            text-align: center;
+            padding: 15px 10px;
+
+            .best-card-title {
+              position: relative;
+              height: 40px;
+              font-size: 18px;
+              margin-bottom: 30px;
+              z-index: 20;
+            }
+
+            .button {
+              font-size: 16px;
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .open-account {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .container {
+
+      .open-account-steps-wrap {
+
+        .open-account-step {
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          .open-account-step-icon {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background-color: #f2f7f9;
+            display: grid;
+            place-content: center;
+            box-sizing: border-box;
+
+            &.third {
+              padding-left: 10px;
+            }
+          }
+
+          .open-account-step-info {
+            .open-account-step-info-title {
+              min-width: 290px;
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      .consulting-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        .consulting-info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 30px;
+
+          .consulting-description {
+            max-width: 80%;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(12, 12, 12);
+            line-height: 1.2;
+          }
+        }
+
+        .consulting-form {
+          width: 80%;
+
+          .consulting-form-row {
+
+            &.action{
+              flex-direction: column;
+              gap: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .rate-map {
+    background-color: #f2f7f9;
+    padding-bottom: 60px;
+
+    .container {
+      .additional-wrap {
+        flex-wrap: wrap;
+        .rate-component-wrap{
+          width: 100%;
+        }
+
+        .additional-map {
+          width: 100%;
+          background-color: white;
+          border-radius: 10px;
+          box-sizing: border-box;
+          padding-bottom: 35px;
+
+          .map {
+            height: 200px;
+
+            img {
+              object-fit: cover;
+            }
+          }
+
+          .office-warp {
+            padding: 0 20px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .additional-map-description{
+              font-size: 15px;
+            }
+
+            .button-fill {
+              border-radius: 5px;
+              max-width: 100px;
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 767px) {
+  .business-main-banner {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background: #f2f7f9;
+
+    .container {
+      .business-main-banner-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 30px;
+        height: auto;
+
+        .business-main-banner-wrap-info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 30px;
+
+          .business-main-banner-wrap-info-title {
+            max-width: 100%;
+            font-size: 24px;
+            margin-bottom: 20px;
+
+            strong {
+              font-size: 40px;
+            }
+          }
+
+          .business-main-banner-wrap-info-description {
+            max-width: 450px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            padding-inline: 10px;
+          }
+
+          .button {
+            font-size: 16px;
+            padding: 8px 30px;
+
+            &:hover {
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        .business-main-banner-wrap-image {
+          width: 80%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .conditions {
+    .container {
+      .conditions-wrap {
+        .conditions-card {
+          width: 100%;
+
+          .conditions-card-title {
+            font-size: 22px;
+            margin-bottom: 18px;
+          }
+
+          .conditions-card-subtitle {
+            height: 58px;
+            font-size: 14px;
+            margin-bottom: 60px;
+          }
+
+          .condition-card-image {
+            img {
+              width: 100%;
+              height: 250px;
+              object-fit: scale-down;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .best {
+    .container {
+      .best-wrap {
+
+        .carousel-controllers {
+
+          .move-backward {
+            position: relative;
+            transform: scale(1.2);
+          }
+
+          .move-forward {
+            position: relative;
+            transform: scale(1.2);
+          }
+        }
+
+        .best-card {
+
+          .best-card-image-content {
+            padding: 25px 20px;
+          }
+
+          .best-card-content {
+            text-align: center;
+            padding: 25px 20px;
+
+            .best-card-title {
+              font-size: 20px;
+              position: relative;
+              height: 40px;
+              margin-bottom: 10px;
+              z-index: 20;
+            }
+
+            .button {
+              font-size: 18px;
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .container {
+      .for-business {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        .for-business-title {
+          font-size: 18px;
+        }
+
+        .for-business-carousel-controllers {
+          gap: 10px;
+          .move-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: .5rem;
+          }
+        }
+      }
+
+      .carousel-card {
+        height: auto;
+        .carousel-card-row {
+          .carousel-card-title {
+            width: 80%;
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+
+        .carousel-card-description {
+          height: 58px;
+          max-width: 80%;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .internet-banking {
+    padding-top: 0;
+    background-color: #f2f7f9;
+    padding-bottom: 100px;
+
+    .container {
+      position: relative;
+      box-sizing: border-box;
+
+      .internet-banking-wrap {
+        flex-wrap: wrap;
+
+        .internet-banking-image{
+          width: 100%;
+
+          img{
+            width: 100%;
+          }
+        }
+
+        .internet-banking-info {
+          background-color: transparent;
+          max-width: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .internet-banking-title{
+            font-size: 20px;
+          }
+
+          .internet-banking-subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+          }
+
+          .button {
+            border-radius: 5px;
+            width: 200px;
+            display: grid;
+            place-content: center;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 499px) {
+  .business-main-banner {
+    .container {
+      .business-main-banner-wrap {
+        padding: 20px 20px;
+        .business-main-banner-wrap-info {
+          .business-main-banner-wrap-info-title {
+            font-size: 18px;
+
+            strong {
+              font-size: 25px;
+            }
+          }
+
+          .business-main-banner-wrap-info-description {
+            max-width: 280px;
+            margin-bottom: 20px;
+            text-transform: lowercase;
+          }
+
+          .button {
+            font-size: 16px;
+            padding: 8px 30px;
+
+            &:hover {
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        .business-main-banner-wrap-image {
+          width: 80%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .conditions {
+    .container {
+      .conditions-wrap {
+        .conditions-card {
+          width: 100%;
+
+          .conditions-card-title {
+            font-size: 18px;
+            margin-bottom: 18px;
+          }
+
+          .conditions-card-subtitle {
+            height: 40px;
+            font-size: 14px;
+            margin-bottom: 40px;
+          }
+
+          .condition-card-image {
+            img {
+              width: 100%;
+              height: 250px;
+              object-fit: scale-down;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .open-account {
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    .container {
+
+      .open-account-steps-wrap {
+
+        .open-account-step {
+          .open-account-step-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: #f2f7f9;
+            display: grid;
+            place-content: center;
+            box-sizing: border-box;
+
+            svg{
+              width: 40px;
+            }
+
+            &.third {
+              padding-left: 10px;
+            }
+          }
+
+          .open-account-step-info {
+            .open-account-step-info-title {
+              min-width: 250px;
+              font-size: 16px;
+              margin-bottom: 10px;
+            }
+
+            .open-account-step-info-subtitle{
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .consulting-wrap {
+        .consulting-info {
+          .consulting-description {
+            max-width: 100%;
+            font-size: 15px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(12, 12, 12);
+            line-height: 1.2;
+          }
+        }
+
+        .consulting-form {
+          width: 100%;
+
+          .consulting-form-row {
+
+            &.action{
+              flex-direction: column;
+              gap: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 424px) {
+  .open-account {
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    .container {
+      .open-account-steps-wrap {
+        .open-account-step {
+          .open-account-step-info {
+            .open-account-step-info-title {
+              min-width: 180px;
+            }
+
+          }
+        }
+      }
+
+      .consulting-wrap {
+        .consulting-info {
+          .consulting-description {
+            max-width: 100%;
+            font-size: 15px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(12, 12, 12);
+            line-height: 1.2;
+          }
+        }
+
+        .consulting-form {
+          width: 100%;
+
+          .consulting-form-row {
+
+            &.action{
+              flex-direction: column;
+              gap: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

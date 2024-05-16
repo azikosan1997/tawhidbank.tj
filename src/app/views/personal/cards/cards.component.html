@@ -1,0 +1,181 @@
+<app-personal-header></app-personal-header>
+<section class="cards">
+  <div class="container">
+    <h2>Все кредитные карты</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="cards-tab" *ngIf="activatedTab === 0">
+      <div class="card-item" *ngFor="let card of allCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{translateText(card.cardTitle)}}</h3>
+          <div class="card-item-info-subtitle">{{translateText(card.cardSubTitle)}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.percent)}}</div>
+              <div>{{translateText(card.percentText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.age)}}</div>
+              <div>{{translateText(card.ageText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.feature)}}</div>
+              <div>{{translateText(card.featureText)}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">{{'personalCardsTextTwentyFive' | translate}}</a>
+            <button class="button" (click)="openPopup(13)">{{'personalCardsTextTwentySix' | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-tab" *ngIf="activatedTab === 1">
+      <div class="card-item" *ngFor="let card of debitCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{translateText(card.cardTitle)}}</h3>
+          <div class="card-item-info-subtitle">{{translateText(card.cardSubTitle)}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.percent)}}</div>
+              <div>{{translateText(card.percentText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.age)}}</div>
+              <div>{{translateText(card.ageText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.feature)}}</div>
+              <div>{{translateText(card.featureText)}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">{{'personalCardsTextTwentyFive' | translate}}</a>
+            <button class="button" (click)="openPopup(11)">{{'personalCardsTextTwentySix' | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-tab" *ngIf="activatedTab === 2">
+      <div class="card-item" *ngFor="let card of craditCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{translateText(card.cardTitle)}}</h3>
+          <div class="card-item-info-subtitle">{{translateText(card.cardSubTitle)}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.percent)}}</div>
+              <div>{{translateText(card.percentText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.age)}}</div>
+              <div>{{translateText(card.ageText)}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{translateText(card.feature)}}</div>
+              <div>{{translateText(card.featureText)}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">{{'personalCardsTextTwentyFive' | translate}}</a>
+            <button class="button" (click)="openPopup(12)">{{'personalCardsTextTwentySix' | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why">
+  <div class="container">
+    <h2>{{'personalCardsTextThirtyFour' | translate}}</h2>
+    <div class="why-wrap">
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="./assets/images/pages/cards/w1.png" alt="Percent">
+        </div>
+        <div class="why-wrap-item-title">{{'personalCardsTextThirtyFive' | translate}}</div>
+        <div class="why-wrap-item-subtitle">{{'personalCardsTextThirtySix' | translate}}</div>
+      </div>
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="./assets/images/pages/cards/w2.png" alt="Exchange">
+        </div>
+        <div class="why-wrap-item-title">{{'personalCardsTextThirtySeven' | translate}}</div>
+        <div class="why-wrap-item-subtitle">{{'personalCardsTextThirtyEight' | translate}} <br><br>
+         <b> {{'personalCardsTextThirtyNine' | translate}}</b></div>
+      </div>
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="./assets/images/pages/cards/w3.png" alt="Card">
+        </div>
+        <div class="why-wrap-item-title">{{'personalCardsTextForty' | translate}}</div>
+        <div class="why-wrap-item-subtitle">{{'personalCardsTextFortyOne' | translate}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cards-request">
+  <div class="container">
+    <div class="cards-request-wrap">
+      <h3 class="cards-request-title">{{'personalCardsTextThirtyOne' | translate}}</h3>
+      <div class="cards-request-bank-obligation">
+        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.37752 5.08241C3 5.62028 3 7.21907 3 10.4167V11.9914C3 17.6294 7.23896 20.3655 9.89856 21.5273C10.62 21.8424 10.9807 22 12 22C13.0193 22 13.38 21.8424 14.1014 21.5273C16.761 20.3655 21 17.6294 21 11.9914V10.4167C21 7.21907 21 5.62028 20.6225 5.08241C20.245 4.54454 18.7417 4.02996 15.7351 3.00079L15.1623 2.80472C13.595 2.26824 12.8114 2 12 2C11.1886 2 10.405 2.26824 8.83772 2.80472L8.26491 3.00079C5.25832 4.02996 3.75503 4.54454 3.37752 5.08241ZM15.0595 10.4995C15.3353 10.1905 15.3085 9.71642 14.9995 9.44055C14.6905 9.16467 14.2164 9.19151 13.9405 9.50049L10.9286 12.8739L10.0595 11.9005C9.78358 11.5915 9.30947 11.5647 9.00049 11.8405C8.69151 12.1164 8.66467 12.5905 8.94055 12.8995L10.3691 14.4995C10.5114 14.6589 10.7149 14.75 10.9286 14.75C11.1422 14.75 11.3457 14.6589 11.488 14.4995L15.0595 10.4995Z" fill="#309799"></path>
+          </g>
+        </svg>
+        <span>
+          {{'personalCardsTextThirtyTwo' | translate}} <br>
+          {{'personalCardsTextThirtyThree' | translate}}
+        </span>
+      </div>
+      <div class="cards-request-form">
+        <app-form [mainForm]="mainForm" [formName]="formName"></app-form>
+      </div>
+    </div>
+    <div class="cards-accordion">
+      <mat-accordion *ngFor="let question of cardsQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>
+<ng-template #cardPopup>
+  <div class="deposit-popup">
+    <div class="popup-close" (click)="closePopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <app-form [mainForm]="mainForm" [appId]="3" [prodId]="prodId"></app-form>
+  </div>
+</ng-template>
+

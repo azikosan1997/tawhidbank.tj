@@ -1,0 +1,66 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.news {
+  padding-bottom: 120px;
+
+  .container {
+    .news-title-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+
+      h2 {
+        @include h2-mixin;
+        margin-bottom: 0;
+
+      }
+
+      .all-news {
+        color: #1f232b;
+        font-style: normal;
+        font-size: 18px;
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+      }
+    }
+
+    .news-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .news-card {
+        max-width: 392px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .news-card-date {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(118, 118, 118);
+          margin-bottom: 20px;
+        }
+
+        .news-description {
+          padding-right: 20px;
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 35, 43);
+        }
+
+        .news-detail {
+          margin-top: 40px;
+          color: #1f232b;
+          font-style: normal;
+          font-size: 18px;
+          font-family: Montserrat, sans-serif;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

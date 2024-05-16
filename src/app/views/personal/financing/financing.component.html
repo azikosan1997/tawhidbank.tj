@@ -1,0 +1,52 @@
+<app-personal-header></app-personal-header>
+<section class="financing">
+  <div class="container">
+    <h2>{{'personalFinancingTitle' | translate}}</h2>
+    <div class="products-wrap">
+      <div class="product-card" *ngFor="let financing of financingInfo">
+        <div class="product-card-image">
+          <img src="{{financing.image}}" alt="{{financing.imageAlt}}">
+        </div>
+        <div class="product-card-info">
+          <h3>{{translateTitle(financing.financingName)}}</h3>
+          <div class="product-card-description">
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{translateTitle(financing.financingTextFirst)}}</div>
+              <div class="product-card-description-item-sub">{{translateTitle(financing.financingSubFirst)}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{translateTitle(financing.financingTextSecond)}}</div>
+              <div class="product-card-description-item-sub">{{translateTitle(financing.financingSubSecond)}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{translateTitle(financing.financingTextThird)}}</div>
+              <div class="product-card-description-item-sub">{{translateTitle(financing.financingSubThird)}}</div>
+            </div>
+          </div>
+          <div class="product-card-info-action">
+            <a routerLink="{{financing.link}}" class="product-detail">{{translateTitle(financing.financingLink)}}</a>
+            <a routerLink="/personal/financing" fragment="financingRequest" type="button" class="button-fill">{{translateTitle(financing.financingButton)}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="financing-request">
+  <div class="container">
+    <app-financing-form id="financingRequest" [appId]="appId" [productId]="productId"></app-financing-form>
+    <div class="financing-accordion">
+      <mat-accordion *ngFor="let question of financingQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateTitle(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateTitle(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateTitle(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

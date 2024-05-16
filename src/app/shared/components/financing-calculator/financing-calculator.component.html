@@ -1,0 +1,101 @@
+<section class="financing-calculator">
+  <div class="container">
+    <div class="financing-calculator-wrap">
+      <div class="financing-calculator-wrap-toggles">
+        <h3>{{'financingCalculatorComponentTextOne' | translate}}</h3>
+        <nav class="tab-panel-button-group">
+          <ul>
+            <li class="tab" *ngFor="let tab of currencyArray; let i = index" (click)="setTab(i)">
+              <a class="tab-link" [ngClass]="selectedCurrency === i ? 'active' : ''">{{ translateText(tab) }}</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'financingCalculatorComponentTextFour' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+              <input class="slider" type="range" min="10000" max="5000000" value="0" step="100" [(ngModel)]="loanAmount">
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'financingCalculatorComponentTextFive' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+              <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100" [(ngModel)]="initialFee">
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'financingCalculatorComponentTextSix' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+              <input class="slider" type="range" value="0" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="financing-calculator-wrap-summary">
+        <div class="financing-calculator-wrap-summary-title">{{translateText(loanTitle)}}</div>
+        <div class="financing-calculator-wrap-summary-row">
+          <div class="financing-calculator-wrap-summary-row-item">
+            <div>{{'financingCalculatorComponentTextSeven' | translate}}</div>
+            <div>{{'financingCalculatorComponentTextThirteen' | translate}}</div>
+          </div>
+          <div class="financing-calculator-wrap-summary-row-item">
+            <div class="important">{{calculateMonthlyPayment().toFixed(2) + ' ' + currency}}</div>
+            <div>{{'financingCalculatorComponentTextEight' | translate}}</div>
+          </div>
+          <div class="financing-calculator-wrap-summary-row-item">
+            <div class="important">{{currentRate + " %"}}</div>
+            <div>{{'financingCalculatorComponentTextNine' | translate}}</div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-summary-row">
+          <div class="documents">{{'financingCalculatorComponentTextTen' | translate}}</div>
+          <div class="wrapper">
+            <div class="financing-calculator-wrap-summary-row-ic">
+              <div class="icon">
+                <svg fill="#309799" width="64px" height="64px" viewBox="0 0 32.00 32.00"
+                     xmlns="http://www.w3.org/2000/svg" stroke="#309799" stroke-width="0.00032">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M 5 6 C 3.355469 6 2 7.355469 2 9 L 2 23 C 2 24.644531 3.355469 26 5 26 L 27 26 C 28.644531 26 30 24.644531 30 23 L 30 9 C 30 7.355469 28.644531 6 27 6 Z M 5 8 L 27 8 C 27.566406 8 28 8.433594 28 9 L 28 23 C 28 23.566406 27.566406 24 27 24 L 5 24 C 4.433594 24 4 23.566406 4 23 L 4 9 C 4 8.433594 4.433594 8 5 8 Z M 11 10 C 8.800781 10 7 11.800781 7 14 C 7 15.113281 7.476563 16.117188 8.21875 16.84375 C 6.886719 17.746094 6 19.28125 6 21 L 8 21 C 8 19.332031 9.332031 18 11 18 C 12.667969 18 14 19.332031 14 21 L 16 21 C 16 19.28125 15.113281 17.746094 13.78125 16.84375 C 14.523438 16.117188 15 15.113281 15 14 C 15 11.800781 13.199219 10 11 10 Z M 18 11 L 18 13 L 26 13 L 26 11 Z M 11 12 C 12.117188 12 13 12.882813 13 14 C 13 15.117188 12.117188 16 11 16 C 9.882813 16 9 15.117188 9 14 C 9 12.882813 9.882813 12 11 12 Z M 18 15 L 18 17 L 26 17 L 26 15 Z M 18 19 L 18 21 L 23 21 L 23 19 Z"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="text">{{'financingCalculatorComponentTextEleven' | translate}}</div>
+            </div>
+            <div class="financing-calculator-wrap-summary-row-ic">
+              <div class="icon">
+                <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                      stroke="#309799" stroke-width="1.5"></path>
+                    <path d="M8 10H16" stroke="#309799" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M8 14H13" stroke="#309799" stroke-width="1.5" stroke-linecap="round"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="text">{{translateText(docPeriod)}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-summary-row">
+          <a routerLink="/personal/financing/murabaha-consumption" fragment="app-financing-form" class="button">{{'financingCalculatorComponentTextTwelve' | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

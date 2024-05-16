@@ -1,0 +1,131 @@
+<app-personal-header></app-personal-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="tab-toggle" id="questions">
+  <div class="container">
+    <h2>{{'faqPageTextThirteen' | translate}}</h2>
+    <nav class="tab-panel-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="questions-answers" *ngIf="activatedTab === 0">
+      <mat-accordion *ngFor="let question of financingQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 1">
+      <mat-accordion *ngFor="let question of depositQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 2">
+      <mat-accordion *ngFor="let question of accountsQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 3">
+      <mat-accordion *ngFor="let question of cardsQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 4">
+      <mat-accordion *ngFor="let question of transferQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 5">
+      <mat-accordion *ngFor="let question of tawhidpayQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 6">
+      <mat-accordion *ngFor="let question of currencyQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 7">
+      <mat-accordion *ngFor="let question of tawhidbankQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="questions-answers" *ngIf="activatedTab === 8">
+      <mat-accordion *ngFor="let question of jobsQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

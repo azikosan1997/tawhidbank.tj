@@ -1,0 +1,142 @@
+<app-about-header></app-about-header>
+<section class="branches">
+  <div class="container">
+    <h1>{{'aboutBranchesPageTextOne' | translate}}</h1>
+    <app-about-navigation></app-about-navigation>
+    <div class="headquarters">
+      <h2>{{'aboutBranchesPageTextSeven' | translate}}</h2>
+      <div class="headquarters-info">
+        <div class="branch-info-container">
+          <div class="headquarters-address">
+            <div class="headquarters-row">
+              <div class="headquarters-row-heading">{{'aboutBranchesPageTextEight' | translate}}</div>
+              <div class="headquarters-row-body">{{'aboutBranchesPageTextNine' | translate}}</div>
+            </div>
+            <div class="headquarters-row">
+              <div class="headquarters-row-heading">{{'aboutBranchesPageTextTen' | translate}}</div>
+              <div class="headquarters-row-body">{{'aboutBranchesPageTextEleven' | translate}}<br>
+                {{'aboutBranchesPageTextTwelve' | translate}}
+              </div>
+            </div>
+          </div>
+          <div class="headquarters-contacts">
+            <div class="headquarters-row">
+              <div class="headquarters-row-heading">{{'aboutBranchesPageTextThirteen' | translate}}</div>
+              <div class="headquarters-row-body number">{{'aboutBranchesPageTextFourteen' | translate}}</div>
+              <div class="headquarters-row-subtitle">{{'aboutBranchesPageTextFifteen' | translate}}</div>
+            </div>
+            <div class="headquarters-row">
+              <div class="headquarters-row-heading">{{'aboutBranchesPageTextSixteen' | translate}}</div>
+              <div class="headquarters-row-body">
+                {{'aboutBranchesPageTextSeventeen' | translate}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="headquarters-map">
+          <google-map [options]="branchOptions" [center]="{lat: 38.56189522986055, lng: 68.78508842680635}" [zoom]="16" width="100%" height="400px">
+            <map-marker [position]="{lat: 38.56189522986055, lng: 68.78508842680635}" [icon]="customMarkerIcon">
+            </map-marker>
+          </google-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="all-branches">
+  <div class="container">
+    <h2>{{'aboutBranchesPageTextEighteen' | translate}}</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="all-branches-wraps">
+      <div class="all-branches-wrap" *ngIf="activatedTab === 0">
+        <mat-accordion *ngFor="let branch of dushanbe">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{translateText(branch.title)}}</div>
+                  <div class="branch-address">{{translateText(branch.translatedAddress)}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-branch-info [data]="dushanbe"></app-branch-info>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="16" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 2">
+        <mat-accordion *ngFor="let branch of khatlon">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{translateText(branch.title)}}</div>
+                  <div class="branch-address">{{translateText(branch.translatedAddress)}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-branch-info [data]="drs"></app-branch-info>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="16" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 1">
+        <mat-accordion *ngFor="let branch of sogd">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{translateText(branch.title)}}</div>
+                  <div class="branch-address">{{translateText(branch.translatedAddress)}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-branch-info [data]="sogd"></app-branch-info>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="16" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon"></map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 3">
+        <mat-accordion *ngFor="let branch of drs">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{translateText(branch.title)}}</div>
+                  <div class="branch-address">{{translateText(branch.translatedAddress)}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-branch-info [data]="khatlon"></app-branch-info>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="16" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</section>

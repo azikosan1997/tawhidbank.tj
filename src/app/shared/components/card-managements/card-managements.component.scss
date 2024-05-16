@@ -1,0 +1,117 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.card-management {
+  padding-bottom: 80px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .card-management-wrap {
+      background-color: rgba(48, 151, 153, 0.2);
+      padding: 30px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .card-management-wrap-info {
+        max-width: 50%;
+
+        .card-management-wrap-info-title {
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
+
+        .card-management-wrap-info-subtitle {
+          font-size: 18px;
+          font-family: "Montserrat",sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+          margin-bottom: 60px;
+        }
+        .card-management-wrap-info-action{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .card-management {
+    padding-bottom: 60px;
+    .container {
+      .card-management-wrap {
+        padding: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+        .card-management-wrap-info {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 30px;
+
+          .card-management-wrap-info-title {
+            font-size: 24px;
+          }
+
+          .card-management-wrap-info-subtitle {
+            font-size: 18px;
+            font-family: "Montserrat",sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            margin-bottom: 60px;
+          }
+          .card-management-wrap-info-action{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+        }
+
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 519px){
+  .card-management {
+    padding-bottom: 60px;
+    .container {
+      .card-management-wrap {
+        .card-management-wrap-info {
+          .card-management-wrap-info-title {
+            font-size: 20px;
+          }
+
+          .card-management-wrap-info-subtitle {
+            font-size: 16px;
+          }
+          .card-management-wrap-info-action{
+            flex-direction: column;
+          }
+        }
+
+        .card-management-wrap-image{
+          width: 100%;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

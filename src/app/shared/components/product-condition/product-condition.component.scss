@@ -1,0 +1,158 @@
+.condition{
+  margin-bottom: 80px;
+  .container {
+    .requirements-wrap {
+      width: 100%;
+      background-color: rgba(48, 151, 153, 0.2);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px 0;
+      box-sizing: border-box;
+
+      .requirements-wrap-item {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-right: 30px;
+        padding-left: 30px;
+        border-right: 1px solid #309799;
+
+        &:last-child {
+          border-right: 1px solid transparent;
+        }
+
+        .requirements-wrap-item-image {
+          width: 120px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .requirements-wrap-item-info {
+          width: 70%;
+
+          .requirements-wrap-item-info-title {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 12px;
+          }
+
+          .requirements-wrap-item-info-subtitle {
+            font-size: 14px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .condition{
+    margin-bottom: 80px;
+    .container {
+      .requirements-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+
+        .requirements-wrap-item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          padding: 20px;
+          border-right: 1px solid transparent;
+          border-bottom: 1px dashed #309799;
+          box-sizing: border-box;
+
+          &:last-child {
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            padding: 20px;
+          }
+
+          .requirements-wrap-item-image {
+            width: 100px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .requirements-wrap-item-info {
+            width: 30%;
+
+            .requirements-wrap-item-info-title {
+              font-size: 16px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(68, 68, 68);
+              font-weight: bold;
+              line-height: 1;
+              margin-bottom: 12px;
+            }
+
+            .requirements-wrap-item-info-subtitle {
+              font-size: 14px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(68, 68, 68);
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px){
+  .condition{
+    margin-bottom: 80px;
+    .container {
+      .requirements-wrap {
+        .requirements-wrap-item {
+          gap: 20px;
+          .requirements-wrap-item-image {
+            width: 80px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .requirements-wrap-item-info {
+            width: 70%;
+
+            .requirements-wrap-item-info-title {
+              font-size: 16px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(68, 68, 68);
+              font-weight: bold;
+              line-height: 1;
+              margin-bottom: 12px;
+            }
+
+            .requirements-wrap-item-info-subtitle {
+              font-size: 14px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(68, 68, 68);
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

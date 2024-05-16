@@ -1,0 +1,91 @@
+.graphic-person {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed rgba(68, 68, 68, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .graphic-person-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1e2332;
+    margin-bottom: 20px;
+  }
+
+  .graphic-person-duty {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6d6d6d;
+    margin-bottom: 40px;
+  }
+
+  .graphic-person-time {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .graphic-person-time-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        color: #1e2332;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .graphic-person {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed rgba(68, 68, 68, 0.2);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .graphic-person-name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1e2332;
+      margin-bottom: 10px;
+    }
+
+    .graphic-person-duty {
+      font-size: 16px;
+      font-weight: 500;
+      color: #6d6d6d;
+      margin-bottom: 40px;
+    }
+
+    .graphic-person-time {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .graphic-person-time-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          display: block;
+          font-size: 14px;
+          font-weight: 400;
+          color: #1e2332;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

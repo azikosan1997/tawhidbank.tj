@@ -1,0 +1,108 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.tab-toggle{
+  padding-bottom: 80px;
+
+  .container{
+    h2{
+      @include h2-mixin;
+      margin-bottom: 60px;
+    }
+
+    .tab-panel-button-group {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style: none;
+
+        li {
+          cursor: pointer;
+          margin-bottom: 20px;
+
+          .tab-link {
+            padding: 10px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            transition: all 120ms ease-in-out;
+
+            &:hover {
+              background-color: #309799;
+              color: white;
+            }
+
+            &.active {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+      }
+
+      a.tab-link {
+        text-decoration: none;
+        padding: 16px 30px;
+        background-color: transparent;
+        border: 2px solid #309799;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(48, 151, 153);
+        transition: all 120ms ease-in-out;
+
+        &:hover {
+          background-color: #309799;
+          color: white;
+        }
+      }
+    }
+
+    .questions-answers{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+
+  .tab-toggle{
+    padding-bottom: 60px;
+
+    .container{
+      .tab-panel-button-group {
+        margin-bottom: 40px;
+        ul {
+          li {
+            cursor: pointer;
+            margin-bottom: 20px;
+
+            .tab-link {
+              padding: 10px 15px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .questions-answers{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+
+}

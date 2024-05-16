@@ -1,0 +1,27 @@
+<div class="branch-info-container">
+  <div class="headquarters-address">
+<!--    <div class="headquarters-row">-->
+<!--      <div class="headquarters-row-heading">{{data.addressTitle ? translateText(data.addressTitle): 'aboutBranchesPageTextEight' | translate}}</div>-->
+<!--      <div class="headquarters-row-body">{{data.translatedAddress ? translateText(data.translatedAddress): '' | translate}}</div>-->
+<!--    </div>-->
+    <div class="headquarters-row">
+      <div class="headquarters-row-heading">{{data.workingGraphic ? translateText(data.workingGraphic) : 'aboutBranchesPageTextTen' | translate}}</div>
+      <div class="headquarters-row-body">{{data.workingGraphicWorkingDays ? translateText(data.workingGraphicWorkingDays) : 'aboutBranchesPageTextEleven' | translate}}<br>
+        {{data.workingGraphicDaysOff ? translateText(data.workingGraphicDaysOff): 'aboutBranchesPageTextTwelve' | translate}}
+      </div>
+    </div>
+  </div>
+  <div class="headquarters-contacts">
+    <div class="headquarters-row">
+      <div class="headquarters-row-heading">{{data.contacts ? translateText(data.contacts) : 'aboutBranchesPageTextThirteen' | translate}}</div>
+      <div class="headquarters-row-body number">{{'aboutBranchesPageTextFourteen' | translate}}</div>
+      <div class="headquarters-row-subtitle">{{data.contactsEmail ? translateText(data.contactsEmail) : 'aboutBranchesPageTextFifteen' | translate}}</div>
+    </div>
+    <div class="headquarters-row">
+      <div class="headquarters-row-heading">{{data.services ? translateText(data.services) : 'aboutBranchesPageTextSixteen' | translate}}</div>
+      <div class="headquarters-row-body">
+        {{data.service ? translateText(data.service) : 'aboutBranchesPageTextSeventeen' | translate}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<app-about-header></app-about-header>
+<section class="help">
+  <div class="container">
+    <h1>{{'aboutHelpTextOne' | translate}}</h1>
+    <div class="help-wrap">
+      <h2>{{'aboutHelpTextTwo' | translate}}</h2>
+      <p class="description">
+        {{'aboutHelpTextThree' | translate}}
+      </p>
+      <div class="paragraph-title">
+        {{'aboutHelpTextFour' | translate}}
+      </div>
+      <p class="description">
+        {{'aboutHelpTextFive' | translate}}
+      </p>
+      <div class="paragraph-title">
+        {{'aboutHelpTextSix' | translate}}
+      </div>
+      <p class="description">
+        {{'aboutHelpTextSeven' | translate}}
+      </p>
+      <div class="paragraph-title">
+        {{'aboutHelpTextEight' | translate}}
+      </div>
+      <p class="description">
+        {{'aboutHelpTextNine' | translate}}
+      <div class="paragraph-title">
+        {{'aboutHelpTextTen' | translate}}
+      </div>
+      <p class="description">
+        +992 (44) 600 47 81
+      </p>
+      <div class="help-form">
+        <h2>{{'aboutHelpTextEleven' | translate}}</h2>
+        <div class="help-form-description">
+          {{'aboutHelpTextTwelve' | translate}}
+        </div>
+        <form class="form" [formGroup]="helpForm" autocomplete="off">
+          <mat-form-field>
+            <mat-label>{{'aboutHelpTextThirteen' | translate}}</mat-label>
+            <mat-select formControlName="topic">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{translateText(food.viewValue)}}
+              </mat-option>
+              <mat-hint style="color: #f44336" *ngIf="helpForm.get('topic')?.touched && helpForm.get('topic')?.errors?.['required']">
+                {{'aboutHelpTextFourteen' | translate}}
+              </mat-hint>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'personalDepositsFormTextThree' | translate}}</mat-label>
+            <input matInput placeholder="{{'personalDepositsFormTextThree' | translate}}" formControlName="fullName">
+            <mat-hint style="color: #f44336" *ngIf="helpForm.get('fullName')?.touched && helpForm.get('fullName')?.errors?.['required']">
+              {{'murabahaAutoTextTwentySeven' | translate}}
+            </mat-hint>
+            <mat-hint style="color: #f44336" *ngIf="helpForm.get('fullName')?.touched && helpForm.get('fullName')?.errors?.['pattern']">
+              {{'businessConsultingRequestFormSeven' | translate}}
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'businessConsultingRequestFormEight' | translate}}</mat-label>
+            <input matInput placeholder="+992 999 99 99" formControlName="mobileNumber">
+            <mat-hint style="color: #f44336" *ngIf="helpForm.get('mobileNumber')?.touched && helpForm.get('mobileNumber')?.errors?.['required']">
+              {{'businessConsultingRequestFormNine' | translate}}
+            </mat-hint>
+            <mat-hint style="color: #f44336" *ngIf="helpForm.get('mobileNumber')?.touched && helpForm.get('mobileNumber')?.errors?.['pattern']">
+              {{'businessConsultingRequestFormTen' | translate}}
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'aboutHelpTextTwentyFive' | translate}}</mat-label>
+            <textarea matInput formControlName="question" placeholder="{{'aboutHelpTextTwentySeven' | translate}}"></textarea>
+            <mat-hint style="color: #f44336" *ngIf="helpForm.get('question')?.touched && helpForm.get('question')?.errors?.['required']">
+              {{'aboutHelpTextTwentySix' | translate}}
+            </mat-hint>
+          </mat-form-field>
+          <button class="button" (click)="sendRequest()">{{'personalFinancingFormTextThirtyEight' | translate}}</button>
+        </form>
+      </div>
+      <div class="hint">
+        {{'aboutHelpTextTwentyEight' | translate}}
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #help>
+  <div class="help-popup">
+    <div class="popup-close" (click)="closePopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="confirm-request">
+      {{'aboutHelpTextTwentyNine' | translate}}
+    </div>
+  </div>
+</ng-template>

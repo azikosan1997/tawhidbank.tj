@@ -1,0 +1,121 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.form {
+  margin-bottom: 100px;
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    h2 {
+      @include h2-mixin;
+    }
+
+    form {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+
+      .form-row{
+        width: 100%;
+        min-height: 90px;
+        box-sizing: border-box;
+        .form-input {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 15px 25px;
+          outline: none;
+          border: 2px solid rgba(48, 151, 153, 1);
+          border-radius: 10px;
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+
+          &.error {
+            border: 2px solid #f44336;
+          }
+        }
+
+        .error-message {
+          color: #f44336;
+          font-size: 12px;
+          font-family: Montserrat, sans-serif;
+        }
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      span {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 18px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(68, 68, 68);
+        line-height: 1.2;
+
+        a {
+          color: #309799;
+          text-decoration: underline;
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .form {
+    margin-bottom: 60px;
+    .container {
+      form {
+        width: 100%;
+
+        .form-row{
+          width: 100%;
+          min-height: 65px;
+          box-sizing: border-box;
+          .form-input {
+            padding: 10px 15px;
+            font-size: 16px;
+
+            &.error {
+              border: 2px solid #f44336;
+            }
+          }
+
+          .error-message {
+            color: #f44336;
+            font-size: 12px;
+            font-family: Montserrat, sans-serif;
+          }
+        }
+
+        .button {
+          font-size: 16px;
+          margin-top: 10px;
+        }
+
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+<app-business-header></app-business-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="features">
+  <div class="container">
+    <h2>{{'businessAccountsPageTextEight' | translate}}</h2>
+    <div class="features-wrap">
+      <div class="features-item">
+        <h3>{{'businessAccountsPageTextNine' | translate}}</h3>
+        <div class="features-item-description">
+         {{'businessAccountsPageTextTen' | translate}}
+        </div>
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c1.png" alt="">
+        </div>
+      </div>
+      <div class="features-item">
+        <h3>{{'businessAccountsPageTextEleven' | translate}}</h3>
+        <div class="features-item-description">
+          {{'businessAccountsPageTextTwelve' | translate}}
+        </div>
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c2.png" alt="">
+        </div>
+      </div>
+      <div class="features-item">
+        <h3>{{'businessAccountsPageTextThirteen' | translate}}</h3>
+        <div class="features-item-description">
+          {{'businessAccountsPageTextFourteen' | translate}}
+        </div>
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c3.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariffs">
+  <div class="container">
+    <h2>{{'businessAccountsPageTextFifteen' | translate}}</h2>
+    <div class="tariffs-subtitle">{{'businessAccountsPageTextSixteen' | translate}}</div>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tariff-tab" *ngIf="activatedTab === 0">
+      <div class="tariff-tab-heading">
+        {{'businessAccountsPageTextSeventeen' | translate}}
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextEighteen' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwenty' | translate}}
+        </div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwenty' | translate}}
+        </div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentyFour' | translate}}
+        </div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentySix' | translate}}
+        </div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 1">
+      <div class="tariff-tab-heading">
+        {{'businessAccountsPageTextSeventeen' | translate}}</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextEighteen' | translate}}</div>
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">
+         {{'businessAccountsPageTextTwenty' | translate}}</div>
+        <div class="tariff-tab-row-item">97 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentyTwo' | translate}}</div>
+        <div class="tariff-tab-row-item">65 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentyFour' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentySix' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 2">
+      <div class="tariff-tab-heading">{{'businessAccountsPageTextSeventeen' | translate}}</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextEighteen' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentyTwo' | translate}}</div>
+        <div class="tariff-tab-row-item">30 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentyTwo' | translate}}</div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line ">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentyFour' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentySix' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 3">
+      <div class="tariff-tab-heading">{{'businessAccountsPageTextSeventeen' | translate}}</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextEighteen' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentyTwo' | translate}}</div>
+        <div class="tariff-tab-row-item">20 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">
+          {{'businessAccountsPageTextTwentyTwo' | translate}}</div>
+        <div class="tariff-tab-row-item">11 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentyFour' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">{{'businessAccountsPageTextTwentySix' | translate}}</div>
+        <div class="tariff-tab-row-item">{{'businessAccountsPageTextNineteen' | translate}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-request-form [requestType]="requestType" id="request" [appId]="appId" [productId]="productId"></app-request-form>
+<section class="partners">
+  <div class="container">
+    <h2>{{'businessAccountsPageTextTwentyEight' | translate}}</h2>
+    <div class="tariffs-subtitle">{{'businessAccountsPageTextTwentyNine' | translate}}</div>
+    <div class="partners-wrap">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{'businessAccountsPageTextThirty' | translate}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="doc-list">
+            <li>{{'businessAccountsPageTextThirtyOne' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtyTwo' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtyThree' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtyFour' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtyFive' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtySix' | translate}}</li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{'businessAccountsPageTextThirtySeven' | translate}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="doc-list">
+            <li>{{'businessAccountsPageTextThirtyEight' | translate}}</li>
+            <li>{{'businessAccountsPageTextThirtyNine' | translate}}</li>
+            <li>{{'businessAccountsPageTextForty' | translate}}</li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             {{'businessAccountsPageTextFortyOne' | translate}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="doc-list">
+            <li>{{'businessAccountsPageTextFortyTwo' | translate}}</li>
+            <li>{{'businessAccountsPageTextFortyThree' | translate}}</li>
+            <li>{{'businessAccountsPageTextFortyFour' | translate}}</li>
+            <li>{{'businessAccountsPageTextFortyFive' | translate}}</li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

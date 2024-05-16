@@ -1,0 +1,76 @@
+<section class="auto-calculator">
+  <div class="container">
+    <div class="auto-calculator-wrap">
+      <h2>{{'murabahaAutoTextTwelve' | translate}}</h2>
+      <div class="auto-calculator-row">
+        <div class="auto-calculator-row-left">
+          <nav class="tab-panel-button-group">
+            <ul>
+              <li class="tab" *ngFor="let tab of currencyArray; let i = index" (click)="setTab(i)">
+                <a class="tab-link" [ngClass]="selectedCurrency === i ? 'active' : ''">{{ translateText(tab) }}</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="mortgage-calculator-criteria">
+            <div class="mortgage-calculator-criteria-title">{{'murabahaAutoTextSeventeen' | translate}}</div>
+            <div class="criteria-tool">
+              <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+              <div class="slider-container">
+                <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+                <input class="slider" type="range" min="10000" max="1000000" value="0" step="100"
+                       [(ngModel)]="loanAmount">
+              </div>
+            </div>
+          </div>
+          <div class="mortgage-calculator-criteria">
+            <div class="mortgage-calculator-criteria-title">{{'murabahaAutoTextEighteen' | translate}}</div>
+            <div class="criteria-tool">
+              <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+              <div class="slider-container">
+                <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+                <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100"
+                       [(ngModel)]="initialFee">
+              </div>
+            </div>
+          </div>
+          <div class="mortgage-calculator-criteria">
+            <div class="mortgage-calculator-criteria-title">{{'murabahaAutoTextNineteen' | translate}}</div>
+            <div class="criteria-tool">
+              <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+              <div class="slider-container">
+                <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+                <input class="slider" type="range" value="0" min="1" max="36" step="1" [(ngModel)]="loanPeriod">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="auto-calculator-row-right">
+          <div class="auto-calculator-row-right-image">
+            <img src="./assets/images/pages/auto/c1.png" alt="Car" *ngIf="loanAmount > 0 && loanAmount <= 300000">
+            <img src="./assets/images/pages/auto/c2.png" alt="Car" *ngIf="loanAmount > 300000 && loanAmount <= 600000">
+            <img src="./assets/images/pages/auto/c3.png" alt="Car" *ngIf="loanAmount > 600000 && loanAmount <= 1000000">
+          </div>
+          <div class="auto-calculator-row-right-summary">
+            <div class="auto-calculator-row-right-summary-header">
+              <span class="auto-calculator-row-right-summary-title">{{'murabahaAutoTextTwenty' | translate}}</span>
+              <div
+                class="auto-calculator-row-right-summary-amount">{{ calculateMonthlyPayment().toFixed(2) + ' ' + currency }}
+              </div>
+            </div>
+            <div class="auto-calculator-row-right-summary-rate-wrap">
+              <div>
+                <div class="auto-calculator-row-right-summary-rate">{{'murabahaAutoTextTwentyOne' | translate}}</div>
+                <div class="auto-calculator-row-right-summary-rate-percent">{{ currentRate + " %" }}</div>
+              </div>
+              <div>
+                <div class="auto-calculator-row-right-summary-rate">{{'murabahaAutoTextTwentyTwo' | translate}}</div>
+                <div class="auto-calculator-row-right-summary-rate-percent">{{ totalAmount.toFixed() + ' ' + currency }}</div>
+              </div>
+            </div>
+            <a routerLink="/personal/auto-financing" fragment="request" class="button">{{'murabahaAutoTextTwentyThree' | translate}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

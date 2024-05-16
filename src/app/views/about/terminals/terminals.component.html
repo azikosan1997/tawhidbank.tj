@@ -1,0 +1,142 @@
+<app-about-header></app-about-header>
+<section class="terminals">
+  <div class="atms-map">
+    <google-map [options]="options" width="120vw" height="700px">
+      <map-marker *ngFor="let atm of bokhtarTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+      <map-marker *ngFor="let atm of shahrituzTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+      <map-marker *ngFor="let atm of rudakiTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+      <map-marker *ngFor="let atm of firdavsiTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+      <map-marker *ngFor="let atm of khujandTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+    </google-map>
+  </div>
+  <div class="container">
+    <h1>{{'aboutAtmsInfoTextFiftyOne' | translate}}</h1>
+    <app-about-navigation></app-about-navigation>
+    <div class="atms-wrap">
+      <h2>{{'aboutTerminalsTextOne' | translate}} </h2>
+<!--      <div class="atm-search">-->
+<!--        <mat-form-field appearance="fill">-->
+<!--          <mat-label>Поиск по адресу</mat-label>-->
+<!--          <input matInput placeholder="Адресс">-->
+<!--          <mat-icon matSuffix>-->
+<!--            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>-->
+<!--              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>-->
+<!--              <g id="SVGRepo_iconCarrier">-->
+<!--                <path opacity="0.1"-->
+<!--                      d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"-->
+<!--                      fill="#309799"></path>-->
+<!--                <path d="M15 15L21 21" stroke="#309799" stroke-width="2" stroke-linecap="round"-->
+<!--                      stroke-linejoin="round"></path>-->
+<!--                <path-->
+<!--                  d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"-->
+<!--                  stroke="#309799" stroke-width="2"></path>-->
+<!--              </g>-->
+<!--            </svg>-->
+<!--          </mat-icon>-->
+<!--          <mat-hint></mat-hint>-->
+<!--        </mat-form-field>-->
+<!--        <mat-form-field>-->
+<!--          <mat-label>Регионы</mat-label>-->
+<!--          <mat-select>-->
+<!--            <mat-option *ngFor="let region of regions" [value]="region.value">-->
+<!--              {{region.viewValue}}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+
+      <div class="atms-info">
+        <div class="atms-hints">
+          <div class="atms-hint">
+            <img src="./assets/images/pages/about/location/terminal.png" alt="Terminal">
+            <span>{{'aboutTerminalsTextOne' | translate}}</span>
+          </div>
+          <div class="atms-hint">
+            <img src="./assets/images/pages/about/location/red.png" alt="ATM">
+            <span>{{'aboutTerminalsTextTwo' | translate}}</span>
+          </div>
+        </div>
+
+        <div class="toggle-region-wrap">
+          <div class="toggle-region" *ngFor="let region of tabsArray; let i = index">
+            <input type="radio" id="{{i}}" name="radio-group" (click)="setTab(i)" [checked]="activatedTab === 0 ? i === 0 : false">
+            <label for="{{i}}">{{translateText(region)}}</label>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 0">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row">
+            <div class="atm-list-row-address">{{'aboutTerminalsTextSeventy' | translate}}</div>
+            <div class="atm-list-row-graphic">{{'aboutAtmsInfoTextFortyFive' | translate}}</div>
+            <div class="atm-list-row-cash">{{'aboutAtmsInfoTextFortySix' | translate}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 1">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let khujandTerminals of khujandTerminals">
+            <div class="atm-list-row-address">{{translateText(khujandTerminals.address)}}</div>
+            <div class="atm-list-row-graphic">{{translateText(khujandTerminals.graphic)}}</div>
+            <div class="atm-list-row-cash">{{translateText(khujandTerminals.cash)}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 2">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let bokhtarTerminal of bokhtarTerminals">
+            <div class="atm-list-row-address">{{translateText(bokhtarTerminal.address)}}</div>
+            <div class="atm-list-row-graphic">{{translateText(bokhtarTerminal.graphic)}}</div>
+            <div class="atm-list-row-cash">{{translateText(bokhtarTerminal.cash)}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 3">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let shahrituzTerminal of shahrituzTerminals">
+            <div class="atm-list-row-address">{{translateText(shahrituzTerminal.address)}}</div>
+            <div class="atm-list-row-graphic">{{translateText(shahrituzTerminal.graphic)}}</div>
+            <div class="atm-list-row-cash">{{translateText(shahrituzTerminal.cash)}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 4">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let rudakiTerminal of rudakiTerminals">
+            <div class="atm-list-row-address">{{translateText(rudakiTerminal.address)}}</div>
+            <div class="atm-list-row-graphic">{{translateText(rudakiTerminal.graphic)}}</div>
+            <div class="atm-list-row-cash">{{translateText(rudakiTerminal.cash)}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 5">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">{{'aboutBranchesPageTextEight' | translate}}</div>
+            <div class="atm-list-row-graphic head">{{'aboutAtmsInfoTextFortyNine' | translate}}</div>
+            <div class="atm-list-row-cash head">{{'aboutAtmsInfoTextFifty' | translate}}</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let firdavsiTerminal of firdavsiTerminals">
+            <div class="atm-list-row-address">{{translateText(firdavsiTerminal.address)}}</div>
+            <div class="atm-list-row-graphic">{{translateText(firdavsiTerminal.graphic)}}</div>
+            <div class="atm-list-row-cash">{{translateText(firdavsiTerminal.cash)}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

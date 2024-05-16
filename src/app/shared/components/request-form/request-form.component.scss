@@ -1,0 +1,177 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.request-form {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  background-color: rgba(48, 151, 153, 0.2);
+
+  .container {
+    .request-form-wrap {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+
+      .request-form-wrap-info {
+        width: 40%;
+
+        h2 {
+          @include h2-mixin;
+        }
+
+        .request-form-wrap-info-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+        }
+      }
+
+      .request-form-wrap-form {
+        width: 50%;
+        box-sizing: border-box;
+
+        .request-form-wrap-form-row {
+          width: 100%;
+          min-height: 112px;
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+
+
+          .button {
+            width: 100%;
+            display: grid;
+            place-items: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            line-height: 1.2;
+            padding-inline: 40px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+          }
+
+          input {
+            width: 100%;
+            height: 60px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 24px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            box-sizing: border-box;
+
+            &.error {
+              border: 1px solid #f44336;
+            }
+          }
+
+          .input-name {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            margin-bottom: 10px;
+          }
+
+          .error-message {
+            color: #f44336;
+            font-size: 12px;
+            font-family: Montserrat, sans-serif;
+          }
+        }
+
+        .policy {
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .request-form {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: rgba(48, 151, 153, 0.2);
+
+    .container {
+      .request-form-wrap {
+        flex-direction: column;
+        align-items: center;
+
+        .request-form-wrap-info {
+          width: 100%;
+          text-align: center;
+
+          .request-form-wrap-info-description {
+            font-size: 16px;
+            margin-bottom: 30px;
+          }
+        }
+
+        .request-form-wrap-form {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .request-form {
+    .container {
+      .request-form-wrap {
+        .request-form-wrap-info {
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+
+          .request-form-wrap-info-description {
+            width: 80%;
+            font-size: 16px;
+            margin-bottom: 30px;
+          }
+        }
+
+        .request-form-wrap-form {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 499px) {
+  .request-form {
+    .container {
+      .request-form-wrap {
+        .request-form-wrap-info {
+
+          .request-form-wrap-info-description {
+            width: 100%;
+          }
+        }
+
+        .request-form-wrap-form {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

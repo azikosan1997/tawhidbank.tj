@@ -1,0 +1,14 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.supervisors{
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  .container{
+    h1{
+      @include h1-mixin;
+      color: #1e2332;
+    }
+  }
+}

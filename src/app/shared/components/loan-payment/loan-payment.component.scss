@@ -1,0 +1,67 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.loan-payment {
+  padding-bottom: 80px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .loan-payment-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      .loan-payment-way {
+        .loan-payment-way-icon {
+          margin-bottom: 20px;
+        }
+
+        .loan-payment-way-title {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+
+        .loan-payment-way-description {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+
+  .loan-payment {
+    padding-bottom: 80px;
+
+    .container {
+      h2 {
+        @include h2-mixin;
+      }
+
+      .loan-payment-wrap {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .loan-payment-way {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

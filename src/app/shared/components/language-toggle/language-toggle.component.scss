@@ -1,0 +1,189 @@
+.select-button {
+  background-color: transparent;
+  padding: 4px 0;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+
+
+  .select-button-wrap {
+    width: 120px;
+    display: flex;
+    align-items: center;
+
+    .select-button-image {
+      width: 35%;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+
+    .select-button-text {
+      font-family: Montserrat, sans-serif;
+      font-weight: 500 !important;
+      color: #707884;
+    }
+
+    .language-tool-icon {
+      transition: all 300ms ease-in-out;
+
+      &.active {
+        transform-origin: center;
+        transform: rotate(180deg) translateY(3px);
+      }
+    }
+  }
+
+  .select-button-options {
+    display: none;
+    width: 120px;
+    position: absolute;
+    z-index: 1001 !important;
+    background-color: white;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    top: calc(100% + 10px);
+    left: 0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &.active {
+      display: block;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: transparent;
+        transition: all 200ms ease-in-out;
+
+        .options-list-item-image {
+          width: 35%;
+          margin-right: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+        }
+
+        .options-list-item-text {
+          font-family: Roboto, sans-serif;
+          font-weight: 500;
+          color: #707884;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          background-color: #e6e6e6;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .select-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 4px 0;
+    display: inline-block;
+    z-index: 10;
+
+
+    .select-button-wrap {
+      width: 45px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      opacity: .7;
+
+      .select-button-image {
+        display: none;
+        width: 35%;
+        margin-right: 10px;
+        border-radius: 8px;
+      }
+
+      .select-button-text {
+        font-family: Montserrat, sans-serif;
+        font-weight: 500 !important;
+        color: #707884;
+      }
+
+      .language-tool-icon {
+        transition: all 300ms ease-in-out;
+
+        &.active {
+          transform-origin: center;
+          transform: rotate(180deg) translateY(3px);
+        }
+      }
+    }
+
+    .select-button-options {
+      display: none;
+      width: 120px;
+      position: absolute;
+      z-index: 1001 !important;
+      background-color: white;
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+      top: calc(100% + 10px);
+      left: -80px;
+      border-radius: 10px;
+      overflow: hidden;
+
+      &.active {
+        display: block;
+      }
+
+      .options-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          padding: 5px 10px;
+          background-color: transparent;
+          transition: all 200ms ease-in-out;
+
+          .options-list-item-image {
+            width: 35%;
+            margin-right: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+          }
+
+          .options-list-item-text {
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+            color: #707884;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            background-color: #e6e6e6;
+          }
+        }
+      }
+    }
+  }
+
+}

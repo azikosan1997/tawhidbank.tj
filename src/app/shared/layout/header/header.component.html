@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header-top-content">
+    <div class="container">
+      <nav class="header-top-menu">
+        <ul>
+          <li *ngFor="let section of sectionArray; let i = index" (click)="setTab(i)">
+            <a  routerLink="{{section.route}}" routerLinkActive="active">{{translateTitle(section.title)}}</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-top-actions">
+        <a routerLink="/about/location" class="header-address-wrap">
+          <mat-icon>location_on</mat-icon>
+          {{'topHeaderMenuOffices' | translate}}
+        </a>
+        <language-toggle></language-toggle>
+      </div>
+    </div>
+  </div>
+</header>

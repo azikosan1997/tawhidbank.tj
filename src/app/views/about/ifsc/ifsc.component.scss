@@ -1,0 +1,56 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.supervisors{
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  .container{
+    h1{
+      @include h1-mixin;
+      color: #1e2332;
+    }
+
+    .ifsc-info{
+      .ifsc-paragraph{
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        line-height: 1.4;
+        text-indent: 40px;
+        text-align: justify;
+        color: #1f232b;
+      }
+    }
+    .ifsc-image{
+      width: 100%;
+      margin-top: 40px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .supervisors{
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    .container{
+      .ifsc-info{
+        .ifsc-paragraph{
+          font-family: Montserrat, sans-serif;
+          font-size: 15px;
+        }
+      }
+      .ifsc-image{
+        width: 100%;
+        margin-top: 30px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}

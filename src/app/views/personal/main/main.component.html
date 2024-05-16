@@ -1,0 +1,181 @@
+<app-personal-header></app-personal-header>
+<section class="main-banner">
+  <div class="container">
+    <div class="banner-warp">
+      <owl-carousel-o [options]="mainBannerOptions" >
+        <ng-template carouselSlide *ngFor="let banner of bannerData" style="border-radius: 20px">
+          <div class="banner-carousel" style="background: {{banner.background}}">
+            <div class="banner-carousel-info">
+              <div class="banner-title" style="color: {{banner.color}}">{{translateText(banner.title)}}</div>
+              <div class="banner-description" style="color: {{banner.color}}">{{translateText(banner.description)}}</div>
+              <a routerLink="{{banner.link}}" class="button" style="background-color: {{banner.button}}; color: {{banner.textColor}}">{{'personalMainBannerData' | translate}}</a>
+            </div>
+            <div class="banner-carousel-image">
+              <img src="{{banner.image}}" alt="">
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<section class="best-products">
+  <div class="container">
+    <h2>{{'personalMainBestProductsTitle' | translate}}</h2>
+    <div class="best-products-wrap">
+      <div class="best-product" *ngFor="let bestProduct of bestProducts">
+        <div class="best-product-image">
+          <img src="{{bestProduct.productImage}}" alt="{{bestProduct.imageAlt}}" class="image">
+        </div>
+        <div class="best-product-info">
+          <h3>{{translateText(bestProduct.productTitle)}}</h3>
+          <div class="best-product-description">{{translateText(bestProduct.productDescription)}}</div>
+          <a routerLink="{{bestProduct.link}}" class="product-link">{{'personalMainBannerData' | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="online-calculator" id="calculator">
+  <div class="container">
+    <h2>{{'personalMainCalculateTitle' | translate}}</h2>
+    <nav class="tab-panel-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <app-mortgage-calculator *ngIf="activatedTab === 1"></app-mortgage-calculator>
+    <div class="converters-wrap" *ngIf="activatedTab === 0">
+      <nav class="converter-toggle">
+        <ul>
+          <li class="tab-toggle " [ngClass]="activeConverter === i ? 'active' : ''" *ngFor="let tab of converterArray; let i = index" (click)="setConverter(i)">
+            <a class="tab-link ">{{translateText(tab)}}</a>
+          </li>
+        </ul>
+      </nav>
+      <app-converter *ngIf="activeConverter === 0"></app-converter>
+      <app-converter-buy *ngIf="activeConverter === 1"></app-converter-buy>
+    </div>
+  </div>
+</section>
+<section class="apps">
+  <div class="container">
+    <div class="apps-wrap">
+      <div class="apps-info">
+        <h2>{{'personalMainAppsTextOne' | translate}}</h2>
+        <div class="apps-info-description">{{'personalMainAppsTextTwo' | translate}}</div>
+        <div class="apps-info-action">
+          <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&pcampaignid=web_share" class="button-fill" target="_blank">
+            {{'personalMainAppsTextThree' | translate}}
+          </a>
+          <a href="https://ib.tawhid.tj/" class="button-transparent" target="_blank">{{'personalMainAppsTextFour' | translate}}</a>
+        </div>
+      </div>
+      <div class="apps-image">
+        <img src="./assets/images/pages/main/apps.png" alt="Tawhid Pay">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="services">
+  <div class="container">
+    <h2>Полезные сервисы</h2>
+    <div class="hint-controllers">
+      <div class="hint">На все случаи жизни</div>
+      <div class="carousel-controllers">
+        <div class="move-backward" (click)="serviceCarousel.prev()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 4.29297L15.7073 5.70718L9.41436 12.0001L15.7073 18.293L14.293 19.7072L6.58594 12.0001L14.293 4.29297Z" fill="#343944"></path>
+          </svg>
+        </div>
+        <div class="move-forward" (click)="serviceCarousel.next()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5859 11.9999L8.29297 18.2928L9.70718 19.707L17.4143 11.9999L9.70718 4.29282L8.29297 5.70703L14.5859 11.9999Z" fill="#343944"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="services-carousel-wrap">
+      <owl-carousel-o [options]="serviceOptions" #serviceCarousel>
+        <ng-template carouselSlide *ngFor="let service of services">
+          <div class="services-carousel-item">
+            <div class="services-carousel-item-icon">
+              <img src="{{service.serviceIcon}}" alt="{{service.iconAlt}}">
+            </div>
+            <h3 class="services-carousel-item-title">
+              {{translateText(service.serviceTitle)}}
+            </h3>
+            <div class="services-carousel-item-description">
+              {{translateText(service.serviceDescription)}}
+            </div>
+            <a routerLink="{{service.link}}" class="button-fill" fragment="{{service.fragment}}">{{'personalMainServicesCarouselButtonText' | translate}}</a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="services-carousel-item">
+            <div class="services-carousel-item-icon">
+              <img src="./assets/images/pages/main/s2.png" alt="Discount">
+            </div>
+            <h3 class="services-carousel-item-title">{{'personalMainServicesCarouselTextThree' | translate}}</h3>
+            <div class="services-carousel-item-description">
+              {{'personalMainServicesCarouselTextThreeDescription' | translate}}
+            </div>
+            <a href="https://iqdom.twb.tj/" class="button-fill" target="_blank">{{'personalMainServicesCarouselButtonText' | translate}}</a>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<section class="additional">
+  <div class="container">
+    <div class="additional-wrap">
+      <app-rate-tabe></app-rate-tabe>
+      <div class="additional-map">
+        <div class="map">
+          <img src="./assets/images/pages/main/map.png" alt="Map">
+        </div>
+        <h3>{{'personalMainAppRateTextNine' | translate}}</h3>
+        <div class="additional-map-description">
+         {{'personalMainAppRateTextTen' | translate}}
+        </div>
+        <a routerLink="/about/location" class="button-fill">{{'personalMainAppRateTextEleven' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="interesting">
+  <div class="container">
+    <h2>{{'personalMainInterestingTitle' | translate}}</h2>
+    <div class="interesting-carousel-wrap">
+      <div class="interesting-carousel-controllers">
+        <div class="go-back" (click)="interestingCarousel.prev()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 4.29297L15.7073 5.70718L9.41436 12.0001L15.7073 18.293L14.293 19.7072L6.58594 12.0001L14.293 4.29297Z" fill="#343944"></path>
+          </svg>
+        </div>
+        <div class="go-next" (click)="interestingCarousel.next()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5859 11.9999L8.29297 18.2928L9.70718 19.707L17.4143 11.9999L9.70718 4.29282L8.29297 5.70703L14.5859 11.9999Z" fill="#343944"></path>
+          </svg>
+        </div>
+      </div>
+      <owl-carousel-o [options]="bottomCarousel" #interestingCarousel>
+        <ng-template carouselSlide *ngFor="let bottomBanner of bottomBanner">
+          <div class="interesting-carousel-item" style="background-image: url('{{bottomBanner.image}}')">
+            <div class="interesting-carousel-item-info">
+              <div class="interesting-carousel-item-title" style="color: {{bottomBanner.color}}">{{translateText(bottomBanner.title)}}</div>
+              <div class="interesting-carousel-item-description" style="color: {{bottomBanner.color}}">{{translateText(bottomBanner.description)}}</div>
+              <a *ngIf="bottomBanner.link" routerLink="{{bottomBanner.link}}" class="button-fill">{{'personalMainBannerData' | translate}}</a>
+              <a *ngIf="bottomBanner.href" href="https://ib.tawhid.tj/" class="button-fill" target="_blank">{{'personalMainAppRateTextEleven' | translate}}</a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<!--<news></news>-->
+<app-faq></app-faq>

@@ -1,0 +1,17 @@
+<section class="q-and-a">
+  <div class="container">
+    <h2>Популярные вопросы</h2>
+    <div class="q-and-a-wrap">
+      <mat-accordion *ngFor="let question of questions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{translateText(question.question)}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{translateText(question.answer)}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

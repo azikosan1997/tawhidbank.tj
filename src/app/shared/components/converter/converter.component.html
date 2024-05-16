@@ -1,0 +1,39 @@
+<div class="converter-wrap">
+  <div class="converter">
+    <div class="converter-row">
+      <mat-form-field>
+        <input matInput [(ngModel)]="fromAmount" (input)="convert()">
+      </mat-form-field>
+      <mat-form-field>
+<!--        <mat-label>{{'personalMainConverterTextOne' | translate}}</mat-label>-->
+        <mat-select [(ngModel)]="selectedFromCurrency" (selectionChange)="convert()">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+            {{currency.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="converter-action">
+      <button class="button converter-toggle" (click)="swapCurrencies()">
+        <mat-icon>repeat</mat-icon>
+      </button>
+    </div>
+    <div class="converter-row">
+      <mat-form-field>
+        <input matInput [(ngModel)]="toAmount" (input)="convertTo()">
+      </mat-form-field>
+      <mat-form-field>
+<!--        <mat-label>{{'personalMainConverterTextOne' | translate}}</mat-label>-->
+        <mat-select [(ngModel)]="selectedToCurrency" (selectionChange)="convert()">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+            {{currency.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="converter-info">
+    <h2>{{'personalMainConverterTextTwo' | translate}}</h2>
+    <img src="./assets/images/pages/main/converter.png" alt="Currency">
+  </div>
+</div>

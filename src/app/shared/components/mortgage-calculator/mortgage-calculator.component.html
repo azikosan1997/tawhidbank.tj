@@ -1,0 +1,75 @@
+<section class="mortgage-calculator-wrap">
+  <nav class="converter-toggle">
+    <ul>
+      <li class="tab-toggle " [ngClass]="activeCurrency === i ? 'active' : ''" *ngFor="let tab of currencyArray; let i = index" (click)="setCurrency(i)">
+        <a class="tab-link ">{{translateText(tab)}}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="mortgage-calculator">
+    <div class="calculator-left">
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">{{'personalMainCalculateMortgageTextOne' | translate}}</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+            <input class="slider" type="range" min="10000" max="500000" value="0" step="100" [(ngModel)]="loanAmount">
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">{{'personalMainCalculateMortgageTextTwo' | translate}}</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+            <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100" [(ngModel)]="initialFee">
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">{{'personalMainCalculateMortgageTextThree' | translate}}</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+            <input class="slider" type="range" value="0" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-right">
+      <div class="calculator-summary">
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            {{'personalMainCalculateMortgageTextFour' | translate}}
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{calculateMonthlyPayment().toFixed(2) + " " + currency}}
+          </div>
+        </div>
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            {{'personalMainCalculateMortgageTextFive' | translate}}
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{currentRate + " %"}}
+          </div>
+        </div>
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            {{'personalMainCalculateMortgageTextSix' | translate}}
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{ totalAmount.toFixed() + " " + currency}}
+          </div>
+        </div>
+        <a href="#" class="request-mortgage">{{'personalMainCalculateMortgageTextSeven' | translate}}</a>
+      </div>
+      <div class="summary-description">
+        {{'personalMainCalculateMortgageTextEight' | translate}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,181 @@
+<div class="additional-rate">
+  <div class="additional-rate-title">
+    <h2>{{'personalMainAppRateTextOne' | translate}}</h2>
+    <div class="sub-title">{{'personalMainAppRateTextTwo' | translate}} / {{updateDataTime}}</div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="{{'personalMainAppRateTextFive' | translate}}">
+      <div class="rate-label-wrap">
+        <div class="rate-label">{{'personalMainAppRateTextThree' | translate}}</div>
+        <div class="rate-label">{{'personalMainAppRateTextFour' | translate}}</div>
+      </div>
+      <div class="rate-rows-wrap">
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/rub.png" alt="Ruble">
+            </div>
+            <div class="currency-name">RUB</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ cashRateData?.[1]?.[1] }}</div>
+            <div class="rate">{{ cashRateData?.[1]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/usd.png" alt="USD">
+            </div>
+            <div class="currency-name">USD</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ cashRateData?.[0]?.[1] }}</div>
+            <div class="rate">{{ cashRateData?.[0]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/eur.png" alt="Euro">
+            </div>
+            <div class="currency-name">EUR</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ cashRateData?.[2]?.[1] }}</div>
+            <div class="rate">{{ cashRateData?.[2]?.[2] }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="{{'personalMainAppRateTextSix' | translate}}">
+      <div class="rate-label-wrap">
+        <div class="rate-label">{{'personalMainAppRateTextThree' | translate}}</div>
+        <div class="rate-label">{{'personalMainAppRateTextFour' | translate}}</div>
+      </div>
+      <div class="rate-rows-wrap">
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/rub.png" alt="Ruble">
+            </div>
+            <div class="currency-name">RUB</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ moneyTransferRateData?.[1]?.[1] }}</div>
+            <div class="rate">{{ moneyTransferRateData?.[1]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/usd.png" alt="USD">
+            </div>
+            <div class="currency-name">USD</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ moneyTransferRateData?.[0]?.[1] }}</div>
+            <div class="rate">{{ moneyTransferRateData?.[0]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/eur.png" alt="Euro">
+            </div>
+            <div class="currency-name">EUR</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ moneyTransferRateData?.[2]?.[1] }}</div>
+            <div class="rate">{{ moneyTransferRateData?.[2]?.[2] }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="{{'personalMainAppRateTextSeven' | translate}}">
+      <div class="rate-label-wrap">
+        <div class="rate-label">{{'personalMainAppRateTextThree' | translate}}</div>
+        <div class="rate-label">{{'personalMainAppRateTextFour' | translate}}</div>
+      </div>
+      <div class="rate-rows-wrap">
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/rub.png" alt="Ruble">
+            </div>
+            <div class="currency-name">RUB</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[1]?.[1] }}</div>
+            <div class="rate">{{ nonCashRateData?.[1]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/usd.png" alt="USD">
+            </div>
+            <div class="currency-name">USD</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[0]?.[1] }}</div>
+            <div class="rate">{{ nonCashRateData?.[0]?.[2] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/eur.png" alt="Euro">
+            </div>
+            <div class="currency-name">EUR</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[2]?.[1] }}</div>
+            <div class="rate">{{ nonCashRateData?.[2]?.[2] }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="{{'personalMainAppRateTextEight' | translate}}">
+      <div class="rate-label-wrap">
+        <div class="rate-label transparent">{{'personalMainAppRateTextThree' | translate}}</div>
+        <div class="rate-label transparent">{{'personalMainAppRateTextFour' | translate}}</div>
+      </div>
+      <div class="rate-rows-wrap">
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/rub.png" alt="Ruble">
+            </div>
+            <div class="currency-name">RUB</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[1]?.[3] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/usd.png" alt="USD">
+            </div>
+            <div class="currency-name">USD</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[0]?.[3] }}</div>
+          </div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-initials">
+            <div class="currency-flag">
+              <img src="./assets/images/pages/main/eur.png" alt="Euro">
+            </div>
+            <div class="currency-name">EUR</div>
+          </div>
+          <div class="rate-values">
+            <div class="rate">{{ nonCashRateData?.[2]?.[3] }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

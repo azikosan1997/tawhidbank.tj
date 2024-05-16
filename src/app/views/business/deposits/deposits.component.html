@@ -1,0 +1,112 @@
+<app-business-header></app-business-header>
+<banner-product [bannerData]="banner"></banner-product>
+<product-condition [conditionData]="conditionData"></product-condition>
+<section class="features">
+  <div class="container">
+    <h2>{{'businessDepositPageTextEleven' | translate}}</h2>
+    <div class="features-wrap">
+      <div class="feature-card">
+        <h3>{{'businessDepositPageTextTwelve' | translate}}</h3>
+        <div class="feature-card-subtitle">
+          {{'businessDepositPageTextThirteen' | translate}}
+        </div>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/investments/f1.png" alt="Shield">
+        </div>
+      </div>
+      <div class="feature-card">
+        <h3>{{'businessDepositPageTextFourteen' | translate}}</h3>
+        <div class="feature-card-subtitle">
+          {{'businessDepositPageTextFifteen' | translate}}
+        </div>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/investments/f2.png" alt="Aim">
+        </div>
+      </div>
+      <div class="feature-card">
+        <h3>{{'businessDepositPageTextSixteen' | translate}}</h3>
+        <div class="feature-card-subtitle">
+          {{'businessDepositPageTextSeventeen' | translate}}
+        </div>
+        <div class="feature-card-image">
+          <img src="./assets/images/pages/investments/f3.png" alt="Calendar">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariffs">
+  <div class="container">
+    <h2>{{'businessDepositPageTextEighteen' | translate}}</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{translateText(tab)}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tariffs-tab" *ngIf="activatedTab === 0">
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwelve' | translate}}</div>
+        <div class="tariffs-tab-row-description space">TJS   USD   RUB   EUR</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextFourteen' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextFifteen' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextSixteen' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextSeventeen' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextEighteen' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextNineteen' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwenty' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextTwentyOne' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwentyTwo' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextTwentyThree' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwentyFour' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextTwentyFive' | translate}}</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwentySix' | translate}}</div>
+        <div class="tariffs-tab-row-description">{{'depositMudarabatextTwentySeventeen' | translate}}</div>
+      </div>
+    </div>
+    <div class="tariffs-tab second-table" *ngIf="activatedTab === 1">
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">{{'depositMudarabatextTwelve' | translate}}</div>
+        <div class="tariffs-tab-row-description profit"><span>TJS</span><span>USD</span><span>EUR</span><span>RUB</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">12</div>
+        <div class="tariffs-tab-row-description profit"><span>40/60</span><span>35/65</span><span>25/75</span><span>25/75</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">18</div>
+        <div class="tariffs-tab-row-description profit"><span>45/55</span><span>40/60</span><span>30/70</span><span>30/70</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">24</div>
+        <div class="tariffs-tab-row-description profit"><span>50/50</span><span>45/55</span><span>35/65</span><span>35/65</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">30</div>
+        <div class="tariffs-tab-row-description profit"><span>55/45</span><span>50/50</span><span>40/60</span><span>40/60</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">36</div>
+        <div class="tariffs-tab-row-description profit"><span>60/40</span><span>55/45</span><span>50/50</span><span>50/50</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-steps></app-steps>
+<app-request-form [requestType]="requestType" id="request" [appId]="appId" [productId]="productId"></app-request-form>
+<app-faq></app-faq>

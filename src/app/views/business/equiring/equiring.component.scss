@@ -1,0 +1,377 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.results {
+  padding-bottom: 60px;
+  .container {
+    .results-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      .result {
+        width: 32%;
+        box-sizing: border-box;
+        background-color: rgba(48, 151, 153, 0.2);
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+
+        img {
+          width: 40%;
+          height: 110px;
+          object-fit: scale-down;
+        }
+
+        .result-info {
+          .result-bold {
+            font-size: 22px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          .result-description {
+            font-size: 15px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+          }
+        }
+      }
+    }
+  }
+}
+
+.features {
+  padding-bottom: 80px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .features-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+      box-sizing: border-box;
+
+      .feature-card {
+        position: relative;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 45px 20px;
+        overflow: hidden;
+        min-height: 620px;
+
+        .feature-card-title {
+          font-size: 26px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          line-height: 1.1;
+          margin-bottom: 40px;
+        }
+
+        ul {
+          li {
+            list-style: none;
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            margin-bottom: 25px;
+          }
+        }
+
+        img {
+          position: absolute;
+          bottom: -10px;
+        }
+
+        .second {
+          bottom: -110px;
+        }
+      }
+    }
+  }
+}
+
+.tariffs {
+  padding-bottom: 60px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .tariffs-wrap {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+
+      .tariff-card {
+        border-radius: 10px;
+        border: 2px solid rgba(48, 151, 153, 0.2);
+        padding: 40px 40px;
+
+        .tariff-card-icon {
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          background-color: white;
+          display: grid;
+          place-content: center;
+          border-radius: 10px;
+          border: 2px solid #309799;
+          margin-bottom: 30px;
+        }
+
+        .tariff-card-title {
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 10px;
+          line-height: 1.2;
+        }
+
+        .tariff-card-subtitle {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1299px){
+  .features {
+    padding-bottom: 60px;
+
+    .container {
+
+      .features-wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+
+        .feature-card {
+          width: 32%;
+          min-height: 700px;
+          padding: 30px 20px;
+
+          .feature-card-title {
+            font-size: 22px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 40px;
+          }
+
+          ul {
+            li {
+              list-style: none;
+              font-size: 16px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(68, 68, 68);
+              line-height: 1.2;
+              margin-bottom: 25px;
+            }
+          }
+
+          img {
+            position: absolute;
+            bottom: -10px;
+          }
+
+          .second {
+            bottom: -110px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .features {
+    .container {
+
+      .features-wrap {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+
+        .feature-card {
+          width: 40%;
+          min-height: 620px;
+          img {
+            position: absolute;
+            bottom: -10px;
+            left: calc(50% - 175px);
+          }
+
+          .second {
+            bottom: -80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .results {
+    .container {
+      .results-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .result {
+          width: 46%;
+          img {
+          }
+
+          .result-info {
+            .result-bold {
+              font-size: 18px;
+            }
+
+            .result-description {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .features {
+    .container {
+
+      .features-wrap {
+        justify-content: center;
+
+        .feature-card {
+          width: 100%;
+          min-height: 570px;
+          img {
+            position: absolute;
+            bottom: -10px;
+            left: calc(50% - 175px);
+          }
+
+          .second {
+            bottom: -80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .results {
+    .container {
+      .results-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .result {
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+
+          .result-info {
+            .result-bold {
+              font-size: 16px;
+            }
+
+            .result-description {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .features {
+    .container {
+      .features-wrap {
+        justify-content: center;
+
+        .feature-card {
+          min-height: 590px;
+
+          .feature-card-title {
+            font-size: 18px;
+          }
+
+          ul {
+            li {
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .tariffs {
+    .container {
+
+      .tariffs-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .tariff-card {
+          width: 100%;
+          padding: 20px 20px;
+          box-sizing: border-box;
+          text-align: center;
+
+          .tariff-card-title {
+            font-size: 18px;
+          }
+
+          .tariff-card-subtitle {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+          }
+        }
+      }
+    }
+  }
+
+}

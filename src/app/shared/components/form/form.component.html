@@ -1,0 +1,47 @@
+<section class="form">
+  <div class="container">
+    <h2>{{formName ? translateText(formName): '' }}</h2>
+    <form [formGroup]="cardRequestData">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="{{'personalDepositsFormTextOne' | translate}}" formControlName="mobileNumber"  [ngClass]="{'error': cardRequestData.get('mobileNumber')?.touched &&
+                                                                      (cardRequestData.get('mobileNumber')?.hasError('required') ||
+                                                                      cardRequestData.get('mobileNumber')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('mobileNumber')?.touched && cardRequestData.get('mobileNumber')?.errors?.['required']">{{'personalDepositsFormTextThirteen' | translate}}</div>
+        <div class="error-message" *ngIf="cardRequestData.get('mobileNumber')?.touched && cardRequestData.get('mobileNumber')?.errors?.['pattern']">{{'personalDepositsFormTextFourteen' | translate}}</div>
+      </div>
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="{{'personalDepositsFormTexTwo' | translate}}" formControlName="email" [ngClass]="{'error': cardRequestData.get('email')?.touched &&
+                                                                      (cardRequestData.get('email')?.hasError('required') ||
+                                                                      cardRequestData.get('email')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('email')?.touched && cardRequestData.get('email')?.errors?.['required']">{{'personalDepositsFormTextFifteen' | translate}}</div>
+      </div>
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="{{'personalDepositsFormTextThree' | translate}}" formControlName="fullName" [ngClass]="{'error': cardRequestData.get('fullName')?.touched &&
+                                                                      (cardRequestData.get('fullName')?.hasError('required') ||
+                                                                      cardRequestData.get('fullName')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('fullName')?.touched && cardRequestData.get('fullName')?.errors?.['required']">{{'personalDepositsFormTextSixteen' | translate}}</div>
+        <div class="error-message" *ngIf="cardRequestData.get('fullName')?.touched && cardRequestData.get('fullName')?.errors?.['pattern']">{{'personalDepositsFormTextSixteen' | translate}}</div>
+      </div>
+<!--      <div class="form-row">-->
+<!--        <input type="text" class="form-input" placeholder="{{'personalDepositsFormTextFour' | translate}}" formControlName="city"  [ngClass]="{'error': cardRequestData.get('city')?.touched &&-->
+<!--                                                                      (cardRequestData.get('city')?.hasError('required') ||-->
+<!--                                                                      cardRequestData.get('city')?.hasError('pattern'))}">-->
+<!--        <div class="error-message" *ngIf="cardRequestData.get('city')?.touched && cardRequestData.get('city')?.errors?.['required']">{{'personalDepositsFormTextSeventeen' | translate}}</div>-->
+<!--      </div>-->
+<!--      <div class="form-row" *ngIf="mainForm">-->
+<!--        <input type="text" class="form-input" placeholder="{{'personalDepositsFormTextFive' | translate}}" formControlName="cardType"  [ngClass]="{'error': cardRequestData.get('cardType')?.touched &&-->
+<!--                                                                      (cardRequestData.get('cardType')?.hasError('required') ||-->
+<!--                                                                      cardRequestData.get('cardType')?.hasError('pattern'))}">-->
+<!--        <div class="error-message" *ngIf="cardRequestData.get('cardType')?.touched && cardRequestData.get('cardType')?.errors?.['required']">{{'personalDepositsFormTextEighteen' | translate}}</div>-->
+<!--      </div>-->
+      <div class="form-row">
+        <app-region-dropdown (cityIdChanged)="onCityIdChange($event)"></app-region-dropdown>
+      </div>
+      <button class="button" (click)="onFormSubmit()">{{'personalDepositsFormTextSix' | translate}}</button>
+      <span>{{'personalDepositsFormTextSeven' | translate}} <a>{{'обработку персональных данных,' | translate}}</a>
+        {{'personalDepositsFormTextNine' | translate}} <a>{{'personalDepositsFormTextTen' | translate}}</a>
+        {{'personalDepositsFormTextEleven' | translate}} <a>{{'personalDepositsFormTextTwelve' | translate}}</a>
+      </span>
+    </form>
+  </div>
+</section>

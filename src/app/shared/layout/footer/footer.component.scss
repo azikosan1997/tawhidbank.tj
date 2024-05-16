@@ -1,0 +1,220 @@
+.footer {
+  background-color: #343944;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #b8c7d4;
+
+  .container {
+    .footer-top-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 50px;
+
+      .footer-top-content-item {
+        max-width: 250px;
+
+        .footer-top-content-item-title {
+          color: white;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 30px;
+
+          &.wmb {
+            margin-bottom: 10px;
+          }
+        }
+
+        .footer-menu {
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            li {
+              list-style: none;
+
+              a {
+                color: #b8c7d4;
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+
+        .footer-tawhid-pay{
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+
+          .app-info{
+            .app-title{
+              font-size: 18px;
+              font-family: "Montserrat",sans-serif;
+              color: rgb(255, 255, 255);
+              margin-bottom: 10px;
+            }
+
+            a{
+              color: #b8c7d4;
+            }
+          }
+        }
+
+        .footer-products{
+          margin-bottom: 30px;
+          .footer-product-title{
+            margin-bottom: 14px;
+          }
+          .footer-product-action{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            a{
+              display: inline-block;
+              width: 80px;
+              text-decoration: none;
+              color: #b8c7d4;
+
+              img{
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .footer {
+    .container {
+      .footer-top-content {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+
+        .footer-top-content-item {
+          width: 49%;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 767px){
+  .footer {
+    .container {
+      .footer-top-content {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+
+        .footer-top-content-item {
+          width: 45%;
+
+          .footer-top-content-item-title {
+            font-size: 1.2em;
+            &.wmb {
+              margin-bottom: 10px;
+            }
+          }
+
+          .footer-menu {
+            ul {
+              li {
+
+                a {
+                  font-size: 1em;
+                }
+              }
+            }
+          }
+
+          .footer-tawhid-pay{
+            .app-info{
+              .app-title{
+                font-size: 1.2em;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 499px){
+  .footer {
+    padding-bottom: 80px;
+    text-align: center;
+
+    .container {
+      .footer-top-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        .footer-top-content-item {
+          width: 100%;
+          border-bottom: 1px dashed #e8e8e8;
+          padding-bottom: 20px;
+
+          .footer-top-content-item-title {
+            font-size: 1.2em;
+            &.wmb {
+              margin-bottom: 10px;
+            }
+          }
+
+          .footer-menu {
+            ul {
+
+              li {
+
+                a {
+                  font-size: 1em;
+                }
+              }
+            }
+          }
+
+          .footer-tawhid-pay{
+
+            .app-info{
+              .app-title{
+                font-size: 1.2em;
+              }
+
+              a{
+                color: #b8c7d4;
+              }
+            }
+          }
+
+          .footer-products{
+            .footer-product-title{
+            }
+            .footer-product-action{
+              a{
+                img{
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

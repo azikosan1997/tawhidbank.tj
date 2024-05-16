@@ -1,0 +1,51 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.feedback{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f2f7f9;
+
+  .container{
+    h2{
+      @include h2-mixin;
+    }
+
+    .feedback-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .feedback-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+
+      .feedback-item-icon{
+        display: grid;
+        place-content: center;
+        width: 60px;
+        height: 60px;
+        background-color: $main-color;
+        border-radius: 50%;
+      }
+
+      .feedback-item-info{
+        .feedback-item-info-title{
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .feedback-item-info-subtitle{
+          font-size: 16px;
+          color: #6d6d6d;
+        }
+      }
+    }
+  }
+}

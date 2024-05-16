@@ -1,0 +1,71 @@
+<section class="request-form">
+  <div class="container">
+    <div class="request-form-wrap">
+      <div class="request-form-wrap-info">
+        <h2>{{ 'businessConsultingRequestForm' | translate }} <br> {{ 'businessConsultingRequestFormTwo' | translate }}
+        </h2>
+        <div class="request-form-wrap-info-description">
+          {{ 'businessConsultingRequestFormThree' | translate }} <br>
+          {{ 'businessConsultingRequestFormFour' | translate }}
+        </div>
+      </div>
+      <form class="request-form-wrap-form" [formGroup]="formData" autocomplete="off">
+        <div class="request-form-wrap-form-row">
+          <div class="input-name">{{ 'businessConsultingRequestFormFive' | translate }}</div>
+          <input type="text" formControlName="fullName" [ngClass]="{'error': formData.get('fullName')?.touched &&
+                                                                      (formData.get('fullName')?.hasError('required') ||
+                                                                      formData.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message"
+               *ngIf="formData.get('fullName')?.touched && formData.get('fullName')?.errors?.['required']">{{ 'businessConsultingRequestFormSix' | translate }}
+          </div>
+          <div class="error-message"
+               *ngIf="formData.get('fullName')?.touched && formData.get('fullName')?.errors?.['pattern']">{{ 'businessConsultingRequestFormSeven' | translate }}
+          </div>
+        </div>
+        <div class="request-form-wrap-form-row">
+          <div class="input-name">{{ 'businessConsultingRequestFormEight' | translate }}</div>
+          <input type="text" formControlName="mobileNumber" [ngClass]="{'error': formData.get('mobileNumber')?.touched &&
+                                                                      (formData.get('mobileNumber')?.hasError('required') ||
+                                                                      formData.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message"
+               *ngIf="formData.get('mobileNumber')?.touched && formData.get('mobileNumber')?.errors?.['required']">{{ 'businessConsultingRequestFormNine' | translate }}
+          </div>
+          <div class="error-message"
+               *ngIf="formData.get('mobileNumber')?.touched && formData.get('mobileNumber')?.errors?.['pattern']">{{ 'businessConsultingRequestFormTen' | translate }}
+          </div>
+        </div>
+        <div class="request-form-wrap-form-row">
+          <div class="input-name">{{ 'businessConsultingRequestFormEleven' | translate }}</div>
+          <input type="text" formControlName="email" [ngClass]="{'error': formData.get('email')?.touched &&
+                                                                      (formData.get('email')?.hasError('required') ||
+                                                                      formData.get('email')?.hasError('pattern'))}">
+          <div class="error-message"
+               *ngIf="formData.get('email')?.touched && formData.get('email')?.errors?.['required']">{{ 'businessConsultingRequestFormTwelve' | translate }}
+          </div>
+        </div>
+        <div class="request-form-wrap-form-row">
+          <div class="input-name">{{ 'businessConsultingRequestFormThirteen' | translate }}</div>
+          <input type="text" formControlName="company" [ngClass]="{'error': formData.get('company')?.touched &&
+                                                                      (formData.get('company')?.hasError('required') ||
+                                                                      formData.get('company')?.hasError('pattern'))}">
+          <div class="error-message"
+               *ngIf="formData.get('company')?.touched && formData.get('company')?.errors?.['required']">{{ 'businessConsultingRequestFormFourteen' | translate }}
+          </div>
+        </div>
+        <div class="request-form-wrap-form-row">
+          <div class="input-name">{{ 'businessConsultingRequestFormFifteen' | translate }}</div>
+          <app-business-region-dropdown (cityIdChanged)="onCityIdChange($event)"></app-business-region-dropdown>
+        </div>
+        <div class="request-form-wrap-form-row">
+          <button class="button" (click)="sendRequest()">{{ 'businessConsultingRequestFormSeventeen' | translate }}
+          </button>
+        </div>
+        <div class="policy">
+          {{ 'businessConsultingRequestFormEighteen' | translate }}
+          <b>{{ 'businessConsultingRequestFormNineteen' | translate }}</b>
+          {{ 'businessConsultingRequestFormTwenty' | translate }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

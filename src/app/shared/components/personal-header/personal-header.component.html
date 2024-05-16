@@ -1,0 +1,333 @@
+<div class="header-bottom-content">
+  <div class="container">
+    <div class="header-logo">
+      <a routerLink="/personal">
+        <img [src]="'assets/images/logo-' + logo + '.png'" alt="Logotype">
+      </a>
+    </div>
+    <nav class="header-bottom-menu">
+      <ul>
+        <li>
+          <a routerLink="/personal/financing"
+             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuOne' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/personal/deposit"
+             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuTwo' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/personal/cards"
+             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuThree' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/personal/transfers"
+             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuFour' | translate }}</a>
+        </li>
+        <li>
+          <button mat-icon-button [matMenuTriggerFor]="more" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #more="matMenu">
+            <a mat-menu-item routerLink="/personal/auto-financing">
+              <a routerLinkActive="active-link" class="nav-item">{{ 'bottomPersonalHeaderMenuFive' | translate }}</a>
+            </a>
+            <a mat-menu-item routerLink="/personal/tawhid-pay">
+              <a routerLinkActive="active-link" class="nav-item">{{ 'bottomPersonalHeaderMenuSix' | translate }}</a>
+            </a>
+            <a mat-menu-item routerLink="/personal/questions">
+              <a routerLinkActive="active-link" class="nav-item">{{ 'bottomPersonalHeaderMenuSeven' | translate }}</a>
+            </a>
+          </mat-menu>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-bottom-action">
+      <a class="button" href="https://ib.tawhid.tj/" target="_blank">
+        {{ 'bottomPersonalHeaderMenuInternetBanking' | translate }}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="29px" height="19px">
+          <image x="0px" y="0px" width="29px" height="19px"
+                 xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAATCAQAAADGkM70AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfnCRQKCSoSENRqAAABHUlEQVQ4y5WTP04CURjEf4OrkJhdE6ytaYyFnYfgBmpvxwHsvQJnsTfewt6oIRJdFoQ3FuyuILsLzKve9958M/P+aAHQ0kADjtkFmYd6YA4EAqHv/XATCEQAOgcCQ962ah5wxyk9wZJKB5j4XqNtTKNrTpkDtPIKZArbiAF3SYpZq6y3HRs3K6IZ6Sa148SYemkhlFGGisqVmb6XvY0qFAtvSjapE30uexfmKJusBOnopNaw862rIzeL0JSv2mMqtlYmrcn6o5QGGGFoK95UTfUhmsnGh//vVcCRE9MMoUBWGhbAGIj1yGTNX1Vm0S1jGuOe3/f4N6NwFTARt8QseKJPc9Q/POuCS1J5TLwjZR3TiBfOKg6T/DlR6+X1F7hUxSFHuWKTAAAAAElFTkSuQmCC"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="header-bottom-content-mobile">
+  <div class="container">
+    <nav class="main-mobile-menu">
+      <ul>
+        <li *ngFor="let menuItem of mobileMenuItems; let i = index">
+          <button class="main-mobile-menu-item" (click)="setMenu(i)">
+              <span class="main-mobile-menu-item-icon">
+                <mat-icon matListItemIcon style="color: #444">{{ menuItem.icon }}</mat-icon>
+              </span>
+            <span class="main-mobile-menu-item-text">{{ translateText(menuItem.text) }}</span>
+          </button>
+        </li>
+        <div class="main-mobile-menu-central-image" (click)="navigateMain()">
+          <img src="./assets/images/mobile-menu-item.png" alt="Logo">
+        </div>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<nav class="menu-mobile-link-options-wrap" *ngIf="closeMobileMenu && mobileMenuActive === 0"
+     (click)="setCloseMobileMenu()">
+  <div class="menu-mobile-link-options-container">
+    <div class="close-mobile-menu-icon" (click)="setCloseMobileMenu()">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z"
+                fill="#bfbfbf"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="menu-mobile-link-options">
+      <div class="menu-mobile-link-options-best-product">
+        <div class="menu-mobile-link-options-best-product-info">
+          <div class="menu-mobile-link-options-best-product-title">{{ 'personalMobileMenuTestSix' | translate }}</div>
+          <div
+            class="menu-mobile-link-options-best-product-description">{{ 'personalMobileMenuTestSeven' | translate }}
+          </div>
+          <a routerLink="/personal/cards/green"
+             class="mobile-menu-link">{{ 'personalMobileMenuTestEight' | translate }}</a>
+        </div>
+        <div class="menu-mobile-link-options-best-product-image">
+          <img src="./assets/images/pages/cards/green-card.png" alt="Card">
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/cards/national"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestNine' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/cards/nameless"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestTen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="menu-mobile-link-options-wrap" *ngIf="closeMobileMenu && mobileMenuActive === 1"
+     (click)="setCloseMobileMenu()">
+  <div class="menu-mobile-link-options-container">
+    <div class="close-mobile-menu-icon" (click)="setCloseMobileMenu()">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z"
+                fill="#bfbfbf"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="menu-mobile-link-options">
+      <div class="menu-mobile-link-options-best-product">
+        <div class="menu-mobile-link-options-best-product-info">
+          <div class="menu-mobile-link-options-best-product-title">{{ 'personalMobileMenuTestEleven' | translate }}
+          </div>
+          <div
+            class="menu-mobile-link-options-best-product-description">{{ 'personalMobileMenuTestTwelve' | translate }}
+          </div>
+          <a routerLink="/personal/financing/murabaha-house"
+             class="mobile-menu-link">{{ 'personalMobileMenuTestEight' | translate }}</a>
+        </div>
+        <div class="menu-mobile-link-options-best-product-image">
+          <img src="./assets/images/pages/financing%20info/banner-house.png" alt="Card">
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/financing/murabaha-consumption"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestThirteen' | translate }} </a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/financing/murabaha-business"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestFourteen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/auto-financing"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestFifteen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/financing/murabaha-agriculture"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestSixteen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="menu-mobile-link-options-wrap" *ngIf="closeMobileMenu && mobileMenuActive === 2"
+     (click)="setCloseMobileMenu()">
+  <div class="menu-mobile-link-options-container">
+    <div class="close-mobile-menu-icon" (click)="setCloseMobileMenu()">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z"
+                fill="#bfbfbf"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="menu-mobile-link-options">
+      <div class="menu-mobile-link-options-best-product">
+        <div class="menu-mobile-link-options-best-product-info">
+          <div class="menu-mobile-link-options-best-product-title">{{'personalMobileMenuTestSeventeen' | translate }}</div>
+          <div class="menu-mobile-link-options-best-product-description">{{ 'depositVakalaTextTwo' | translate }}</div>
+          <a routerLink="/deposit/vakala"
+             class="mobile-menu-link">{{'personalMobileMenuTestEight' | translate }}</a>
+        </div>
+        <div class="menu-mobile-link-options-best-product-image">
+          <img src="./assets/images/pages/deposit%20info/deposit-vakala.png" alt="Card">
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/deposit/mudaraba"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestEighteen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/deposit/manzil"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestNineteen' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="menu-mobile-link-options-wrap" *ngIf="closeMobileMenu && mobileMenuActive === 4"
+     (click)="setCloseMobileMenu()">
+  <div class="menu-mobile-link-options-container">
+    <div class="close-mobile-menu-icon" (click)="setCloseMobileMenu()">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z"
+                fill="#bfbfbf"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="menu-mobile-link-options">
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/auto-financing"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestTwenty' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/tawhid-pay"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestTwentyOne' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/questions"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestTwentyTwo' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+

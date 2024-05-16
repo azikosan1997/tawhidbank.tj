@@ -1,0 +1,274 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.requirements {
+  margin-bottom: 80px;
+}
+
+.features {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .features-wrap {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      .feature-card {
+        background-color: rgba(48, 151, 153, 0.2);
+        border-radius: 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          font-size: 22px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 40px;
+          min-height: 100px;
+        }
+
+        &.gradient {
+          grid-column-start: 2;
+          grid-column-end: 4;
+          flex-direction: row;
+          align-items: flex-start;
+          background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+
+          h3 {
+            color: white;
+          }
+
+          .feature-card-image {
+            img {
+              padding-top: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.what-financing {
+  padding-bottom: 100px;
+
+  .container {
+    .what-financing-wrap {
+      width: 100%;
+      background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+      border-radius: 10px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 30px 70px;
+      color: white;
+
+      .what-financing-wrap-image {
+        width: 28%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .what-financing-wrap-info {
+        width: 70%;
+        h3 {
+          font-size: 30px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .features {
+    padding-bottom: 80px;
+
+    .container {
+      .features-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 30px;
+        box-sizing: border-box;
+
+        .feature-card {
+          background-color: rgba(48, 151, 153, 0.2);
+          border-radius: 10px;
+          padding: 30px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+
+          h3 {
+            font-size: 22px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            margin-bottom: 40px;
+            min-height: 100px;
+          }
+
+          &.gradient {
+            box-sizing: border-box;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            flex-direction: row;
+            align-items: flex-start;
+            background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+
+            h3 {
+              color: white;
+            }
+
+            .feature-card-image {
+              img {
+                padding-top: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .features {
+    .container {
+      .features-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .feature-card {
+          width: 80%;
+          padding: 15px;
+          text-align: center;
+
+          h3 {
+            font-size: 18px;
+            min-height: auto;
+          }
+
+          &.gradient {
+            box-sizing: border-box;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+
+            h3 {
+              color: white;
+            }
+
+            .feature-card-image {
+              display: grid;
+              place-items: center;
+
+              img {
+                width: 100%;
+                padding-top: 0;
+              }
+            }
+          }
+
+          .feature-card-image {
+            display: grid;
+            place-items: center;
+
+            img {
+              width: 100%;
+              height: 250px;
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .what-financing {
+    padding-bottom: 100px;
+
+    .container {
+      .what-financing-wrap {
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 30px;
+
+        .what-financing-wrap-image {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+
+        .what-financing-wrap-info {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 499px) {
+  .features {
+    .container {
+      .features-wrap {
+
+        .feature-card {
+          width: 100%;
+
+          .feature-card-image {
+            display: grid;
+            place-items: center;
+
+            img {
+              width: 100%;
+              padding-top: 0;
+            }
+          }
+
+          .feature-card-image {
+            display: grid;
+            place-items: center;
+
+            img {
+              width: 100%;
+              height: 250px;
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<app-about-header></app-about-header>
+<section class="supervisors">
+  <div class="container">
+    <h1>{{'aboutIfcsTextTwenty' | translate}}</h1>
+    <div class="ifsc-info">
+      <p class="ifsc-paragraph" *ngFor="let paragraph of ifscParagraphs">{{translateText(paragraph)}}</p>
+    </div>
+    <div class="ifsc-image">
+      <img src="./assets/images/pages/about/ifsc.png" alt="IFSC">
+    </div>
+  </div>
+</section>
+

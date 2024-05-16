@@ -1,0 +1,15 @@
+<section class="banner">
+  <div class="container">
+    <div class="banner-warp" *ngFor="let data of bannerData">
+      <div class="banner-info">
+        <h1>{{ translateText(data.title) }}</h1>
+        <div class="banner-subtitle">{{ translateText(data.subtitle) }}</div>
+        <div class="app-banner-description">{{data.description ? translateText(data.description) : '' }}</div>
+        <a href="{{ data.link }}" class="button">{{ translateText(data.buttonText) }}</a>
+      </div>
+      <div class="banner-image {{data.class}}">
+        <img src="{{data.image}}" alt="Safe">
+      </div>
+    </div>
+  </div>
+</section>

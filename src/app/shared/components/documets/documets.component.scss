@@ -1,0 +1,40 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.documents {
+  margin-top: 80px;
+  margin-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .documents-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      .documents-wrap-row {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid rgba(48, 151, 153, 0.2);
+
+        &:last-child {
+          border-bottom: 1px solid rgba(48, 151, 153, 0.2);
+        }
+
+        .document-name {
+          font-size: 16px;
+          font-family: "Montserrat",sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

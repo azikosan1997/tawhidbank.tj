@@ -1,0 +1,352 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.atms {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f7f8f9;
+
+  .atms-map {
+    left: 0;
+    top: 520px;
+    position: absolute;
+    width: 100vw;
+    z-index: 100;
+  }
+
+  .container {
+    h1 {
+      @include h1-mixin;
+      color: #1e2332;
+      margin-bottom: 50px;
+    }
+
+    .atms-wrap {
+      width: 100%;
+      background-color: white;
+      padding: 50px;
+      border-radius: 15px;
+      position: relative;
+      box-sizing: border-box;
+
+      .atm-search {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .atms-info{
+        margin-top: 800px;
+
+        .atms-hints {
+          display: flex;
+          align-items: center;
+          gap: 50px;
+
+          .atms-hint {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+
+            img {
+              width: 25px;
+              height: 30px;
+            }
+
+            span {
+              font-size: 18px;
+              font-family: Montserrat, sans-serif;
+
+            }
+          }
+        }
+      }
+
+      h2 {
+        @include h2-mixin;
+      }
+
+      .atm-list {
+        .atm-list-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          border-bottom: 2px solid rgba(48, 151, 153, 0.3);
+          font-family: Montserrat, sans-serif;
+          font-size: 18px;
+
+          &:last-child{
+            border-bottom: none;
+          }
+
+          .atm-list-row-address {
+            width: 60%;
+            font-weight: 500;
+
+            &.head {
+              font-size: 18px;
+              font-weight: 500;
+              color: #535e6e;
+            }
+          }
+
+          .atm-list-row-graphic {
+            width: 20%;
+            text-align: center;
+
+            &.head {
+              font-size: 18px;
+              font-weight: 500;
+              color: #535e6e;
+            }
+          }
+
+          .atm-list-row-cash {
+            width: 20%;
+            text-align: center;
+
+            &.head {
+              font-size: 18px;
+              font-weight: 500;
+              color: #535e6e;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1199px) {
+  .atms {
+    .atms-map {
+      left: -30px;
+      top: 400px;
+    }
+
+    .container {
+      .atms-wrap {
+        width: 100%;
+        padding: 30px;
+
+        .atms-info{
+          margin-top: 800px;
+
+          .atms-hints {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            .atms-hint {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              margin-bottom: 40px;
+
+              img {
+                width: 25px;
+                height: 30px;
+              }
+
+              span {
+                font-size: 18px;
+                font-family: Montserrat, sans-serif;
+
+              }
+            }
+          }
+        }
+
+        .atm-list {
+          .atm-list-row {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 18px;
+
+            .atm-list-row-address {
+              width: 50%;
+              font-weight: 500;
+
+              &.head {
+                font-size: 18px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+            .atm-list-row-graphic {
+              width: 24%;
+              text-align: center;
+
+              &.head {
+                font-size: 18px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+            .atm-list-row-cash {
+              width: 24%;
+              text-align: center;
+
+              &.head {
+                font-size: 18px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .atms {
+    .atms-map {
+      left: -30px;
+      top: 530px;
+    }
+
+    .container {
+      .atms-wrap {
+        width: 100%;
+        padding: 30px;
+
+        .atms-info{
+          margin-top: 800px;
+
+          .atms-hints {
+            gap: 20px;
+          }
+        }
+
+        .atm-list {
+          .atm-list-row {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 16px;
+
+            .atm-list-row-address {
+              width: 50%;
+              font-weight: 500;
+
+              &.head {
+                font-size: 16px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+            .atm-list-row-graphic {
+              width: 24%;
+              text-align: center;
+              font-size: 14px;
+
+              &.head {
+                font-size: 11px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+            .atm-list-row-cash {
+              width: 24%;
+              text-align: center;
+              font-size: 14px;
+
+              &.head {
+                font-size: 11px;
+                font-weight: 500;
+                color: #535e6e;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .atms {
+    .atms-map {
+      left: 0;
+      top: 500px;
+      position: absolute;
+      width: 100vw;
+      z-index: 100;
+    }
+
+    .container {
+      .atms-wrap {
+        padding: 20px;
+        border-radius: 10px;
+
+        .atms-info{
+          margin-top: 800px;
+
+          .atms-hints {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            .atms-hint {
+              gap: 10px;
+              margin-bottom: 20px;
+
+              span {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+        .atm-list {
+          .atm-list-row {
+            font-size: 14px;
+
+            .atm-list-row-address {
+              width: 50%;
+
+              &.head {
+                font-size: 14px;
+              }
+            }
+
+            .atm-list-row-graphic {
+              width: 24%;
+              text-align: center;
+
+              &.head {
+                font-size: 10px;
+                text-align: center;
+              }
+            }
+
+            .atm-list-row-cash {
+              width: 20%;
+              text-align: center;
+
+              &.head {
+                text-align: center;
+                font-size: 10px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

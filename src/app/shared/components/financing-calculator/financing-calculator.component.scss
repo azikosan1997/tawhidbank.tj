@@ -1,0 +1,356 @@
+.financing-calculator {
+  padding-bottom: 80px;
+
+  .container {
+    .financing-calculator-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 15px;
+      border: 2px solid rgba(48, 151, 153, 0.2);
+      padding: 35px;
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+
+      .financing-calculator-wrap-toggles {
+        width: 48%;
+
+        h3 {
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 50px;
+        }
+
+        .tab-panel-button-group {
+          margin-bottom: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+
+            li {
+              cursor: pointer;
+
+              .tab-link {
+                padding: 10px 30px;
+                background-color: transparent;
+                border: 2px solid #309799;
+                border-radius: 10px;
+                font-size: 18px;
+                font-family: "Montserrat", sans-serif;
+                color: rgb(48, 151, 153);
+                transition: all 120ms ease-in-out;
+
+                &:hover {
+                  background-color: #309799;
+                  color: white;
+                }
+
+                &.active {
+                  background-color: #309799;
+                  color: white;
+                }
+              }
+            }
+          }
+
+          a.tab-link {
+            text-decoration: none;
+            padding: 16px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            transition: all 120ms ease-in-out;
+
+            &:hover {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+
+        .financing-calculator-wrap-toggles-row {
+          margin-bottom: 40px;
+
+          h4 {
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+          }
+        }
+      }
+    }
+
+    .financing-calculator-wrap-summary {
+      padding-top: 15px;
+      width: 50%;
+
+      .financing-calculator-wrap-summary-title {
+        border-radius: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background: linear-gradient(90deg, rgb(48, 153, 151) 0%, rgb(56, 173, 172) 57%, rgb(64, 192, 193) 100%);
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        margin-bottom: 40px;
+      }
+
+      .financing-calculator-wrap-summary-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+
+        &:nth-child(3) {
+          display: inline-block;
+          border-bottom: none;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .financing-calculator-wrap-summary-row-item {
+          font-size: 14px;
+          font-family: Montserrat, sans-serif;
+          margin-bottom: 20px;
+
+          .important {
+            font-size: 30px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            font-weight: bold;
+            line-height: 1.2;
+          }
+        }
+
+        .documents {
+          font-family: Montserrat, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: #444444;
+          margin-bottom: 20px;
+        }
+
+        .wrapper {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          .financing-calculator-wrap-summary-row-ic {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+
+        .button {
+          width: 100%;
+          display: grid;
+          padding: 20px 0;
+          place-content: center;
+          border: none;
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+          border: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .financing-calculator {
+
+    .container {
+      .financing-calculator-wrap {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .financing-calculator-wrap-toggles {
+          width: 100%;
+
+          h3 {
+            font-size: 1.6em;
+          }
+
+          .financing-calculator-wrap-toggles-row {
+            h4 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .financing-calculator-wrap-summary {
+        width: 100%;
+
+        .financing-calculator-wrap-summary-title {
+          font-size: 22px;
+        }
+
+        .financing-calculator-wrap-summary-row {
+          .important {
+            font-size: 24px;
+          }
+        }
+
+        .documents {
+          font-size: 14px;
+        }
+
+        a.button {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .financing-calculator {
+
+    .container {
+      .financing-calculator-wrap {
+        .financing-calculator-wrap-toggles {
+          width: 100%;
+
+          h3 {
+            font-size: 1.6em;
+          }
+
+          .financing-calculator-wrap-toggles-row {
+            h4 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .financing-calculator-wrap-summary {
+        width: 100%;
+
+        .financing-calculator-wrap-summary-title {
+          font-size: 22px;
+        }
+
+        .financing-calculator-wrap-summary-row {
+
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          .important {
+            font-size: 24px;
+          }
+        }
+
+        .documents {
+          font-size: 14px;
+        }
+
+        .wrapper{
+          flex-direction: column;
+        }
+
+        a.button {
+          font-size: 18px !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 499px) {
+  .financing-calculator {
+
+    .container {
+      .financing-calculator-wrap {
+        .financing-calculator-wrap-toggles {
+          width: 100%;
+
+          h3 {
+            font-size: 1.1em !important;
+            margin-bottom: 30px;
+          }
+          .tab-panel-button-group {
+            margin-bottom: 30px;
+            ul {
+              li {
+                .tab-link {
+                  padding: 5px 15px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+
+          .financing-calculator-wrap-toggles-row {
+            h4 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .financing-calculator-wrap-summary {
+        width: 100%;
+
+        .financing-calculator-wrap-summary-title {
+          font-size: 22px;
+        }
+
+        .financing-calculator-wrap-summary-row {
+
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          .important {
+            font-size: 24px;
+          }
+        }
+
+        .documents {
+          font-size: 14px;
+        }
+
+        .wrapper{
+          flex-direction: column;
+        }
+
+        a.button {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+}
+

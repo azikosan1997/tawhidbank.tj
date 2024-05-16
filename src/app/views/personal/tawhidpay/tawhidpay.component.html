@@ -1,0 +1,116 @@
+<app-personal-header></app-personal-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="app-features">
+  <div class="container">
+    <div class="app-features-item">
+      <img src="./assets/images/pages/tawhid%20pay/af3.png" alt="First place icon">
+      <span>{{'tawhidpayPageTextFive' | translate}}</span>
+    </div>
+    <div class="app-features-item">
+      <img src="./assets/images/pages/tawhid%20pay/af2.png" alt="Hand & People icon">
+      <span>{{'tawhidpayPageTextSix' | translate}}</span>
+    </div>
+    <div class="app-features-item">
+      <img src="./assets/images/pages/tawhid%20pay/af1.png" alt="People icon">
+      <span>{{'tawhidpayPageTextSeven' | translate}}</span>
+    </div>
+  </div>
+</section>
+<section class="shops">
+  <div class="container">
+    <div class="shops-wrap">
+      <div class="shops-info">
+        <div class="shops-info-title">{{'tawhidpayPageTextEight' | translate}}</div>
+        <div class="shops-info-subtitle">{{'tawhidpayPageTextNine' | translate}}</div>
+        <div class="shops-info-description">{{'tawhidpayPageTextTen' | translate}} <br>
+          {{'tawhidpayPageTextEleven' | translate}}
+        </div>
+        <div class="shops-info-actions">
+          <div class="app-stores">
+            <a href="https://apps.apple.com/ru/app/tawhid-pay/id1546481237" target="_blank">
+              <img src="./assets/images/pages/tawhid%20pay/apps.png" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&hl=ru" target="_blank">
+              <img src="./assets/images/pages/tawhid%20pay/ggp.png" alt="Google Play">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="shops-images">
+        <img src="./assets/images/pages/tawhid%20pay/double-mobiles.png" alt="Mobiles">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="opportunities">
+  <div class="container">
+    <h2>{{'tawhidpayPageTextTwelve' | translate}}</h2>
+    <div class="opportunities-wrap">
+      <div class="opportunities-item">
+        <div class="opportunities-item-title">{{'tawhidpayPageTextThirteen' | translate}}</div>
+        <div class="opportunities-item-description">{{'tawhidpayPageTextFourteen' | translate}}</div>
+        <img src="./assets/images/pages/tawhid%20pay/em1.png" alt="Mobile & App">
+      </div>
+      <div class="opportunities-item">
+        <div class="opportunities-item-title">{{'tawhidpayPageTextFifteen' | translate}}</div>
+        <div class="opportunities-item-description">{{'tawhidpayPageTextSixteen' | translate}}
+        </div>
+        <img src="./assets/images/pages/tawhid%20pay/em2.png" alt="Mobile & App">
+      </div>
+      <div class="opportunities-item">
+        <div class="opportunities-item-title">{{'tawhidpayPageTextSeventeen' | translate}}</div>
+        <div class="opportunities-item-description">{{'tawhidpayPageTextEighteen' | translate}}
+        </div>
+        <img src="./assets/images/pages/tawhid%20pay/em3.png" alt="Mobile & App">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="download">
+  <div class="container">
+    <h2>{{'tawhidpayPageTextNineteen' | translate}}</h2>
+    <div class="download-wrap">
+      <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&hl=ru">
+        <img src="./assets/images/pages/tawhid%20pay/gp.png" alt="Google Play">
+      </a>
+      <a href="https://apps.apple.com/ru/app/tawhid-pay/id1546481237">
+        <img src="./assets/images/pages/tawhid%20pay/ap.png" alt="App Store">
+      </a>
+    </div>
+  </div>
+</section>
+<section class="install">
+  <div class="container">
+    <h2>{{'tawhidpayPageTextTwenty' | translate}}</h2>
+    <div class="install-wrap">
+      <div class="install-wrap-info">
+        <div class="install-wrap-title">{{'tawhidpayPageTextTwentyOne' | translate}}</div>
+        <span>{{'tawhidpayPageTextTwentyTwo' | translate}} </span>
+        <span>{{'tawhidpayPageTextTwentyThree' | translate}}</span>
+        <span>{{'tawhidpayPageTextTwentyFour' | translate}}</span>
+        <span>{{'tawhidpayPageTextTwentyFive' | translate}}<br> {{'tawhidpayPageTextTwentySix' | translate}}</span>
+      </div>
+      <div class="install-wrap-image">
+        <img src="./assets/images/pages/tawhid%20pay/mobile-stage.png" alt="Mobile on Stage">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="faq">
+  <div class="container">
+    <h2>{{'tawhidpayPageTextTwentySeven' | translate}}</h2>
+    <div class="faq-wrap">
+      <mat-accordion *ngFor="let question of tawhidpayQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

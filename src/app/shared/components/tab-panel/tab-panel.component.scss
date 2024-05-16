@@ -1,0 +1,302 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.tab-panel {
+  padding-bottom: 80px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+      margin-bottom: 60px;
+    }
+
+    .tab-panel-button-group {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+
+        li {
+          cursor: pointer;
+
+          .tab-link {
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            transition: all 120ms ease-in-out;
+
+            &:hover {
+              background-color: #309799;
+              color: white;
+            }
+
+            &.active {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+      }
+
+      button.tab-link {
+        text-decoration: none;
+        padding: 16px 30px;
+        background-color: transparent;
+        border: 2px solid #309799;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(48, 151, 153);
+        transition: all 120ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #309799;
+          color: white;
+        }
+      }
+    }
+
+    .tab-info-wrap {
+      width: 100%;
+      box-sizing: border-box;
+
+      .active-tab {
+        width: 100%;
+
+        .active-tab-title {
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        .active-tab-row {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(48, 151, 153, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+
+          .active-tab-row-name {
+            font-weight: 600;
+            color: #616161;
+          }
+
+          &.documents {
+            justify-content: flex-start;
+            gap: 20px;
+          }
+        }
+
+
+        &.tariffs {
+          box-sizing: border-box;
+          padding: 40px;
+          border: 3px solid rgba(48, 151, 153, 0.2);
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .tab-panel {
+    padding-bottom: 60px;
+
+    .container {
+      h2 {
+        @include h2-mixin;
+        margin-bottom: 60px;
+      }
+
+      .tab-info-wrap {
+        .active-tab {
+          width: 100%;
+
+          .active-tab-title {
+            font-size: 18px;
+          }
+
+          .active-tab-row {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 16px;
+            gap: 20px;
+
+            .active-tab-row-value {
+              width: 50%;
+              text-align: right;
+
+              &.limits {
+                text-align: left;
+                width: 100%;
+              }
+
+              &.docs {
+                text-align: left;
+                width: 100%;
+              }
+            }
+          }
+
+          &.tariffs {
+            padding: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .tab-panel {
+    padding-bottom: 60px;
+
+    .container {
+      h2 {
+        @include h2-mixin;
+        margin-bottom: 60px;
+      }
+
+      .tab-panel-button-group {
+        margin-bottom: 30px;
+
+        ul {
+          li {
+            .tab-link {
+              padding: 10px 15px;
+              font-size: 16px;
+            }
+          }
+        }
+
+        button.tab-link {
+          padding: 10px 15px;
+          font-size: 16px;
+        }
+      }
+
+      .tab-info-wrap {
+        .active-tab {
+          width: 100%;
+
+          .active-tab-title {
+            font-size: 18px;
+          }
+
+          .active-tab-row {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 16px;
+            gap: 20px;
+
+            .active-tab-row-value {
+              width: 50%;
+              text-align: right;
+            }
+          }
+
+          &.tariffs {
+            padding: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 499px) {
+  .tab-panel {
+    padding-bottom: 60px;
+
+    .container {
+      h2 {
+        @include h2-mixin;
+        margin-bottom: 25px;
+      }
+
+      .tab-panel-button-group {
+        margin-bottom: 30px;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        ul {
+          li {
+            margin-top: 10px;
+
+            .tab-link {
+              padding: 5px 10px;
+              font-size: 14px;
+            }
+          }
+        }
+
+        button.tab-link {
+          margin-top: 10px;
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+      }
+
+      .tab-info-wrap {
+        .active-tab {
+          width: 100%;
+
+          .active-tab-title {
+            font-size: 18px;
+          }
+
+          .active-tab-row {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 16px;
+            gap: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &.limits {
+              flex-direction: row;
+              font-size: 14px;
+              align-items: center;
+            }
+
+            &.documents {
+              flex-direction: row;
+              font-size: 14px;
+              align-items: center;
+            }
+
+            .active-tab-row-value {
+              width: 100%;
+              text-align: left;
+            }
+          }
+
+          &.tariffs {
+            padding: 25px;
+          }
+        }
+      }
+    }
+  }
+}

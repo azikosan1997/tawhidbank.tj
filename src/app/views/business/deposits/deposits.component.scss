@@ -1,0 +1,352 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.features {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .features-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      .feature-card {
+        background-color: rgba(48, 151, 153, 0.2);
+        padding: 30px;
+        border-radius: 10px;
+
+        h3 {
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          min-height: 56px;
+        }
+
+        .feature-card-subtitle {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+          min-height: 77px;
+          margin-bottom: 30px;
+        }
+
+        .feature-card-image {
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tariffs {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    nav.all-branches-button-group {
+      margin-top: 50px;
+      margin-bottom: 60px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+
+        li {
+          cursor: pointer;
+
+          a {
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 15px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+
+            &.active {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .tariffs-tab {
+      width: 100%;
+
+      .tariffs-tab-row {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(48, 151, 153, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .tariffs-tab-row-title {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+        }
+
+        .tariffs-tab-row-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: 400;
+          text-align: center;
+
+          &.profit {
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+          }
+
+          &.space {
+            word-spacing: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.steps {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+      margin-bottom: 50px;
+    }
+
+    .steps-wrap {
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .step {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .step-number {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background-color: #309799;
+          display: grid;
+          place-content: center;
+          font-size: 50px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+          margin-bottom: 40px;
+        }
+
+        .step-title {
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          line-height: 1.2;
+          margin-bottom: 15px;
+        }
+
+        .step-subtitle {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .features {
+    padding-bottom: 60px;
+
+    .container {
+
+      .features-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+
+
+        .feature-card {
+          width: 45%;
+          box-sizing: border-box;
+
+          h3 {
+            font-size: 18px;
+          }
+
+          .feature-card-subtitle {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            min-height: 77px;
+            margin-bottom: 30px;
+          }
+
+          .feature-card-image {
+            width: 100%;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .features {
+    padding-bottom: 60px;
+
+    .container {
+      .features-wrap {
+        .feature-card {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .tariffs {
+    padding-bottom: 60px;
+
+    .container {
+
+      nav.all-branches-button-group {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        ul {
+          li {
+            cursor: pointer;
+            &:last-child{
+              margin-top: 10px;
+            }
+
+            a {
+              padding: 8px 15px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .tariffs-tab {
+        width: 100%;
+
+        .tariffs-tab-row {
+          gap: 30px;
+
+          .tariffs-tab-row-title {
+            text-align: left;
+          }
+
+          .tariffs-tab-row-description {
+            font-size: 16px;
+            text-align: right;
+
+            &.profit {
+              width: 70%;
+            }
+
+            &.space {
+              word-spacing: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px){
+  .tariffs {
+    .container {
+
+      nav.all-branches-button-group {
+        ul {
+          li {
+            cursor: pointer;
+            &:last-child{
+              margin-top: 5px;
+            }
+
+            a {
+              padding: 8px 15px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .tariffs-tab {
+        width: 100%;
+
+        &.second-table{
+          overflow-x: scroll;
+        }
+
+        .tariffs-tab-row {
+          gap: 30px;
+
+          .tariffs-tab-row-title {
+            text-align: left;
+            font-size: 16px;
+          }
+
+          .tariffs-tab-row-description {
+            font-size: 14px;
+            text-align: right;
+
+            &.profit {
+              width: 70%;
+            }
+
+            &.space {
+              word-spacing: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

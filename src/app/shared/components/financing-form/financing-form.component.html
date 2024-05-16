@@ -1,0 +1,217 @@
+<section class="financing-form">
+  <div class="container">
+    <div class="financing-request-wrap">
+      <h3 class="financing-request-title">{{'personalFinancingFormTextOne' | translate}}</h3>
+      <div class="financing-form-step" *ngIf="!confirmedFirstStep">
+        <div class="financing-request-steps">
+          <div class="financing-request-step-one">{{'personalFinancingFormTextTwo' | translate}}</div>
+          <div class="financing-request-step-one-info">{{'personalFinancingFormTextThree' | translate}}</div>
+        </div>
+        <form [formGroup]="firstStep">
+          <div class="financing-fields-for-tin">
+            <mat-form-field>
+              <mat-label>{{'personalFinancingFormTextFour' | translate}}</mat-label>
+              <input matInput formControlName="tin"  [ngClass]="{'error': firstStep.get('tin')?.touched &&
+                                                                      (firstStep.get('tin')?.hasError('required') ||
+                                                                      firstStep.get('tin')?.hasError('pattern'))}">
+              <mat-hint class="error-message" *ngIf="firstStep.get('tin')?.touched && firstStep.get('tin')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextOne' | translate}}</mat-hint>
+              <mat-hint class="error-message" *ngIf="firstStep.get('tin')?.touched && firstStep.get('tin')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextTwo' | translate}}</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>{{'personalFinancingFormTextFive' | translate}}</mat-label>
+              <input matInput formControlName="mobileNumber"  [ngClass]="{'error': firstStep.get('mobileNumber')?.touched &&
+                                                                      (firstStep.get('mobileNumber')?.hasError('required') ||
+                                                                      firstStep.get('mobileNumber')?.hasError('pattern'))}">
+              <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextThree' | translate}}</mat-hint>
+              <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextFour' | translate}}</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="financing-action">
+            <button class="button" (click)="solvencyCheck()">{{'personalFinancingFormTextSix' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="financing-form-step" *ngIf="confirmedFirstStep">
+        <div class="financing-request-steps">
+          <div class="financing-request-step-one">{{'personalFinancingFormTextSeven' | translate}}</div>
+          <div class="financing-request-step-one-info">{{'personalFinancingFormTextEight' | translate}}</div>
+        </div>
+        <div class="financing-request-condition">
+          <h3>{{'personalFinancingFormTextSixteen' | translate}}</h3>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+              <input class="slider" type="range" min="1000" max="5000000" value="0" step="100" [(ngModel)]="loanAmount">
+            </div>
+          </div>
+        </div>
+        <div class="financing-request-period">
+          <h3>{{'personalFinancingFormTextSeventeen' | translate}}</h3>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+              <input class="slider" type="range" value="loanPeriod" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
+            </div>
+          </div>
+          <div class="financing-request-period-buttons">
+            <div class="financing-period-button-wrap">
+              <div class="financing-period-button" *ngFor="let period of periodButton; let i = index"
+                   (click)="buttonClick(i)"
+                   [ngClass]="buttonIndex === i ? 'active' : ''">{{ period }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="financing-request-bank-obligation">
+          <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M3.37752 5.08241C3 5.62028 3 7.21907 3 10.4167V11.9914C3 17.6294 7.23896 20.3655 9.89856 21.5273C10.62 21.8424 10.9807 22 12 22C13.0193 22 13.38 21.8424 14.1014 21.5273C16.761 20.3655 21 17.6294 21 11.9914V10.4167C21 7.21907 21 5.62028 20.6225 5.08241C20.245 4.54454 18.7417 4.02996 15.7351 3.00079L15.1623 2.80472C13.595 2.26824 12.8114 2 12 2C11.1886 2 10.405 2.26824 8.83772 2.80472L8.26491 3.00079C5.25832 4.02996 3.75503 4.54454 3.37752 5.08241ZM15.0595 10.4995C15.3353 10.1905 15.3085 9.71642 14.9995 9.44055C14.6905 9.16467 14.2164 9.19151 13.9405 9.50049L10.9286 12.8739L10.0595 11.9005C9.78358 11.5915 9.30947 11.5647 9.00049 11.8405C8.69151 12.1164 8.66467 12.5905 8.94055 12.8995L10.3691 14.4995C10.5114 14.6589 10.7149 14.75 10.9286 14.75C11.1422 14.75 11.3457 14.6589 11.488 14.4995L15.0595 10.4995Z"
+                    fill="#309799"></path>
+            </g>
+          </svg>
+          <span>
+          {{'personalFinancingFormTextNineteen' | translate}} <br>
+          {{'personalFinancingFormTextTwenty' | translate}}
+        </span>
+        </div>
+        <div class="financing-request-form">
+          <h3>{{'personalFinancingFormTextTwentyOne' | translate}}</h3>
+          <form [formGroup]="secondStep">
+            <div class="financing-request-condition">
+              <h3>{{'personalFinancingFormTextNine' | translate}}</h3>
+              <mat-form-field>
+                <mat-label>{{'personalFinancingFormTextTen' | translate}}</mat-label>
+                <mat-select formControlName="product">
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{translateText(food.viewValue)}}
+                  </mat-option>
+                  <mat-hint style="color: #f44336" *ngIf="secondStep.get('product')?.touched && secondStep.get('product')?.errors?.['required']">
+                    {{'personalFinancingFormTextNine' | translate}}
+                  </mat-hint>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="form-row">
+              <mat-form-field class="example-form-field">
+                <mat-label>{{'personalFinancingFormTextTwentyTwo' | translate}}</mat-label>
+                <input matInput type="text" formControlName="surname"  [ngClass]="{'error': secondStep.get('surname')?.touched &&
+                                                                      (secondStep.get('surname')?.hasError('required') ||
+                                                                      secondStep.get('surname')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('surname')?.touched && secondStep.get('surname')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextFive' | translate}}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="form-row">
+              <mat-form-field class="example-form-field">
+                <mat-label>{{'personalFinancingFormTextTwentyThree' | translate}}</mat-label>
+                <input matInput type="text" formControlName="name"  [ngClass]="{'error': secondStep.get('name')?.touched &&
+                                                                      (secondStep.get('name')?.hasError('required') ||
+                                                                      secondStep.get('name')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('name')?.touched && secondStep.get('name')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextSix' | translate}}</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="example-form-field">
+                <mat-label>{{'personalFinancingFormTextTwentyFour' | translate}}</mat-label>
+                <input matInput type="text" formControlName="fathersName"  [ngClass]="{'error': secondStep.get('fathersName')?.touched &&
+                                                                      (secondStep.get('fathersName')?.hasError('required') ||
+                                                                      secondStep.get('fathersName')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('fathersName')?.touched && secondStep.get('fathersName')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextSeven' | translate}}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="form-row">
+              <mat-form-field class="example-form-field">
+                <mat-label>{{'personalFinancingFormTextTwentyFive' | translate}}</mat-label>
+                <input matInput type="tell" formControlName="mobileNumber"  [ngClass]="{'error': secondStep.get('mobileNumber')?.touched &&
+                                                                      (secondStep.get('mobileNumber')?.hasError('required') ||
+                                                                      secondStep.get('mobileNumber')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('mobileNumber')?.touched && secondStep.get('mobileNumber')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextEight' | translate}}</mat-hint>
+                <mat-hint class="error-message" *ngIf="secondStep.get('mobileNumber')?.touched && secondStep.get('mobileNumber')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">{{'personalFinancingFormErrorTextNine' | translate}}</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="example-form-field">
+                <mat-label>{{'personalFinancingFormTextTwentySix' | translate}}</mat-label>
+                <input matInput type="text" formControlName="email"  [ngClass]="{'error': secondStep.get('email')?.touched &&
+                                                                      (secondStep.get('email')?.hasError('required') ||
+                                                                      secondStep.get('email')?.hasError('pattern'))}">
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('email')?.touched && secondStep.get('email')?.errors?.['required']">
+                  {{'personalFinancingFormTextTwentySeven' | translate}}
+                </mat-hint>
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('email')?.touched && secondStep.get('email')?.errors?.['pattern']">
+                  {{'personalFinancingFormTextTwentyEight' | translate}}
+                </mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="form-row">
+              <mat-form-field>
+                <mat-label>{{'personalFinancingFormTextTwentyNine' | translate}}</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthDate"  [ngClass]="{'error': secondStep.get('birthDate')?.touched &&
+                                                                      (secondStep.get('birthDate')?.hasError('required') ||
+                                                                      secondStep.get('birthDate')?.hasError('pattern'))}">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('birthDate')?.touched && secondStep.get('birthDate')?.errors?.['required']">
+                  {{'personalFinancingFormTextThirty' | translate}}
+                </mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="financing-request-agreement">
+              <mat-checkbox class="example-margin" formControlName="birthDate" >{{'personalFinancingFormTextThirtyOne' | translate}}{{'personalFinancingFormTextThirtyTwo' | translate}}{{'personalFinancingFormTextThirtyThree' | translate}}
+                {{'personalFinancingFormTextThirtyFour' | translate}}{{'personalFinancingFormTextThirtyFive' | translate}}
+                {{'personalFinancingFormTextThirtySix' | translate}}{{'personalFinancingFormTextThirtySeven' | translate}}
+              </mat-checkbox>
+            </div>
+          </form>
+        </div>
+        <div class="financing-action">
+          <button class="button" (click)="sendData()">{{'personalFinancingFormTextThirtyEight' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #totpCheck>
+  <div class="totp-check-wrap">
+    <div class="popup-close" (click)="closeCheckTiPopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <h4>{{'personalFinancingFormTextThirtyNine' | translate}}</h4>
+    <form [formGroup]="totpStep">
+      <mat-form-field>
+        <mat-label>{{'personalFinancingFormTextForty' | translate}}</mat-label>
+        <input matInput formControlName="totp"  [ngClass]="{'error': totpStep.get('totp')?.touched &&
+                                                                      (totpStep.get('totp')?.hasError('required') ||
+                                                                      totpStep.get('totp')?.hasError('pattern'))}">
+        <mat-hint class="error-message" *ngIf="totpStep.get('totp')?.touched && totpStep.get('totp')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните поле кода</mat-hint>
+        <mat-hint class="error-message" *ngIf="totpStep.get('totp')?.touched && totpStep.get('totp')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">Код должен содержать только 6 цифр</mat-hint>
+      </mat-form-field>
+    </form>
+    <button class="button" (click)="checkTin()">{{'personalFinancingFormTextFortyOne' | translate}}</button>
+  </div>
+</ng-template>
+
+<ng-template #thanks>
+  <div class="totp-check-wrap">
+    <div class="popup-close" (click)="closeCheckTiPopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <h4>{{'personalFinancingFormTextFortyTwo' | translate}}</h4>
+  </div>
+</ng-template>

@@ -1,0 +1,58 @@
+<div class="header-bottom-content">
+  <div class="container">
+    <div class="header-logo">
+      <a routerLink="/business">
+        <img [src]="'assets/images/logo-' + logo + '.png'" alt="Logotype">
+      </a>
+    </div>
+    <nav class="header-bottom-menu">
+      <ul>
+        <li>
+          <a routerLink="/business/accounting" routerLinkActive="active-link">{{'businessAccountsPageTextOne' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/business/financing" routerLinkActive="active-link">{{'bottomBusinessHeaderMenuTwo' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/business/deposits" routerLinkActive="active-link">{{'bottomBusinessHeaderMenuThree' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/business/merchant-acquiring" routerLinkActive="active-link">{{'bottomBusinessHeaderMenuFour' | translate}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-bottom-action">
+      <a class="button" href="https://ib.tawhid.tj/" target="_blank">
+        {{'bottomBusinessHeaderMenuFive' | translate}}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="29px" height="19px">
+          <image  x="0px" y="0px" width="29px" height="19px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAATCAQAAADGkM70AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfnCRQKCSoSENRqAAABHUlEQVQ4y5WTP04CURjEf4OrkJhdE6ytaYyFnYfgBmpvxwHsvQJnsTfewt6oIRJdFoQ3FuyuILsLzKve9958M/P+aAHQ0kADjtkFmYd6YA4EAqHv/XATCEQAOgcCQ962ah5wxyk9wZJKB5j4XqNtTKNrTpkDtPIKZArbiAF3SYpZq6y3HRs3K6IZ6Sa148SYemkhlFGGisqVmb6XvY0qFAtvSjapE30uexfmKJusBOnopNaw862rIzeL0JSv2mMqtlYmrcn6o5QGGGFoK95UTfUhmsnGh//vVcCRE9MMoUBWGhbAGIj1yGTNX1Vm0S1jGuOe3/f4N6NwFTARt8QseKJPc9Q/POuCS1J5TLwjZR3TiBfOKg6T/DlR6+X1F7hUxSFHuWKTAAAAAElFTkSuQmCC" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="header-bottom-content-mobile">
+  <div class="container">
+    <nav class="main-mobile-menu">
+      <ul>
+        <li *ngFor="let menuItem of mobileMenuItems; let i = index">
+          <button class="main-mobile-menu-item" (click)="setMenu(i)" >
+              <span class="main-mobile-menu-item-icon">
+                <mat-icon matListItemIcon style="color: #444">{{menuItem.icon}}</mat-icon>
+              </span>
+            <span class="main-mobile-menu-item-text">{{ translateText(menuItem.text )}}</span>
+          </button>
+        </li>
+        <div class="main-mobile-menu-central-image" (click)="navigateMain()">
+          <img src="./assets/images/mobile-menu-item.png" alt="Logo">
+        </div>
+      </ul>
+    </nav>
+  </div>
+</div>
+

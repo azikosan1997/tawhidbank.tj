@@ -1,0 +1,158 @@
+.branch-info-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  .headquarters-address {
+    width: 49%;
+    .headquarters-row {
+      margin-bottom: 60px;
+
+      .headquarters-row-heading {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: rgb(115 120 125);
+        margin-bottom: 10px;
+      }
+
+      .headquarters-row-body {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .headquarters-contacts {
+    width: 49%;
+
+    .headquarters-row {
+      .headquarters-row-heading {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: rgb(115 120 125);
+        margin-bottom: 10px;
+      }
+
+      .headquarters-row-body {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: justify;
+
+        &.number {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+
+      .headquarters-row-subtitle {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(68, 68, 68);
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .branch-info-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    .headquarters-address {
+      width: 100%;
+      .headquarters-row {
+        margin-bottom: 40px;
+
+        .headquarters-row-heading {
+          font-size: 16px;
+          text-transform: uppercase;
+          color: rgb(115 120 125);
+          margin-bottom: 10px;
+        }
+
+        .headquarters-row-body {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .headquarters-contacts {
+      width: 100%;
+
+      .headquarters-row {
+        .headquarters-row-heading {
+          font-size: 16px;
+          text-transform: uppercase;
+          color: rgb(115 120 125);
+          margin-bottom: 10px;
+        }
+
+        .headquarters-row-body {
+          font-size: 16px;
+          margin-bottom: 20px;
+
+          &.number {
+            font-size: 20px;
+            font-weight: 600;
+          }
+        }
+
+        .headquarters-row-subtitle {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px){
+  .branch-info-container{
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    .headquarters-address {
+      .headquarters-row {
+        margin-bottom: 30px;
+
+        .headquarters-row-heading {
+          font-size: 16px;
+        }
+
+        .headquarters-row-body {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .headquarters-contacts {
+      width: 100%;
+
+      .headquarters-row {
+        .headquarters-row-heading {
+        }
+
+        .headquarters-row-body {
+          font-size: 14px;
+          margin-bottom: 20px;
+
+          &.number {
+            font-size: 18px;
+          }
+        }
+        .headquarters-row-subtitle {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+
