@@ -56,16 +56,16 @@ export class AboutHeaderComponent {
     this.mobileMenuActive = index;
     switch(index) {
       case 0:
-        this.router.navigate(['/about/location']);
+        this.router.navigate(['/o-banke/kontakty']);
         break;
       case 1:
-        this.router.navigate(['/about/documents']);
+        this.router.navigate(['/o-banke/documents']);
         break;
       case 2:
-        this.router.navigate(['/about']);
+        this.router.navigate(['/o-banke']);
         break;
       case 3:
-        this.router.navigate(['/about/job']);
+        this.router.navigate(['/o-banke/job']);
         break;
       case 4:
         this.mobileMenuActive = index;
@@ -82,6 +82,6 @@ export class AboutHeaderComponent {
   }
 
   navigateMain(): void {
-    this.router.navigate(['/about']);
+    this.router.navigate(['/o-banke']);
   }
 }

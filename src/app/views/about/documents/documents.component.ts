@@ -113,6 +113,10 @@ export class DocumentsComponent {
 
   auditDocs = [
     {
+      title: 'aboutDocumentsTextFiftyFiftySeven',
+      path: './assets/documents/audit/Хисоботи аудити мустакил  2023.PDF'
+    },
+    {
       title: 'aboutDocumentsTextFiftyFifty',
       path: './assets/documents/audit/audit-2023.PDF'
     },
@@ -145,6 +149,7 @@ export class DocumentsComponent {
       path: './assets/documents/audit/Отчет независимых аудиторов за 2016г.pdf'
     },
   ]
+
   tawhidpayDocs = [
     {
       title: 'aboutDocumentsTextFiftySeven',
@@ -155,6 +160,7 @@ export class DocumentsComponent {
       path: './assets/documents/audit/ПУБЛИЧНАЯ ОФЕРТА Tawhid_Pay.pdf'
     },
   ]
+
   depositDocs = [
     {
       title: 'aboutDocumentsTextFiftyNine',

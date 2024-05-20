@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: '', component: AboutBankComponent},
   {path: 'documents', component: DocumentsComponent},
   {path: 'job', component: JobComponent},
-  {path: 'location', component: BranchesComponent},
+  {path: 'kontakty', component: BranchesComponent},
   {path: 'atms', component: AtmsComponent},
   {path: 'terminals', component: TerminalsComponent},
   {path: 'graphic', component: GraphicComponent},

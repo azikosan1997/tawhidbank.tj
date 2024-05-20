@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: 'personal', loadChildren: () => import('./views/financing/financing.module').then(m => m.FinancingModule) },
       { path: 'personal', loadChildren: () => import('./views/cards/cards.module').then(m => m.CardsModule) },
       { path: 'business', loadChildren: () => import('./views/business/business.module').then(m => m.BusinessModule) },
-      { path: 'about', loadChildren: () => import('./views/about/about.module').then(m => m.AboutModule) }
+      { path: 'o-banke', loadChildren: () => import('./views/about/about.module').then(m => m.AboutModule) }
     ]
   }
 ];

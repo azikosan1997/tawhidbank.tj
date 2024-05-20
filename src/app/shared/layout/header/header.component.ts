@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit{
       this.personal = false;
       this.business = true;
       this.about = false;
-    }else if (this.path === '/about') {
+    }else if (this.path === '/o-banke') {
       this.personal = false;
       this.business = false;
       this.about = true;
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit{
     },
     {
       title: 'topHeaderMenuAbout',
-      route: '/about'
+      route: '/o-banke'
     },
   ];
 
