@@ -8,8 +8,41 @@
 
   .container {
     h1 {
-      @include h2-mixin;
+      @include h1-mixin;
       color: #1e2332;
+    }
+
+    .first-announcement{
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      margin-bottom: 40px;
+
+      h2{
+        @include h2-mixin;
+      }
+      .date{
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      ol{
+        li{
+          margin-bottom: 5px;
+          font-weight: 600;
+        }
+      }
+
+      .new-text-sub{
+        display: block;
+        max-width: 160px;
+      }
+    }
+
+    h2{
+      @include h2-mixin;
+      text-align: left;
     }
 
     .announcement-main-picture {
@@ -70,6 +103,20 @@
 
   .announcement {
     .container {
+
+      .first-announcement{
+        font-size: 14px;
+        text-align: justify;
+
+        h2{
+          @include h2-mixin;
+          text-align: left;
+        }
+        .date{
+          font-size: 14px;
+        }
+      }
+
       .announcement-main-picture {
         img {
           width: 100%;
@@ -81,5 +128,7 @@
       }
     }
   }
+
+
 
 }
