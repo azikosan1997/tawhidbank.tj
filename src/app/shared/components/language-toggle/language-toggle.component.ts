@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
-import {runCommand} from "@angular/cli/src/command-builder/command-runner";
 import {LanguageServiceService} from "../../../services/language-service.service";
 
 @Component({

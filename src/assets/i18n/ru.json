@@ -25,6 +25,7 @@
   "bottomAboutHeaderMenuSeven": "КИФУ",
   "bottomAboutHeaderMenuEight": "Правление Банка",
   "bottomAboutHeaderMenuNine": "Интернет-банк",
+  "bottomAboutHeaderMenuTen": "Объявления",
   "footerPersonalTextOne": "Частным клиентам",
   "footerPersonalTextTwo": "Финансирования",
   "footerPersonalTextThree": "Карты",
@@ -67,6 +68,8 @@
   "personalMainBannerDataDescriptionThree": "Надёжные исламские инвестиции.",
   "personalMainBannerDataTitleFour": "Мурабаха “Авто”",
   "personalMainBannerDataDescriptionFour": "Ускорь свою  жизнь с новым авто!",
+  "personalMainBannerDataTitleFive": "Продажа автомобилей от Тавхидбанк!",
+  "personalMainBannerDataDescriptionFive": "Автомобили по доступным ценам",
   "personalMainBannerData": "Подробнее",
   "personalMainBestProductsTitle": "Лучшее от банка",
   "personalMainBestProductTitleOne": "Мурабаха жильё",
@@ -1616,5 +1619,8 @@
   "regionTextFour": "р. Шахритуз",
   "regionTextFive": "р. Рудаки",
   "regionTextSix": "р. Фирдавси",
-  "title": "«Тавхидбанк» — финансирования, переводы, депозит, «Корти милли» и онлайн банкинг"
+  "title": "«Тавхидбанк» — финансирования, переводы, депозит, «Корти милли» и онлайн банкинг",
+  "announcementsTextOne": "ОАО «Тавхидбанк» объявляет о продаже служебных автомобилей банка на основе переоценки транспортных средств.",
+  "announcementsTextTwo": "Подробности по телефону 9111",
+  "stockHolders": "Акционеры"
 }

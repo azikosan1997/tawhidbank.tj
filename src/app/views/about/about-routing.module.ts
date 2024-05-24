@@ -12,6 +12,7 @@ import {HelpComponent} from "./help/help.component";
 import {SupervisoryComponent} from "./supervisory/supervisory.component";
 import {IfscComponent} from "./ifsc/ifsc.component";
 import {BankBoardComponent} from "./bank-board/bank-board.component";
+import {AnnouncementsComponent} from "./announcements/announcements.component";
 
 const routes: Routes = [
   {path: '', component: AboutBankComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'supervisory', component: SupervisoryComponent},
   {path: 'ifsc', component: IfscComponent},
   {path: 'bank-board', component: BankBoardComponent},
+  {path: 'announcements', component: AnnouncementsComponent},
 ];
 
 @NgModule({

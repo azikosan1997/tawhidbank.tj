@@ -27,6 +27,7 @@ import { SupervisoryComponent } from './supervisory/supervisory.component';
 import { IfscComponent } from './ifsc/ifsc.component';
 import { BankBoardComponent } from './bank-board/bank-board.component';
 import {TranslateModule} from "@ngx-translate/core";
+import { AnnouncementsComponent } from './announcements/announcements.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {TranslateModule} from "@ngx-translate/core";
     SupervisoryComponent,
     IfscComponent,
     BankBoardComponent,
+    AnnouncementsComponent,
   ],
     imports: [
         CommonModule,

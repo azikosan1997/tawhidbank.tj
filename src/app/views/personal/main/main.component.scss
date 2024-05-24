@@ -20,11 +20,12 @@
         border-radius: 20px;
         position: relative;
         box-sizing: border-box;
+        overflow: hidden;
 
         .banner-carousel-info {
 
           .banner-title {
-            font-size: 48px;
+            font-size: 44px;
             font-family: "Montserrat", sans-serif;
             color: rgb(25, 25, 25);
             font-weight: bold;
@@ -59,7 +60,7 @@
         .banner-carousel-image {
           position: absolute;
           bottom: 0;
-          right: 0;
+          right: -2px;
 
           img {
             width: 100%;

@@ -56,9 +56,17 @@
       </svg>
     </div>
 
-    <div class="rate-images">
-      <img src="./assets/images/pages/deposits/rate-tj.png" alt="Rate TJS">
-      <img src="./assets/images/pages/deposits/rate-usd.png" alt="Rate USD">
+    <div class="rate-images" *ngIf="selectedLanguageFlag === 0">
+      <img src="./assets/images/pages/deposits/tj-sm.png" alt="Rate TJS">
+      <img src="./assets/images/pages/deposits/tj-usd.png" alt="Rate USD">
+    </div>
+    <div class="rate-images" *ngIf="selectedLanguageFlag === 1">
+      <img src="./assets/images/pages/deposits/ru-sm.png" alt="Rate TJS">
+      <img src="./assets/images/pages/deposits/ru-usd.png" alt="Rate USD">
+    </div>
+    <div class="rate-images" *ngIf="selectedLanguageFlag === 2">
+      <img src="./assets/images/pages/deposits/en-sm.png" alt="Rate TJS">
+      <img src="./assets/images/pages/deposits/en-usd.png" alt="Rate USD">
     </div>
   </div>
 </ng-template>

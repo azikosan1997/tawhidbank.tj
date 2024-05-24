@@ -25,6 +25,7 @@
   "bottomAboutHeaderMenuSeven": "CIFS",
   "bottomAboutHeaderMenuEight": "Bank Board",
   "bottomAboutHeaderMenuNine": "Internet-banking",
+  "bottomAboutHeaderMenuTen": "Announcements",
   "footerPersonalTextOne": "For private clients",
   "footerPersonalTextTwo": "Financing",
   "footerPersonalTextThree": "Cards",
@@ -67,6 +68,8 @@
   "personalMainBannerDataDescriptionThree": "Reliable Islamic investments.",
   "personalMainBannerDataTitleFour": "Murabaha “Auto”",
   "personalMainBannerDataDescriptionFour": "Speed up your life with a new car!",
+  "personalMainBannerDataTitleFive": "Car sales from Tawhidbank!",
+  "personalMainBannerDataDescriptionFive": "Cars at affordable prices",
   "personalMainBannerData": "More",
   "personalMainBestProductsTitle": "The best from the bank",
   "personalMainBestProductTitleOne": "Murabaha housing",
@@ -1610,5 +1613,8 @@
   "regionTextFour": "r. Shahrituz",
   "regionTextFive": "r. Rudaki",
   "regionTextSix": "r. Firdavsi",
-  "title": "«Tawhidbank» — financing, transfers, deposit, \"Korti milli\" and online banking"
+  "title": "«Tawhidbank» — financing, transfers, deposit, \"Korti milli\" and online banking",
+  "announcementsTextOne": "OJSC \"Tawkhidbank\" announces the sale of bank company cars based on the revaluation of vehicles.",
+  "announcementsTextTwo": "For details call 9111",
+  "stockHolders": "Shareholders"
 }

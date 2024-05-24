@@ -128,14 +128,75 @@ button {
 }
 
 
+.banner-temp{
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #309799;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+
+  .container{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text-two{
+      display: flex;
+      align-items: center;
+
+      span:first-child{
+        height: 24px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+}
+
 @media screen and (max-width: 767px){
   .mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
     font-size: 1.2em !important;
+  }
+
+
+  .banner-temp{
+    font-size: 14px;
+    .container{
+      .text-two{
+
+        span:first-child{
+          height: 26px;
+          margin-right: 5px;
+        }
+      }
+    }
+
   }
 }
 
 @media screen and (max-width: 499px){
   .mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
     font-size: 1em !important;
+  }
+
+  .banner-temp{
+    font-size: 14px;
+    .container{
+      flex-direction: column;
+      .text-two{
+
+        span:first-child{
+          height: 26px;
+          margin-right: 5px;
+        }
+      }
+    }
+
   }
 }

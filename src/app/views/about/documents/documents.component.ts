@@ -74,6 +74,10 @@ export class DocumentsComponent {
       title: 'aboutDocumentsTextFourteen',
       path: './assets/documents/About/Устав Тавхидбанк.pdf'
     },
+    {
+      title: 'stockHolders',
+      path: './assets/documents/img.png'
+    },
   ]
 
   financialReportsDocs = [

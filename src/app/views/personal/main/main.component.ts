@@ -160,6 +160,16 @@ export class MainComponent implements OnInit {
       textColor: '#309799',
       link: '/personal/auto-financing'
     },
+    {
+      image: './assets/images/pages/main/banner-images/car-2.png',
+      background: 'linear-gradient(120deg, #309997, #bdfff3)',
+      title: 'personalMainBannerDataTitleFive',
+      description: 'personalMainBannerDataDescriptionFive',
+      color: '#fff',
+      button: '#fff',
+      textColor: '#062e5b',
+      link: '/o-banke/announcements'
+    },
   ];
 
   bestProducts = [
