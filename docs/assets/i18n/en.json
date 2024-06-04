@@ -1617,10 +1617,9 @@
   "announcementsTextOne": "OJSC \"Tawkhidbank\" announces the sale of bank company cars based on the revaluation of vehicles.",
   "announcementsTextTwo": "For details call 9111",
   "stockHolders": "Shareholders",
-
   "announcementsFirstTextOne": "Annual General Meeting of Shareholders of OJSC \"Tawhidbank\"",
-  "announcementsFirstTextTwo": "Bulletin dated May 10. 2024",
-  "announcementsFirstTextThree": "Shareholders of Tawhidbank OJSC are notified that on May 30, 2024 at 10:00 am the annual general meeting of shareholders of Tavkhidbank JSC will be held with the following agenda:",
+  "announcementsFirstTextTwo": "10/05/2024",
+  "announcementsFirstTextThree": "Shareholders of Tawhidbank OJSC are notified that on May 30, 2024 at 10:00 am the annual general meeting of shareholders of Tawhidbank JSC will be held with the following agenda:",
   "announcementsFirstTextFour": "On the report of Tawhidbank OJSC for 2023, the annual accounting report, including the profit and loss statement, as well as the distribution of profits and losses at the end of the financial year.",
   "announcementsFirstTextFive": "On introducing amendments and additions to the Charter of Tawhidbank OJSC.",
   "announcementsFirstTextSix": "On introducing amendments and additions to the Regulations on the Supervisory Board of OJSC Tawhidbank.",
@@ -1630,5 +1629,18 @@
   "announcementsFirstTextTen": "On the payment of remuneration to members of the supervisory board of Tawhidbank OJSC in connection with the performance of duties as a member of the supervisory board during the period from May 30, 2023 to May 30, 2024.",
   "announcementsFirstTextEleven": "Registration of participants in the annual General Meeting of Shareholders will begin on May 30, 2024 at 9:00 in the Bank’s Head Office building.",
   "announcementsFirstTextTwelve": "The materials of the annual General Meeting of Shareholders will be presented to shareholders for review on working days in the building of the Bank's Head Office.",
-  "announcementsFirstTextThirteen": "Supervisory Board of OJSC \"Tawhidbank\"."
+  "announcementsFirstTextThirteen": "Supervisory Board of OJSC \"Tawhidbank\".",
+  "announcementsFirstTextZero": "Announcements and News",
+
+  "announcementsFirstTextFourteen": "On May 30, 2023, in the building of the central office of Tawhidbank OJSC, the Annual General Meeting of Shareholders of the bank was held, which adopted the following decisions:",
+  "announcementsFirstTextFifteen": "Approved the Report of Tawhidbank OJSC for 2023, annual financial statements, including profit and loss statements of the joint-stock company, as well as the distribution of profits and losses of the joint-stock company based on the results of the financial year;определило, что Правление Банка по запросу акционеров дает им разъяснения относительно размера и порядка уплаты закята с каждой акции;",
+  "announcementsFirstTextSixteen": "Determined that the Board of the Bank, at the request of shareholders, provides them with explanations regarding the amount and procedure for paying zakat on each share",
+  "announcementsFirstTextSeventeen": "Made changes and additions to the Charter of the Bank regarding the powers of the Supervisory Board of the Bank arising from Instruction of the National Bank of Tajikistan No. 247 “About the organization of the risk management system and internal control in financial credit organizations”",
+  "announcementsFirstTextEighteen": "Made changes and additions to the Regulations on the Supervisory Council regarding the date and state registration number of the Bank, changes in the address of the Bank Branch in the Rudaki district, the powers of the Supervisory Council of the Bank arising from the Instruction of the National Bank of Tajikistan No. 247 “About the organization of the risk management system and internal control in financial credit organizations”;",
+  "announcementsFirstTextNineteen": "Made editorial changes to the Regulations on the Management Board;",
+  "announcementsFirstTextTwenty": "Elected shareholder Kakhorov Fatkhullo Zainulloevich as the Bank's Auditor;",
+  "announcementsFirstTextTwentyOne": "Appointed the auditing organization Baker Tilly Tajikistan LLC to conduct an external audit of Tawhidbank’s activities in 2024.",
+  "announcementsFirstTextTwentyTwo": "Results of the annual general meeting of shareholders of Tawhidbank OJSC",
+  "announcementsFirstTextTwentyThree": "30/05/2024"
+
 }

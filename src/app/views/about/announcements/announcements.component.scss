@@ -17,6 +17,18 @@
       font-size: 16px;
       margin-bottom: 40px;
 
+      .announcement-main-picture{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        img {
+          width: 60%;
+          border-radius: .75rem;
+        }
+      }
+
       h2{
         @include h2-mixin;
       }
@@ -29,7 +41,13 @@
 
       ol{
         li{
-          margin-bottom: 5px;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+      }
+      ul{
+        li{
+          margin-bottom: 10px;
           font-weight: 600;
         }
       }
@@ -106,7 +124,13 @@
 
       .first-announcement{
         font-size: 14px;
-        text-align: justify;
+        text-align: left;
+
+        .announcement-main-picture {
+          img {
+            width: 100%;
+          }
+        }
 
         h2{
           @include h2-mixin;
