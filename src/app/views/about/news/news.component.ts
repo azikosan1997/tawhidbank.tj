@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
-import {NewsService} from "../../../services/news.service";
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {NewsService} from "../../../services/news.service";
 import {LanguageServiceService} from "../../../services/language-service.service";
-import {AnnouncementsService} from "../../../services/announcements.service";
 
 @Component({
-  selector: 'app-announcements',
-  templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.scss']
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.scss']
 })
-export class AnnouncementsComponent {
+export class NewsComponent implements OnInit {
   displayingTjNews: any = null;
   displayingEnNews: any = null;
   displayingRuNews: any = null;
   displayingNews: any[] = [];
   lang: string = 'tj'
 
-  constructor(private announcementsService: AnnouncementsService,
+  constructor(private newsService: NewsService,
               private router: Router,
               private languageService: LanguageServiceService,) {
 
@@ -24,7 +23,7 @@ export class AnnouncementsComponent {
 
   ngOnInit() {
 
-    this.announcementsService.getAllAnnouncements()
+    this.newsService.getAllNews()
       .subscribe({
         next: (data: any) => {
           this.processNewsData(data);
@@ -101,6 +100,6 @@ export class AnnouncementsComponent {
   }
 
   goToNewsPage(id: string): void {
-    this.router.navigate(['/o-banke/announcements', id]);
+    this.router.navigate(['/o-banke/news', id]);
   }
 }

@@ -8,6 +8,7 @@ import {AutoComponent} from "./auto/auto.component";
 import {TawhidPayComponent} from "./tawhidpay/tawhidpay.component";
 import {CardsComponent} from "./cards/cards.component";
 import {QuestionsComponent} from "./questions/questions.component";
+import {LeasingComponent} from "./leasing/leasing.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'account-management', component: TawhidPayComponent},
   {path: 'cards', component: CardsComponent},
   {path: 'questions', component: QuestionsComponent},
+  {path: 'leasing', component: LeasingComponent},
 ];
 
 @NgModule({

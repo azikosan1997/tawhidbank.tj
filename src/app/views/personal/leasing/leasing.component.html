@@ -1,0 +1,35 @@
+<app-personal-header></app-personal-header>
+<banner-product [bannerData]="banner"></banner-product>
+<section class="leasing-info">
+  <div class="container">
+    <div class="leasing-info-wrap">
+      <div class="leasing-info-wrap-text">
+        {{'leasingPageTextThree' | translate}}
+      </div>
+      <div class="leasing-info-wrap-image">
+        <img src="./assets/images/pages/leasing/bank.png" alt="Bank">
+      </div>
+    </div>
+  </div>
+</section>
+<app-leasing-calculator [loanTitle]="loanTitle"  [docPeriod]="docPeriod" [tjsRate]="tjsRate" [usdRate]="usdRate"></app-leasing-calculator>
+<app-leasing-table [tariffs]="tariffs" [DocsGroupOne]="DocsGroupOne" [DocsGroupTwo]="DocsGroupTwo" [DocsGroupThree]="DocsGroupThree"> </app-leasing-table>
+<app-financing-form id="form"></app-financing-form>
+<section class="financing-request">
+  <div class="container">
+    <div class="financing-accordion">
+      <mat-accordion *ngFor="let question of financingQuestions">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{question.question ? translateText(question.question) : ''}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{question.answer ? translateText(question.answer) : ''}}</p>
+          <span *ngFor="let option of question.options">{{option.row ? translateText(option.row) : ''}}<br></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>
+

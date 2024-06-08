@@ -28,6 +28,9 @@ import { IfscComponent } from './ifsc/ifsc.component';
 import { BankBoardComponent } from './bank-board/bank-board.component';
 import {TranslateModule} from "@ngx-translate/core";
 import { AnnouncementsComponent } from './announcements/announcements.component';
+import { NewsComponent } from './news/news.component';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { AnnouncementsDetailComponent } from './announcements-detail/announcements-detail.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
     IfscComponent,
     BankBoardComponent,
     AnnouncementsComponent,
+    NewsComponent,
+    NewsDetailComponent,
+    AnnouncementsDetailComponent,
   ],
     imports: [
         CommonModule,

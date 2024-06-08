@@ -54,6 +54,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import { RegionDropdownComponent } from './components/region-dropdown/region-dropdown.component';
 import { BusinessRegionDropdownComponent } from './components/business-region-dropdown/business-region-dropdown.component';
+import { LeasingCalculatorComponent } from './components/leasing-calculator/leasing-calculator.component';
+import { LeasingTableComponent } from './components/leasing-table/leasing-table.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +94,8 @@ import { BusinessRegionDropdownComponent } from './components/business-region-dr
     PersonInfoComponent,
     RegionDropdownComponent,
     BusinessRegionDropdownComponent,
+    LeasingCalculatorComponent,
+    LeasingTableComponent,
   ],
   imports: [
     CommonModule,
@@ -150,7 +154,9 @@ import { BusinessRegionDropdownComponent } from './components/business-region-dr
     LanguageToggleComponent,
     PersonInfoComponent,
     RegionDropdownComponent,
-    BusinessRegionDropdownComponent
+    BusinessRegionDropdownComponent,
+    LeasingCalculatorComponent,
+    LeasingTableComponent
   ]
 })
 export class SharedModule {

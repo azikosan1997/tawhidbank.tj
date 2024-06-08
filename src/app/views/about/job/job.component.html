@@ -51,28 +51,28 @@
     </div>
   </div>
 </section>
-<!--<section class="search" id="search">-->
-<!--  <div class="container">-->
-<!--    <h2>{{'aboutJobTextThirteen' | translate}}</h2>-->
-<!--    <div class="search-subtitle">{{'aboutJobTextFourteen' | translate}}</div>-->
-<!--    <div class="search-params-wrap">-->
-<!--      <mat-accordion *ngFor="let job of jobs">-->
-<!--        <mat-expansion-panel>-->
-<!--          <mat-expansion-panel-header>-->
-<!--            <mat-panel-title>-->
-<!--              {{job.duty}}-->
-<!--            </mat-panel-title>-->
-<!--          </mat-expansion-panel-header>-->
-<!--          <div class="job-description">-->
-<!--            <div class="salary">{{job.salary}}</div>-->
-<!--            <div class="salary city">{{job.city}}</div>-->
-<!--            <div class="job-info">{{job.info}}</div>-->
-<!--          </div>-->
-<!--        </mat-expansion-panel>-->
-<!--      </mat-accordion>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
+<section class="search" id="search">
+  <div class="container">
+    <h2>{{'aboutJobTextThirteen' | translate}}</h2>
+    <div class="search-subtitle">{{'aboutJobTextFourteen' | translate}}</div>
+    <div class="search-params-wrap">
+      <mat-accordion *ngFor="let job of displayingJobs" style="width: 100%">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{job.position}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="job-description">
+            <div class="salary">{{job.salary}}</div>
+            <div class="salary city">{{job.region}}</div>
+            <div class="job-info" [innerHTML]="job.description"></div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>
 <section class="contact" id="contact">
   <div class="container">
     <h2>{{'aboutJobTextFifteen' | translate}}</h2>

@@ -1,0 +1,13 @@
+<app-about-header></app-about-header>
+<section class="news-detail">
+  <div class="container" *ngFor="let n of news">
+    <div class="news-detail-content">
+      <div class="news-detail-content-info">
+        <div class="news-detail-content-info-title">{{ n.title }}</div>
+        <div class="news-detail-date">{{ n.post_date }}</div>
+        <div class="news-detail-content-image" [style.backgroundImage]="'url(' + n.image + ')'"></div>
+        <div class="news-detail-content-info-description" [innerHTML]="n.description"></div>
+      </div>
+    </div>
+  </div>
+</section>

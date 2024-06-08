@@ -28,6 +28,7 @@ import {QuestionsComponent} from './questions/questions.component';
 import {TranslateModule} from "@ngx-translate/core";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { LeasingComponent } from './leasing/leasing.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     TawhidPayComponent,
     CardsComponent,
     QuestionsComponent,
+    LeasingComponent,
   ],
   imports: [
     CommonModule,

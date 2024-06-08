@@ -13,6 +13,9 @@ import {SupervisoryComponent} from "./supervisory/supervisory.component";
 import {IfscComponent} from "./ifsc/ifsc.component";
 import {BankBoardComponent} from "./bank-board/bank-board.component";
 import {AnnouncementsComponent} from "./announcements/announcements.component";
+import {NewsComponent} from "./news/news.component";
+import {NewsDetailComponent} from "./news-detail/news-detail.component";
+import {AnnouncementsDetailComponent} from "./announcements-detail/announcements-detail.component";
 
 const routes: Routes = [
   {path: '', component: AboutBankComponent},
@@ -28,6 +31,9 @@ const routes: Routes = [
   {path: 'ifsc', component: IfscComponent},
   {path: 'bank-board', component: BankBoardComponent},
   {path: 'announcements', component: AnnouncementsComponent},
+  {path: 'announcements/:newsId', component: AnnouncementsDetailComponent},
+  {path: 'all-news', component: NewsComponent},
+  { path: 'news/:newsId', component: NewsDetailComponent },
 ];
 
 @NgModule({

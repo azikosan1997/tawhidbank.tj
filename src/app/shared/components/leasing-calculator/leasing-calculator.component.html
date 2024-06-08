@@ -1,0 +1,62 @@
+<section class="financing-calculator">
+  <div class="container">
+    <div class="financing-calculator-wrap">
+      <div class="financing-calculator-wrap-toggles">
+        <h3>{{'leasingCalculatorComponentTextOne' | translate}}</h3>
+        <nav class="tab-panel-button-group">
+          <ul>
+            <li class="tab" *ngFor="let tab of currencyArray; let i = index" (click)="setTab(i)">
+              <a class="tab-link" [ngClass]="selectedCurrency === i ? 'active' : ''">{{ translateText(tab) }}</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'leasingCalculatorComponentTextFour' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+              <input class="slider" type="range" min="10000" max="5000000" value="0" step="100" [(ngModel)]="loanAmount">
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'financingCalculatorComponentTextFive' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+              <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100" [(ngModel)]="initialFee">
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>{{'leasingCalculatorComponentTextSix' | translate}}</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+              <input class="slider" type="range" value="0" min="1" max="120" step="1" [(ngModel)]="loanPeriod">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="financing-calculator-wrap-summary">
+        <div class="financing-calculator-wrap-summary-title">{{translateText(loanTitle)}}</div>
+        <div class="financing-calculator-wrap-summary-row">
+          <div class="financing-calculator-wrap-summary-row-item">
+            <div class="important">{{calculateMonthlyPayment().toFixed(2) + ' ' + currency}}</div>
+            <div>{{'financingCalculatorComponentTextEight' | translate}}</div>
+          </div>
+          <div class="financing-calculator-wrap-summary-row-item">
+            <div class="important">{{currentRate + " %"}}</div>
+            <div>{{'leasingCalculatorComponentTextNine' | translate}}</div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-summary-row">
+          <a href="/personal/leasing#form" class="button">{{'financingCalculatorComponentTextTwelve' | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

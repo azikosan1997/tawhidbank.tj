@@ -20,8 +20,8 @@
              routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuThree' | translate }}</a>
         </li>
         <li>
-          <a routerLink="/personal/transfers"
-             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuFour' | translate }}</a>
+          <a routerLink="/personal/leasing"
+             routerLinkActive="active-link">{{ 'bottomPersonalHeaderMenuEight' | translate }}</a>
         </li>
         <li>
           <button mat-icon-button [matMenuTriggerFor]="more" aria-label="Example icon-button with a menu">
@@ -29,6 +29,8 @@
           </button>
           <mat-menu #more="matMenu">
             <a mat-menu-item routerLink="/personal/auto-financing">
+              <a routerLinkActive="active-link" class="nav-item">{{ 'bottomPersonalHeaderMenuFour' | translate }}</a>
+            </a><a mat-menu-item routerLink="/personal/auto-financing">
               <a routerLinkActive="active-link" class="nav-item">{{ 'bottomPersonalHeaderMenuFive' | translate }}</a>
             </a>
             <a mat-menu-item routerLink="/personal/tawhid-pay">
@@ -317,6 +319,19 @@
       <div class="menu-mobile-link-options-row">
         <a routerLink="/personal/questions"
            class="menu-mobile-link-options-row-menu-item-text">{{ 'personalMobileMenuTestTwentyTwo' | translate }}</a>
+        <div class="menu-mobile-link-options-row-menu-item-icon">
+          <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="menu-mobile-link-options-row">
+        <a routerLink="/personal/leasing"
+           class="menu-mobile-link-options-row-menu-item-text">{{ 'bottomPersonalHeaderMenuEight' | translate }}</a>
         <div class="menu-mobile-link-options-row-menu-item-icon">
           <svg fill="#bfbfbf" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

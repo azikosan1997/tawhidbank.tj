@@ -1,0 +1,121 @@
+.leasing-info{
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  .container{
+    .leasing-info-wrap{
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 200ms ease-in-out;
+
+      &:hover{
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .leasing-info-wrap-text{
+        font-size: 18px;
+        font-family: Montserrat, sans-serif;
+        line-height: 1.2;
+        padding-right: 20px;
+      }
+
+      .leasing-info-wrap-image{
+        width: 80%;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+.financing-request {
+  margin-bottom: 60px;
+  .container {
+    .financing-accordion {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .financing-help {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .leasing-info{
+    .container{
+      .leasing-info-wrap{
+        .leasing-info-wrap-text{
+          max-width: 65%;
+        }
+
+        .leasing-info-wrap-image{
+          width: 220px;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .leasing-info{
+    .container{
+      .leasing-info-wrap{
+        flex-direction: column-reverse;
+        text-align: center;
+
+        .leasing-info-wrap-text{
+          max-width: 100%;
+          font-size: 18px;
+        }
+
+        .leasing-info-wrap-image{
+          width: 60%;
+          margin-bottom: 20px;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .leasing-info{
+    .container{
+      .leasing-info-wrap{
+        padding: 20px 20px;
+        flex-direction: column-reverse;
+        .leasing-info-wrap-text{
+          max-width: 100%;
+          font-size: 14px;
+        }
+
+        .leasing-info-wrap-image{
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,7 +1,7 @@
 <app-about-header></app-about-header>
 <section class="news">
   <div class="container">
-    <h1>{{'announcementsFirstTextZero' | translate}}</h1>
+    <h1>{{'bottomAboutHeaderMenuFour' | translate}}</h1>
 
     <div class="news-list-wrap">
       <div class="news-list-item" *ngFor="let news of displayingNews" (click)="goToNewsPage(news.id)">
@@ -10,7 +10,6 @@
         <div class="news-list-item-info">
           <div class="news-list-item-heading">{{news.title}}</div>
           <div class="news-list-item-date">{{news.post_date}}</div>
-
         </div>
       </div>
     </div>
